@@ -4,7 +4,7 @@
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="Widok : Widok project page">
+    <meta name="description" content="Widok : Reactive web framework for Scala.JS">
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
@@ -19,7 +19,7 @@
           <a id="forkme_banner" href="https://github.com/widok">View on GitHub</a>
 
           <h1 id="project_title">Widok</h1>
-          <h2 id="project_tagline">Widok project page</h2>
+          <h2 id="project_tagline">Reactive web framework for Scala.JS</h2>
 
         </header>
     </div>
@@ -27,37 +27,72 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+        <p><em>Widok</em> is a reactive web framework for Scala.JS. Its key concepts are:</p>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+<ul>
+<li>
+<strong>Page:</strong> dispatches the current query to a page which renders widgets</li>
+<li>
+<strong>Widget:</strong> element to be rendered by the browser</li>
+<li>
+<strong>Channel:</strong> value stream; for 1:n data propagation</li>
+<li>
+<strong>Aggregate:</strong> container of channels; for n:m data propagation</li>
+</ul>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+<h2>
+<a name="comparison" class="anchor" href="#comparison"><span class="octicon octicon-link"></span></a>Comparison</h2>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+<p>Widok is different from traditional web frameworks in the following aspects:</p>
 
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+<ul>
+<li>The rendering logic is implemented entirely on the client-side</li>
+<li>The sole purpose of the server is to exchange data with the client</li>
+<li>Instead of writing HTML templates, widgets are defined in pure Scala code</li>
+<li>Only widgets are allowed to manipulate the DOM</li>
+<li>Designed with memory-efficiency in mind</li>
+<li>Bootstrap 3 bindings available</li>
+</ul>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+<p>As Widok is built around Scala.JS it also inherits some of its properties:</p>
 
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+<ul>
+<li>IDE support</li>
+<li>Browser source maps</li>
+<li>Fast compilation times</li>
+</ul>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+<h2>
+<a name="widgets" class="anchor" href="#widgets"><span class="octicon octicon-link"></span></a>Widgets</h2>
 
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+<p>HTML elements are provided as widgets. Also, native Bootstrap 3 bindings exist to allow for faster prototyping.</p>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+<h2>
+<a name="data-propagation" class="anchor" href="#data-propagation"><span class="octicon octicon-link"></span></a>Data propagation</h2>
 
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+<p>Channels model realtime values as a stream. This stream can be observed. Internally, no copies of the produced values are created. If desired, the current value can be explicitly cached, though. It is possible to operate on channels with higher-order functions. Every time a new value is produced, it is propagated down the observer chain.</p>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+<p>Aggregates are channel containers. They allow to deal with large lists efficiently. As aggregates may be rendered directly to the browser, no copies of the list are being made. If an item gets removed, this is reflected directly by a change in the DOM, only deleting the actual node.</p>
+
+<h2>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>Widok is licensed under the terms of the GPLv3.</p>
+
+<h2>
+<a name="authors" class="anchor" href="#authors"><span class="octicon octicon-link"></span></a>Authors</h2>
+
+<p>Tim Nieradzik <a href="mailto:tim@kognit.io">tim@kognit.io</a></p>
+
+<h2>
+<a name="links" class="anchor" href="#links"><span class="octicon octicon-link"></span></a>Links</h2>
+
+<ul>
+<li><a href="https://github.com/widok/widok/wiki">User manual</a></li>
+<li><a href="https://widok.github.io/">Project page</a></li>
+<li><a href="http://widok.github.io/api/index.html">API documentation</a></li>
+<li><a href="https://github.com/widok/widok">Source code</a></li>
+</ul>
       </section>
     </div>
 
