@@ -4,7 +4,7 @@
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="Widok : Reactive web framework for Scala.JS">
+    <meta name="description" content="Widok : Reactive web framework for Scala.js">
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
@@ -19,7 +19,7 @@
           <a id="forkme_banner" href="https://github.com/widok">View on GitHub</a>
 
           <h1 id="project_title">Widok</h1>
-          <h2 id="project_tagline">Reactive web framework for Scala.JS</h2>
+          <h2 id="project_tagline">Reactive web framework for Scala.js</h2>
 
         </header>
     </div>
@@ -27,17 +27,17 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <p><em>Widok</em> is a reactive web framework for Scala.JS. Its key concepts are:</p>
+        <p><em>Widok</em> is a reactive web framework for Scala.js. Its key concepts are:</p>
 
 <ul>
 <li>
-<strong>Page:</strong> dispatches the current query to a page which renders widgets</li>
+<strong>Page:</strong> the browser query is dispatched to a page which renders widgets</li>
 <li>
-<strong>Widget:</strong> element to be rendered by the browser</li>
+<strong>Widget:</strong> an element that corresponds to a node in the DOM</li>
 <li>
-<strong>Channel:</strong> value stream; for 1:n data propagation</li>
+<strong>Channel:</strong> a stream of values</li>
 <li>
-<strong>Aggregate:</strong> container of channels; for n:m data propagation</li>
+<strong>Aggregate:</strong> a channel container</li>
 </ul>
 
 <h2>
@@ -54,7 +54,7 @@
 <li>Bootstrap 3 bindings available</li>
 </ul>
 
-<p>As Widok is built around Scala.JS it also inherits some of its properties:</p>
+<p>As Widok is built around Scala.js it also inherits some of its properties:</p>
 
 <ul>
 <li>IDE support</li>
@@ -63,16 +63,11 @@
 </ul>
 
 <h2>
-<a name="widgets" class="anchor" href="#widgets"><span class="octicon octicon-link"></span></a>Widgets</h2>
-
-<p>HTML elements are provided as widgets. Also, native Bootstrap 3 bindings exist to allow for faster prototyping.</p>
-
-<h2>
 <a name="data-propagation" class="anchor" href="#data-propagation"><span class="octicon octicon-link"></span></a>Data propagation</h2>
 
-<p>Channels model realtime values as a stream. This stream can be observed. Internally, no copies of the produced values are created. If desired, the current value can be explicitly cached, though. It is possible to operate on channels with higher-order functions. Every time a new value is produced, it is propagated down the observer chain.</p>
+<p>Channels model continuous values as streams. These streams can be observed. Internally, no copies of the produced values are created. If desired, the current value can be explicitly cached, though. It is possible to operate on channels with higher-order functions such as <code>map()</code> and <code>filter()</code>. Every time a new value is produced, it is propagated down the observer chain.</p>
 
-<p>Aggregates are channel containers. They allow to deal with large lists efficiently. As aggregates may be rendered directly to the browser, no copies of the list are being made. If an item gets removed, this is reflected directly by a change in the DOM, only deleting the actual node.</p>
+<p>Aggregates are channel containers. They allow to deal with large lists efficiently. If an item gets added, removed or updated, this is reflected directly by a change in the DOM, only operating on the actual nodes.</p>
 
 <h2>
 <a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
@@ -82,16 +77,28 @@
 <h2>
 <a name="authors" class="anchor" href="#authors"><span class="octicon octicon-link"></span></a>Authors</h2>
 
-<p>Tim Nieradzik <a href="mailto:tim@kognit.io">tim@kognit.io</a></p>
+<ul>
+<li>Tim Nieradzik</li>
+</ul>
+
+<h2>
+<a name="similar-projects" class="anchor" href="#similar-projects"><span class="octicon octicon-link"></span></a>Similar projects</h2>
+
+<ul>
+<li><a href="https://github.com/lihaoyi/scala.rx">scala.rx</a></li>
+<li><a href="https://github.com/lihaoyi/scalatags">scalatags</a></li>
+<li><a href="https://github.com/monifu/monifu">monifu</a></li>
+</ul>
 
 <h2>
 <a name="links" class="anchor" href="#links"><span class="octicon octicon-link"></span></a>Links</h2>
 
 <ul>
-<li><a href="https://github.com/widok/widok/wiki">User manual</a></li>
-<li><a href="https://widok.github.io/">Project page</a></li>
-<li><a href="http://widok.github.io/api/index.html">API documentation</a></li>
 <li><a href="https://github.com/widok/widok">Source code</a></li>
+<li><a href="https://github.com/widok/widok/wiki">User manual</a></li>
+<li><a href="http://widok.github.io/api/latest/">API documentation</a></li>
+<li><a href="https://github.com/widok/widok/issues">Issue tracker</a></li>
+<li><a href="https://travis-ci.org/widok/widok">Travis CI</a></li>
 </ul>
       </section>
     </div>
