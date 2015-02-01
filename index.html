@@ -1,116 +1,214 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="Widok : Reactive web framework for Scala.js">
+<head>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
     <title>Widok</title>
-  </head>
 
-  <body>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/widok">View on GitHub</a>
+    <!-- Custom CSS -->
+    <link href="css/clean-blog.min.css" rel="stylesheet">
 
-          <h1 id="project_title">Widok</h1>
-          <h2 id="project_tagline">Reactive web framework for Scala.js</h2>
+    <!-- Custom Fonts -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
-        </header>
-    </div>
+</head>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <p><em>Widok</em> is a reactive web framework for Scala.js. Its key concepts are:</p>
+<body>
 
-<ul>
-<li>
-<strong>Page:</strong> the browser query is dispatched to a page which renders widgets</li>
-<li>
-<strong>Widget:</strong> an element that corresponds to a node in the DOM</li>
-<li>
-<strong>Channel:</strong> a stream of values</li>
-<li>
-<strong>Aggregate:</strong> a channel container</li>
-</ul>
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('img/home-bg.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1>Widok</h1>
+                        <hr class="small">
+                        <span class="subheading">Reactive web framework for Scala.js</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
-<h2>
-<a name="comparison" class="anchor" href="#comparison"><span class="octicon octicon-link"></span></a>Comparison</h2>
+	<article>
+		<!-- Main Content -->
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-<p>Widok is different from traditional web frameworks in the following aspects:</p>
+                    <p>
+                        <a href="https://travis-ci.org/widok/widok"><img src="https://travis-ci.org/widok/widok.svg" alt="Build Status"></a>
+                        <a href="https://gitter.im/widok/widok?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge"><img src="https://badges.gitter.im/Join%20Chat.svg" alt="Gitter"></a>
+                    </p>
 
-<ul>
-<li>The rendering logic is implemented entirely on the client-side</li>
-<li>The sole purpose of the server is to exchange data with the client</li>
-<li>Instead of writing HTML templates, widgets are defined in pure Scala code</li>
-<li>Only widgets are allowed to manipulate the DOM</li>
-<li>Designed with memory-efficiency in mind</li>
-<li>Bootstrap 3 bindings available</li>
-</ul>
 
-<p>As Widok is built around Scala.js it also inherits some of its properties:</p>
+                    <h2 class="section-heading">Abstract</h2>
 
-<ul>
-<li>IDE support</li>
-<li>Browser source maps</li>
-<li>Fast compilation times</li>
-</ul>
+                    <p>
+                        Widok is a reactive web framework for <a href="http://www.scala-js.org/">Scala.js</a>. It enables you to develop interactive web applications entirely in Scala by transpiling the code to JavaScript. Abstractions such as <i>views</i>, <i>channels</i> or <i>aggregates</i> allow for concise and reliable code. Widok ships native bindings for popular CSS frameworks like <a href="http://getbootstrap.com/">Bootstrap</a> and <a href="http://fortawesome.github.io/Font-Awesome/">Font-Awesome</a> which let you iterate faster.
+                    </p>
 
-<h2>
-<a name="data-propagation" class="anchor" href="#data-propagation"><span class="octicon octicon-link"></span></a>Data propagation</h2>
+                    <p>Widok's key concepts are:</p>
 
-<p>Channels model continuous values as streams. These streams can be observed. Internally, no copies of the produced values are created. If desired, the current value can be explicitly cached, though. It is possible to operate on channels with higher-order functions such as <code>map()</code> and <code>filter()</code>. Every time a new value is produced, it is propagated down the observer chain.</p>
+                    <ul class="task-list">
+                        <li><strong>Page:</strong> the browser query is dispatched to a page which renders widgets</li>
+                        <li><strong>Widget:</strong> an element that corresponds to a node in the DOM</li>
+                        <li><strong>Channel:</strong> a stream of values</li>
+                        <li><strong>Aggregate:</strong> a channel container</li>
+                    </ul>
 
-<p>Aggregates are channel containers. They allow to deal with large lists efficiently. If an item gets added, removed or updated, this is reflected directly by a change in the DOM, only operating on the actual nodes.</p>
+                    <h2 class="section-heading">Comparison</h2>
 
-<h2>
-<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+                    <p>Widok is different from traditional web frameworks in the following aspects:</p>
 
-<p>Widok is licensed under the terms of the Apache v2.0 license.</p>
+                    <ul class="task-list">
+                        <li>The rendering logic is implemented entirely on the client-side</li>
+                        <li>The sole purpose of the server is to exchange data with the client</li>
+                        <li>Instead of writing HTML templates, widgets are defined in pure Scala code</li>
+                        <li>Only widgets are allowed to manipulate the DOM</li>
+                        <li>Designed with memory-efficiency in mind</li>
+                        <li>Bootstrap 3 bindings available</li>
+                    </ul>
 
-<h2>
-<a name="authors" class="anchor" href="#authors"><span class="octicon octicon-link"></span></a>Authors</h2>
+                    <p>As Widok is built around Scala.js it also inherits some of its properties:</p>
 
-<ul>
-<li>Tim Nieradzik</li>
-</ul>
+                    <ul class="task-list">
+                        <li>IDE support</li>
+                        <li>Browser source maps</li>
+                        <li>Fast compilation times</li>
+                    </ul>
 
-<h2>
-<a name="similar-projects" class="anchor" href="#similar-projects"><span class="octicon octicon-link"></span></a>Similar projects</h2>
+                    <h2 class="section-heading">Data propagation</h2>
 
-<ul>
-<li><a href="https://github.com/lihaoyi/scala.rx">scala.rx</a></li>
-<li><a href="https://github.com/lihaoyi/scalatags">scalatags</a></li>
-<li><a href="https://github.com/monifu/monifu">monifu</a></li>
-</ul>
+                    <p>Channels model continuous values as streams. These streams can be observed. Internally, no copies of the produced values are created. If desired, the current value can be explicitly cached, though. It is possible to operate on channels with higher-order functions such as <code>map()</code> and <code>filter()</code>. Every time a new value is produced, it is propagated down the observer chain.</p>
 
-<h2>
-<a name="links" class="anchor" href="#links"><span class="octicon octicon-link"></span></a>Links</h2>
+                    <p>Aggregates are channel containers. They allow to deal with large lists efficiently. If an item gets added, removed or updated, this is reflected directly by a change in the DOM, only operating on the actual nodes.</p>
 
-<ul>
-<li><a href="https://github.com/widok/widok">Source code</a></li>
-<li><a href="https://github.com/widok/widok/wiki">User manual</a></li>
-<li><a href="http://widok.github.io/api/latest/">API documentation</a></li>
-<li><a href="https://github.com/widok/widok/issues">Issue tracker</a></li>
-<li><a href="https://travis-ci.org/widok/widok">Travis CI</a></li>
-</ul>
-      </section>
-    </div>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
+                    <h2 class="section-heading">
+                        Code example
+                    </h2>
 
-    
+                    <p>The following example implements a single-page application that uses two-way binding:</p>
 
-  </body>
+                    <pre>
+package example
+
+import org.widok._
+import org.widok.html._
+
+object App extends PageApplication {
+  val name = Var("")
+  val hasName = name.map(_.nonEmpty)
+
+  def view() = div(
+    h1("Welcome to Widok!")
+  , p("Please enter your name:")
+
+  , text().bindLive(name)
+
+  , p("Hello, ", name)
+      .show(hasName)
+
+  , button("Change my name")
+      .onClick(_ => name := "tux")
+      .show(name.unequal("tux"))
+
+  , button("Log out")
+      .onClick(_ => name := "")
+      .show(hasName)
+  )
+
+  def ready() { }
+}
+                    </pre>
+
+					<h2 class="section-heading">
+						User manual
+					</h2>
+
+                    <p>The user manual (v0.1) is available in three formats:</p>
+
+					<ul>
+						<li><a href="manual/widok-v0.1.html">HTML</a></li>
+						<li><a href="manual/widok-v0.1.pdf">PDF</a></li>
+						<li><a href="manual/widok-v0.1.epub">EPUB</a></li>
+					</ul>
+
+                    <h2 class="section-heading">
+                        Showcase
+                    </h2>
+
+                    <ul>
+                        <li><a href="https://github.com/widok/todomvc">TodoMVC</a></li>
+                        <li><a href="https://github.com/poliglot/poliglot-ui">Poliglot-UI</a>: Node.js application that uses the Bootstrap bindings</li>
+                    </ul>
+
+                    <h2 class="section-heading">Project links</h2>
+
+                    <ul>
+                        <li><a href="http://widok.github.io/api/latest/">API documentation</a></li>
+                        <li><a href="https://github.com/widok/widok">Source code</a></li>
+                        <li><a href="https://github.com/widok/widok/issues">Issue tracker</a></li>
+                        <li><a href="https://gitter.im/widok/widok">Gitter</a></li>
+                        <li><a href="https://travis-ci.org/widok/widok">Travis CI</a></li>
+                    </ul>
+
+                    <h2 class="section-heading">Similar projects</h2>
+
+                    <ul>
+						<li><a href="https://github.com/lihaoyi/scala.rx">scala.rx</a></li>
+						<li><a href="https://github.com/lihaoyi/scalatags">scalatags</a></li>
+						<li><a href="https://github.com/monifu/monifu">monifu</a></li>
+                    </ul>
+				</div>
+			</div>
+		</div>
+	</article>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                        <li>
+                            <a href="http://twitter.com/timnieradzik/">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://github.com/widok/">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted">Copyright &copy; Widok 2015</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
 </html>
