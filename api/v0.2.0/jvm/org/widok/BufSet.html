@@ -1,0 +1,1064 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>BufSet - org.widok.BufSet</title>
+          <meta name="description" content="BufSet - org.widok.BufSet" />
+          <meta name="keywords" content="BufSet org.widok.BufSet" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../lib/template.js"></script>
+      <script type="text/javascript" src="../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../index.html';
+            var hash = 'org.widok.BufSet';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="type">
+      <div id="definition">
+        <a href="BufSet$.html" title="See companion object"><img src="../../lib/trait_to_object_big.png" /></a>
+        <p id="owner"><a href="../package.html" class="extype" name="org">org</a>.<a href="package.html" class="extype" name="org.widok">widok</a></p>
+        <h1><a href="BufSet$.html" title="See companion object">BufSet</a></h1><h3><span class="morelinks"><div>
+            Related Docs:
+            <a href="BufSet$.html" title="See companion object">object BufSet</a>
+            | <a href="package.html" class="extype" name="org.widok">package widok</a>
+          </div></span></h3><span class="permalink">
+      <a href="../../index.html#org.widok.BufSet" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <span class="name">BufSet</span><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="ReadBufSet.html" class="extype" name="org.widok.ReadBufSet">ReadBufSet</a>[<span class="extype" name="org.widok.BufSet.T">T</span>] with <a href="WriteBufSet.html" class="extype" name="org.widok.WriteBufSet">WriteBufSet</a>[<span class="extype" name="org.widok.BufSet.T">T</span>] with <a href="StateBufSet.html" class="extype" name="org.widok.StateBufSet">StateBufSet</a>[<span class="extype" name="org.widok.BufSet.T">T</span>]</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><a href="StateBufSet.html" class="extype" name="org.widok.StateBufSet">StateBufSet</a>[<span class="extype" name="org.widok.BufSet.T">T</span>], <a href="Disposable.html" class="extype" name="org.widok.Disposable">Disposable</a>, <a href="WriteBufSet.html" class="extype" name="org.widok.WriteBufSet">WriteBufSet</a>[<span class="extype" name="org.widok.BufSet.T">T</span>], <a href="reactive/mutate/BufSet.html" class="extype" name="org.widok.reactive.mutate.BufSet">reactive.mutate.BufSet</a>[<span class="extype" name="org.widok.BufSet.T">T</span>], <a href="ReadBufSet.html" class="extype" name="org.widok.ReadBufSet">ReadBufSet</a>[<span class="extype" name="org.widok.BufSet.T">T</span>], <a href="DeltaBufSet.html" class="extype" name="org.widok.DeltaBufSet">DeltaBufSet</a>[<span class="extype" name="org.widok.BufSet.T">T</span>], <a href="reactive/stream/Filter.html" class="extype" name="org.widok.reactive.stream.Filter">Filter</a>[<a href="DeltaBufSet.html" class="extype" name="org.widok.DeltaBufSet">DeltaBufSet</a>, <span class="extype" name="org.widok.BufSet.T">T</span>, <span class="extype" name="org.widok.BufSet.T">T</span>], <a href="reactive/stream/Map.html" class="extype" name="org.widok.reactive.stream.Map">Map</a>[<a href="DeltaBufSet.html" class="extype" name="org.widok.DeltaBufSet">DeltaBufSet</a>, <span class="extype" name="org.widok.BufSet.T">T</span>], <a href="reactive/stream/Size.html" class="extype" name="org.widok.reactive.stream.Size">Size</a>, <a href="PollBufSet.html" class="extype" name="org.widok.PollBufSet">PollBufSet</a>[<span class="extype" name="org.widok.BufSet.T">T</span>], <a href="reactive/poll/BufSet.html" class="extype" name="org.widok.reactive.poll.BufSet">reactive.poll.BufSet</a>[<span class="extype" name="org.widok.BufSet.T">T</span>], <a href="reactive/poll/Empty.html" class="extype" name="org.widok.reactive.poll.Empty">Empty</a>, <a href="reactive/poll/Count.html" class="extype" name="org.widok.reactive.poll.Count">Count</a>[<span class="extype" name="org.widok.BufSet.T">T</span>], <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a>, <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Any" class="extype" target="_top">Any</a></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="org.widok.BufSet"><span>BufSet</span></li><li class="in" name="org.widok.StateBufSet"><span>StateBufSet</span></li><li class="in" name="org.widok.Disposable"><span>Disposable</span></li><li class="in" name="org.widok.WriteBufSet"><span>WriteBufSet</span></li><li class="in" name="org.widok.reactive.mutate.BufSet"><span>BufSet</span></li><li class="in" name="org.widok.ReadBufSet"><span>ReadBufSet</span></li><li class="in" name="org.widok.DeltaBufSet"><span>DeltaBufSet</span></li><li class="in" name="org.widok.reactive.stream.Filter"><span>Filter</span></li><li class="in" name="org.widok.reactive.stream.Map"><span>Map</span></li><li class="in" name="org.widok.reactive.stream.Size"><span>Size</span></li><li class="in" name="org.widok.PollBufSet"><span>PollBufSet</span></li><li class="in" name="org.widok.reactive.poll.BufSet"><span>BufSet</span></li><li class="in" name="org.widok.reactive.poll.Empty"><span>Empty</span></li><li class="in" name="org.widok.reactive.poll.Count"><span>Count</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show all</span></li>
+            </ol>
+            <a href="http://docs.scala-lang.org/overviews/scaladoc/usage.html#members" target="_blank">Learn more about member selection</a>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:Any):Boolean"></a>
+      <a id="!=(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BufSet@!=(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef###" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="##():Int"></a>
+      <a id="##():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Int" class="extype" target="_top">Int</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BufSet@##():Int" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="org.widok.reactive.mutate.BufSet#++=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="++=(values:Seq[T]):Unit"></a>
+      <a id="++=(Seq[T]):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $plus$plus$eq" class="name">++=</span><span class="params">(<span name="values">values: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="org.widok.BufSet.T">T</span>]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BufSet@++=(values:Seq[T]):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="reactive/mutate/BufSet.html" class="extype" name="org.widok.reactive.mutate.BufSet">BufSet</a></dd><dt>See also</dt><dd><span class="cmt"><p><a href="reactive/mutate/BufSet.html#insertAll(values:Seq[T]):Unit" class="extmbr" name="org.widok.reactive.mutate.BufSet#insertAll">insertAll</a></p></span></dd></dl></div>
+    </li><li name="org.widok.reactive.mutate.BufSet#+=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="+=(value:T):Unit"></a>
+      <a id="+=(T):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $plus$eq" class="name">+=</span><span class="params">(<span name="value">value: <span class="extype" name="org.widok.BufSet.T">T</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BufSet@+=(value:T):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="reactive/mutate/BufSet.html" class="extype" name="org.widok.reactive.mutate.BufSet">BufSet</a></dd><dt>See also</dt><dd><span class="cmt"><p><a href="reactive/mutate/BufSet.html#insert(value:T):Unit" class="extmbr" name="org.widok.reactive.mutate.BufSet#insert">insert</a></p></span></dd></dl></div>
+    </li><li name="org.widok.reactive.mutate.BufSet#--=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="--=(values:Seq[T]):Unit"></a>
+      <a id="--=(Seq[T]):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $minus$minus$eq" class="name">--=</span><span class="params">(<span name="values">values: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="org.widok.BufSet.T">T</span>]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BufSet@--=(values:Seq[T]):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="reactive/mutate/BufSet.html" class="extype" name="org.widok.reactive.mutate.BufSet">BufSet</a></dd><dt>See also</dt><dd><span class="cmt"><p><a href="reactive/mutate/BufSet.html#removeAll(values:Seq[T]):Unit" class="extmbr" name="org.widok.reactive.mutate.BufSet#removeAll">removeAll</a></p></span></dd></dl></div>
+    </li><li name="org.widok.reactive.mutate.BufSet#-=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="-=(value:T):Unit"></a>
+      <a id="-=(T):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $minus$eq" class="name">-=</span><span class="params">(<span name="value">value: <span class="extype" name="org.widok.BufSet.T">T</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BufSet@-=(value:T):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="reactive/mutate/BufSet.html" class="extype" name="org.widok.reactive.mutate.BufSet">BufSet</a></dd><dt>See also</dt><dd><span class="cmt"><p><a href="reactive/mutate/BufSet.html#remove(value:T):Unit" class="extmbr" name="org.widok.reactive.mutate.BufSet#remove">remove</a></p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:Any):Boolean"></a>
+      <a id="==(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BufSet@==(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="org.widok.reactive.stream.Filter#all" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="all(value:B):org.widok.ReadChannel[Boolean]"></a>
+      <a id="all(T):ReadChannel[Boolean]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">all</span><span class="params">(<span name="value">value: <span class="extype" name="org.widok.BufSet.T">T</span></span>)</span><span class="result">: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BufSet@all(value:B):org.widok.ReadChannel[Boolean]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">All elements are equal to <code>value</code>
+</p><div class="fullcomment"><div class="comment cmt"><p>All elements are equal to <code>value</code>
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="reactive/stream/Filter.html" class="extype" name="org.widok.reactive.stream.Filter">Filter</a></dd><dt>See also</dt><dd><span class="cmt"><p><a href="reactive/stream/Filter.html#any(value:B):org.widok.ReadChannel[Boolean]" class="extmbr" name="org.widok.reactive.stream.Filter#any">any</a>
+</p></span></dd></dl></div>
+    </li><li name="org.widok.reactive.stream.Filter#any" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="any(value:B):org.widok.ReadChannel[Boolean]"></a>
+      <a id="any(T):ReadChannel[Boolean]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">any</span><span class="params">(<span name="value">value: <span class="extype" name="org.widok.BufSet.T">T</span></span>)</span><span class="result">: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BufSet@any(value:B):org.widok.ReadChannel[Boolean]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">At least one element is equal to <code>value</code>
+</p><div class="fullcomment"><div class="comment cmt"><p>At least one element is equal to <code>value</code>
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="reactive/stream/Filter.html" class="extype" name="org.widok.reactive.stream.Filter">Filter</a></dd><dt>See also</dt><dd><span class="cmt"><p><a href="reactive/stream/Filter.html#all(value:B):org.widok.ReadChannel[Boolean]" class="extmbr" name="org.widok.reactive.stream.Filter#all">all</a>
+</p></span></dd></dl></div>
+    </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="asInstanceOf[T0]:T0"></a>
+      <a id="asInstanceOf[T0]:T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BufSet@asInstanceOf[T0]:T0" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="org.widok.StateBufSet#changes" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="changes:org.widok.RootChannel[org.widok.BufSet.Delta[T]]"></a>
+      <a id="changes:RootChannel[Delta[T]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">changes</span><span class="result">: <a href="RootChannel.html" class="extype" name="org.widok.RootChannel">RootChannel</a>[<a href="BufSet$$Delta.html" class="extype" name="org.widok.BufSet.Delta">Delta</a>[<span class="extype" name="org.widok.BufSet.T">T</span>]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BufSet@changes:org.widok.RootChannel[org.widok.BufSet.Delta[T]]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="StateBufSet.html" class="extype" name="org.widok.StateBufSet">StateBufSet</a></dd></dl></div>
+    </li><li name="org.widok.WriteBufSet#clear" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="clear():Unit"></a>
+      <a id="clear():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clear</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BufSet@clear():Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Removes all elements</p><div class="fullcomment"><div class="comment cmt"><p>Removes all elements</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="WriteBufSet.html" class="extype" name="org.widok.WriteBufSet">WriteBufSet</a> → <a href="reactive/mutate/BufSet.html" class="extype" name="org.widok.reactive.mutate.BufSet">BufSet</a></dd></dl></div>
+    </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="clone():Object"></a>
+      <a id="clone():AnyRef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BufSet@clone():Object" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.CloneNotSupportedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="org.widok.reactive.stream.Filter#contains" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="contains(value:B):org.widok.ReadChannel[Boolean]"></a>
+      <a id="contains(T):ReadChannel[Boolean]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">contains</span><span class="params">(<span name="value">value: <span class="extype" name="org.widok.BufSet.T">T</span></span>)</span><span class="result">: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BufSet@contains(value:B):org.widok.ReadChannel[Boolean]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Stream contains at least one occurrence of <code>value</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Stream contains at least one occurrence of <code>value</code>.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="reactive/stream/Filter.html" class="extype" name="org.widok.reactive.stream.Filter">Filter</a></dd><dt>Note</dt><dd><span class="cmt"><p>Channels: Once true, will never produce any other value.
+</p></span>, <span class="cmt"><p>Buffers: When the item is removed, it will produce false.</p></span></dd></dl></div>
+    </li><li name="org.widok.PollBufSet#contains$" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="contains$(value:T):Boolean"></a>
+      <a id="contains$(T):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">contains$</span><span class="params">(<span name="value">value: <span class="extype" name="org.widok.BufSet.T">T</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BufSet@contains$(value:T):Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="PollBufSet.html" class="extype" name="org.widok.PollBufSet">PollBufSet</a> → <a href="reactive/poll/Count.html" class="extype" name="org.widok.reactive.poll.Count">Count</a></dd></dl></div>
+    </li><li name="org.widok.reactive.stream.Filter#count" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="count(value:B):org.widok.ReadChannel[Int]"></a>
+      <a id="count(T):ReadChannel[Int]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">count</span><span class="params">(<span name="value">value: <span class="extype" name="org.widok.BufSet.T">T</span></span>)</span><span class="result">: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Int" class="extype" target="_top">Int</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BufSet@count(value:B):org.widok.ReadChannel[Int]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Count number of occurrence of <code>value</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Count number of occurrence of <code>value</code>.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="reactive/stream/Filter.html" class="extype" name="org.widok.reactive.stream.Filter">Filter</a></dd><dt>Note</dt><dd><span class="cmt"><p>Channels: With every matching element, the counter is increased.
+</p></span>, <span class="cmt"><p>Buffers: When the element is removed, the counter is decreased.</p></span></dd></dl></div>
+    </li><li name="org.widok.StateBufSet#dispose" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="dispose():Unit"></a>
+      <a id="dispose():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">dispose</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BufSet@dispose():Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="StateBufSet.html" class="extype" name="org.widok.StateBufSet">StateBufSet</a> → <a href="Disposable.html" class="extype" name="org.widok.Disposable">Disposable</a></dd></dl></div>
+    </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="eq(x$1:AnyRef):Boolean"></a>
+      <a id="eq(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BufSet@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#equals" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="equals(x$1:Any):Boolean"></a>
+      <a id="equals(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BufSet@equals(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="org.widok.reactive.stream.Filter#exists" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="exists(f:B=&gt;Boolean):org.widok.ReadChannel[Boolean]"></a>
+      <a id="exists((T)⇒Boolean):ReadChannel[Boolean]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">exists</span><span class="params">(<span name="f">f: (<span class="extype" name="org.widok.BufSet.T">T</span>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BufSet@exists(f:B=&gt;Boolean):org.widok.ReadChannel[Boolean]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Checks for existence of a value for which <code>f</code> is true
+</p><div class="fullcomment"><div class="comment cmt"><p>Checks for existence of a value for which <code>f</code> is true
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="reactive/stream/Filter.html" class="extype" name="org.widok.reactive.stream.Filter">Filter</a></dd><dt>Note</dt><dd><span class="cmt"><p>Channels: false as long as <code>f</code> returns false, then true
+</p></span>, <span class="cmt"><p>Buffers: false as long as no row exists where <code>f</code> is true, then true</p></span></dd><dt>See also</dt><dd><span class="cmt"><p><a href="reactive/stream/Filter.html#forall(f:B=&gt;Boolean):org.widok.ReadChannel[Boolean]" class="extmbr" name="org.widok.reactive.stream.Filter#forall">forall</a>
+</p></span></dd></dl></div>
+    </li><li name="org.widok.DeltaBufSet#filter" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="filter(f:T=&gt;Boolean):org.widok.DeltaBufSet[T]"></a>
+      <a id="filter((T)⇒Boolean):DeltaBufSet[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">filter</span><span class="params">(<span name="f">f: (<span class="extype" name="org.widok.BufSet.T">T</span>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <a href="DeltaBufSet.html" class="extype" name="org.widok.DeltaBufSet">DeltaBufSet</a>[<span class="extype" name="org.widok.BufSet.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BufSet@filter(f:T=&gt;Boolean):org.widok.DeltaBufSet[T]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Only include elements for which <code>f</code> is true</p><div class="fullcomment"><div class="comment cmt"><p>Only include elements for which <code>f</code> is true</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="DeltaBufSet.html" class="extype" name="org.widok.DeltaBufSet">DeltaBufSet</a> → <a href="reactive/stream/Filter.html" class="extype" name="org.widok.reactive.stream.Filter">Filter</a></dd></dl></div>
+    </li><li name="org.widok.reactive.stream.Filter#filterNot" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="filterNot(f:B=&gt;Boolean):Container[A]"></a>
+      <a id="filterNot((T)⇒Boolean):DeltaBufSet[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">filterNot</span><span class="params">(<span name="f">f: (<span class="extype" name="org.widok.BufSet.T">T</span>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <a href="DeltaBufSet.html" class="extype" name="org.widok.DeltaBufSet">DeltaBufSet</a>[<span class="extype" name="org.widok.BufSet.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BufSet@filterNot(f:B=&gt;Boolean):Container[A]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="reactive/stream/Filter.html" class="extype" name="org.widok.reactive.stream.Filter">Filter</a></dd></dl></div>
+    </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="finalize():Unit"></a>
+      <a id="finalize():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BufSet@finalize():Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.lang.Throwable]</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="org.widok.reactive.stream.Filter#forall" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="forall(f:B=&gt;Boolean):org.widok.ReadChannel[Boolean]"></a>
+      <a id="forall((T)⇒Boolean):ReadChannel[Boolean]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">forall</span><span class="params">(<span name="f">f: (<span class="extype" name="org.widok.BufSet.T">T</span>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BufSet@forall(f:B=&gt;Boolean):org.widok.ReadChannel[Boolean]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Checks whether <code>f</code> is true for all elements
+</p><div class="fullcomment"><div class="comment cmt"><p>Checks whether <code>f</code> is true for all elements
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="reactive/stream/Filter.html" class="extype" name="org.widok.reactive.stream.Filter">Filter</a></dd><dt>See also</dt><dd><span class="cmt"><p><a href="reactive/stream/Filter.html#exists(f:B=&gt;Boolean):org.widok.ReadChannel[Boolean]" class="extmbr" name="org.widok.reactive.stream.Filter#exists">exists</a>
+</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getClass():Class[_]"></a>
+      <a id="getClass():Class[_]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BufSet@getClass():Class[_]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hashCode():Int"></a>
+      <a id="hashCode():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Int" class="extype" target="_top">Int</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BufSet@hashCode():Int" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="org.widok.WriteBufSet#insert" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="insert(value:T):Unit"></a>
+      <a id="insert(T):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">insert</span><span class="params">(<span name="value">value: <span class="extype" name="org.widok.BufSet.T">T</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BufSet@insert(value:T):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Adds <code>value</code></p><div class="fullcomment"><div class="comment cmt"><p>Adds <code>value</code></p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="WriteBufSet.html" class="extype" name="org.widok.WriteBufSet">WriteBufSet</a> → <a href="reactive/mutate/BufSet.html" class="extype" name="org.widok.reactive.mutate.BufSet">BufSet</a></dd></dl></div>
+    </li><li name="org.widok.WriteBufSet#insertAll" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="insertAll(values:Seq[T]):Unit"></a>
+      <a id="insertAll(Seq[T]):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">insertAll</span><span class="params">(<span name="values">values: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="org.widok.BufSet.T">T</span>]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BufSet@insertAll(values:Seq[T]):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Insert <code>values</code></p><div class="fullcomment"><div class="comment cmt"><p>Insert <code>values</code></p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="WriteBufSet.html" class="extype" name="org.widok.WriteBufSet">WriteBufSet</a> → <a href="reactive/mutate/BufSet.html" class="extype" name="org.widok.reactive.mutate.BufSet">BufSet</a></dd></dl></div>
+    </li><li name="org.widok.reactive.stream.Size#isEmpty" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isEmpty:org.widok.ReadChannel[Boolean]"></a>
+      <a id="isEmpty:ReadChannel[Boolean]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isEmpty</span><span class="result">: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BufSet@isEmpty:org.widok.ReadChannel[Boolean]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="reactive/stream/Size.html" class="extype" name="org.widok.reactive.stream.Size">Size</a></dd><dt>Note</dt><dd><span class="cmt"><p>Partial channels: Produce true if the current value is cleared.
+</p></span>, <span class="cmt"><p>Channels: Produce false with the first received value.</p></span>, <span class="cmt"><p>Buffers: Produce a new value once a row is added or removed.</p></span></dd></dl></div>
+    </li><li name="org.widok.PollBufSet#isEmpty$" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isEmpty$:Boolean"></a>
+      <a id="isEmpty$:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isEmpty$</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BufSet@isEmpty$:Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="PollBufSet.html" class="extype" name="org.widok.PollBufSet">PollBufSet</a> → <a href="reactive/poll/Empty.html" class="extype" name="org.widok.reactive.poll.Empty">Empty</a></dd></dl></div>
+    </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BufSet@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="org.widok.DeltaBufSet#map" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="map[C](f:T=&gt;C):org.widok.DeltaBufSet[C]"></a>
+      <a id="map[C]((T)⇒C):DeltaBufSet[C]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">map</span><span class="tparams">[<span name="C">C</span>]</span><span class="params">(<span name="f">f: (<span class="extype" name="org.widok.BufSet.T">T</span>) ⇒ <span class="extype" name="org.widok.DeltaBufSet.map.C">C</span></span>)</span><span class="result">: <a href="DeltaBufSet.html" class="extype" name="org.widok.DeltaBufSet">DeltaBufSet</a>[<span class="extype" name="org.widok.DeltaBufSet.map.C">C</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BufSet@map[C](f:T=&gt;C):org.widok.DeltaBufSet[C]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Applies <code>f</code> on each element</p><div class="fullcomment"><div class="comment cmt"><p>Applies <code>f</code> on each element</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="DeltaBufSet.html" class="extype" name="org.widok.DeltaBufSet">DeltaBufSet</a> → <a href="reactive/stream/Map.html" class="extype" name="org.widok.reactive.stream.Map">Map</a></dd></dl></div>
+    </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ne(x$1:AnyRef):Boolean"></a>
+      <a id="ne(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BufSet@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="org.widok.reactive.stream.Size#nonEmpty" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="nonEmpty:org.widok.ReadChannel[Boolean]"></a>
+      <a id="nonEmpty:ReadChannel[Boolean]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">nonEmpty</span><span class="result">: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BufSet@nonEmpty:org.widok.ReadChannel[Boolean]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Negation of <a href="reactive/stream/Size.html#isEmpty:org.widok.ReadChannel[Boolean]" class="extmbr" name="org.widok.reactive.stream.Size#isEmpty">isEmpty</a>
+</p><div class="fullcomment"><div class="comment cmt"><p>Negation of <a href="reactive/stream/Size.html#isEmpty:org.widok.ReadChannel[Boolean]" class="extmbr" name="org.widok.reactive.stream.Size#isEmpty">isEmpty</a>
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="reactive/stream/Size.html" class="extype" name="org.widok.reactive.stream.Size">Size</a></dd></dl></div>
+    </li><li name="org.widok.PollBufSet#nonEmpty$" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="nonEmpty$:Boolean"></a>
+      <a id="nonEmpty$:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">nonEmpty$</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BufSet@nonEmpty$:Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="PollBufSet.html" class="extype" name="org.widok.PollBufSet">PollBufSet</a> → <a href="reactive/poll/Empty.html" class="extype" name="org.widok.reactive.poll.Empty">Empty</a></dd></dl></div>
+    </li><li name="scala.AnyRef#notify" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notify():Unit"></a>
+      <a id="notify():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BufSet@notify():Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#notifyAll" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notifyAll():Unit"></a>
+      <a id="notifyAll():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BufSet@notifyAll():Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="org.widok.reactive.stream.Filter#partition" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="partition(f:B=&gt;Boolean):(Container[A],Container[A])"></a>
+      <a id="partition((T)⇒Boolean):(DeltaBufSet[T],DeltaBufSet[T])"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">partition</span><span class="params">(<span name="f">f: (<span class="extype" name="org.widok.BufSet.T">T</span>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: (<a href="DeltaBufSet.html" class="extype" name="org.widok.DeltaBufSet">DeltaBufSet</a>[<span class="extype" name="org.widok.BufSet.T">T</span>], <a href="DeltaBufSet.html" class="extype" name="org.widok.DeltaBufSet">DeltaBufSet</a>[<span class="extype" name="org.widok.BufSet.T">T</span>])</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BufSet@partition(f:B=&gt;Boolean):(Container[A],Container[A])" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Partitions stream into two sub-stream</p><div class="fullcomment"><div class="comment cmt"><p>Partitions stream into two sub-stream</p><p>The left stream contains all elements for which <code>f</code> is true, all other
+elements go to the right stream.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="reactive/stream/Filter.html" class="extype" name="org.widok.reactive.stream.Filter">Filter</a></dd></dl></div>
+    </li><li name="org.widok.WriteBufSet#remove" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="remove(value:T):Unit"></a>
+      <a id="remove(T):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">remove</span><span class="params">(<span name="value">value: <span class="extype" name="org.widok.BufSet.T">T</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BufSet@remove(value:T):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Removes <code>value</code></p><div class="fullcomment"><div class="comment cmt"><p>Removes <code>value</code></p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="WriteBufSet.html" class="extype" name="org.widok.WriteBufSet">WriteBufSet</a> → <a href="reactive/mutate/BufSet.html" class="extype" name="org.widok.reactive.mutate.BufSet">BufSet</a></dd></dl></div>
+    </li><li name="org.widok.WriteBufSet#removeAll" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="removeAll(values:Seq[T]):Unit"></a>
+      <a id="removeAll(Seq[T]):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">removeAll</span><span class="params">(<span name="values">values: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="org.widok.BufSet.T">T</span>]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BufSet@removeAll(values:Seq[T]):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Remove <code>values</code></p><div class="fullcomment"><div class="comment cmt"><p>Remove <code>values</code></p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="WriteBufSet.html" class="extype" name="org.widok.WriteBufSet">WriteBufSet</a> → <a href="reactive/mutate/BufSet.html" class="extype" name="org.widok.reactive.mutate.BufSet">BufSet</a></dd></dl></div>
+    </li><li name="org.widok.WriteBufSet#set" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="set(values:Seq[T]):Unit"></a>
+      <a id="set(Seq[T]):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">set</span><span class="params">(<span name="values">values: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="org.widok.BufSet.T">T</span>]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BufSet@set(values:Seq[T]):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Replace all elements with <code>values</code></p><div class="fullcomment"><div class="comment cmt"><p>Replace all elements with <code>values</code></p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="WriteBufSet.html" class="extype" name="org.widok.WriteBufSet">WriteBufSet</a> → <a href="reactive/mutate/BufSet.html" class="extype" name="org.widok.reactive.mutate.BufSet">BufSet</a></dd></dl></div>
+    </li><li name="org.widok.DeltaBufSet#size" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="size:org.widok.ReadChannel[Int]"></a>
+      <a id="size:ReadChannel[Int]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">size</span><span class="result">: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Int" class="extype" target="_top">Int</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BufSet@size:org.widok.ReadChannel[Int]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="DeltaBufSet.html" class="extype" name="org.widok.DeltaBufSet">DeltaBufSet</a> → <a href="reactive/stream/Size.html" class="extype" name="org.widok.reactive.stream.Size">Size</a></dd><dt>Note</dt><dd><span class="cmt"><p>State channels: Produce when a new child is attached and if the size
+                      changes. In <a href="Opt.html" class="extype" name="org.widok.Opt">org.widok.Opt</a> the size is reset if
+                      the value is cleared.
+</p></span>, <span class="cmt"><p>Channels: The size is only produced in response to each received
+                value on the channel.</p></span>, <span class="cmt"><p>Buffers: Produce the row count once a row is added or removed.</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
+      <a id="synchronized[T0](⇒T0):T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BufSet@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="org.widok.PollBufSet#toSeq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toSeq:org.widok.ReadChannel[Seq[T]]"></a>
+      <a id="toSeq:ReadChannel[Seq[T]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toSeq</span><span class="result">: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="org.widok.BufSet.T">T</span>]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BufSet@toSeq:org.widok.ReadChannel[Seq[T]]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="PollBufSet.html" class="extype" name="org.widok.PollBufSet">PollBufSet</a></dd></dl></div>
+    </li><li name="org.widok.PollBufSet#toSet$" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toSet$:Set[T]"></a>
+      <a id="toSet$:Set[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toSet$</span><span class="result">: <span class="extype" name="scala.Predef.Set">Set</span>[<span class="extype" name="org.widok.BufSet.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BufSet@toSet$:Set[T]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="PollBufSet.html" class="extype" name="org.widok.PollBufSet">PollBufSet</a> → <a href="reactive/poll/BufSet.html" class="extype" name="org.widok.reactive.poll.BufSet">BufSet</a></dd></dl></div>
+    </li><li name="scala.AnyRef#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toString():String"></a>
+      <a id="toString():String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BufSet@toString():String" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="org.widok.WriteBufSet#toggle" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toggle(state:Boolean,values:T*):Unit"></a>
+      <a id="toggle(Boolean,T*):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toggle</span><span class="params">(<span name="state">state: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>, <span name="values">values: <span class="extype" name="org.widok.BufSet.T">T</span>*</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BufSet@toggle(state:Boolean,values:T*):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Insert all elements from <code>values</code> if state true, otherwise remove</p><div class="fullcomment"><div class="comment cmt"><p>Insert all elements from <code>values</code> if state true, otherwise remove</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="WriteBufSet.html" class="extype" name="org.widok.WriteBufSet">WriteBufSet</a> → <a href="reactive/mutate/BufSet.html" class="extype" name="org.widok.reactive.mutate.BufSet">BufSet</a></dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait():Unit"></a>
+      <a id="wait():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BufSet@wait():Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long,x$2:Int):Unit"></a>
+      <a id="wait(Long,Int):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Long" class="extype" target="_top">Long</a></span>, <span name="arg1">arg1: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BufSet@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long):Unit"></a>
+      <a id="wait(Long):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Long" class="extype" target="_top">Long</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BufSet@wait(x$1:Long):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="org.widok.StateBufSet">
+              <h3>Inherited from <a href="StateBufSet.html" class="extype" name="org.widok.StateBufSet">StateBufSet</a>[<span class="extype" name="org.widok.BufSet.T">T</span>]</h3>
+            </div><div class="parent" name="org.widok.Disposable">
+              <h3>Inherited from <a href="Disposable.html" class="extype" name="org.widok.Disposable">Disposable</a></h3>
+            </div><div class="parent" name="org.widok.WriteBufSet">
+              <h3>Inherited from <a href="WriteBufSet.html" class="extype" name="org.widok.WriteBufSet">WriteBufSet</a>[<span class="extype" name="org.widok.BufSet.T">T</span>]</h3>
+            </div><div class="parent" name="org.widok.reactive.mutate.BufSet">
+              <h3>Inherited from <a href="reactive/mutate/BufSet.html" class="extype" name="org.widok.reactive.mutate.BufSet">reactive.mutate.BufSet</a>[<span class="extype" name="org.widok.BufSet.T">T</span>]</h3>
+            </div><div class="parent" name="org.widok.ReadBufSet">
+              <h3>Inherited from <a href="ReadBufSet.html" class="extype" name="org.widok.ReadBufSet">ReadBufSet</a>[<span class="extype" name="org.widok.BufSet.T">T</span>]</h3>
+            </div><div class="parent" name="org.widok.DeltaBufSet">
+              <h3>Inherited from <a href="DeltaBufSet.html" class="extype" name="org.widok.DeltaBufSet">DeltaBufSet</a>[<span class="extype" name="org.widok.BufSet.T">T</span>]</h3>
+            </div><div class="parent" name="org.widok.reactive.stream.Filter">
+              <h3>Inherited from <a href="reactive/stream/Filter.html" class="extype" name="org.widok.reactive.stream.Filter">Filter</a>[<a href="DeltaBufSet.html" class="extype" name="org.widok.DeltaBufSet">DeltaBufSet</a>, <span class="extype" name="org.widok.BufSet.T">T</span>, <span class="extype" name="org.widok.BufSet.T">T</span>]</h3>
+            </div><div class="parent" name="org.widok.reactive.stream.Map">
+              <h3>Inherited from <a href="reactive/stream/Map.html" class="extype" name="org.widok.reactive.stream.Map">Map</a>[<a href="DeltaBufSet.html" class="extype" name="org.widok.DeltaBufSet">DeltaBufSet</a>, <span class="extype" name="org.widok.BufSet.T">T</span>]</h3>
+            </div><div class="parent" name="org.widok.reactive.stream.Size">
+              <h3>Inherited from <a href="reactive/stream/Size.html" class="extype" name="org.widok.reactive.stream.Size">Size</a></h3>
+            </div><div class="parent" name="org.widok.PollBufSet">
+              <h3>Inherited from <a href="PollBufSet.html" class="extype" name="org.widok.PollBufSet">PollBufSet</a>[<span class="extype" name="org.widok.BufSet.T">T</span>]</h3>
+            </div><div class="parent" name="org.widok.reactive.poll.BufSet">
+              <h3>Inherited from <a href="reactive/poll/BufSet.html" class="extype" name="org.widok.reactive.poll.BufSet">reactive.poll.BufSet</a>[<span class="extype" name="org.widok.BufSet.T">T</span>]</h3>
+            </div><div class="parent" name="org.widok.reactive.poll.Empty">
+              <h3>Inherited from <a href="reactive/poll/Empty.html" class="extype" name="org.widok.reactive.poll.Empty">Empty</a></h3>
+            </div><div class="parent" name="org.widok.reactive.poll.Count">
+              <h3>Inherited from <a href="reactive/poll/Count.html" class="extype" name="org.widok.reactive.poll.Count">Count</a>[<span class="extype" name="org.widok.BufSet.T">T</span>]</h3>
+            </div><div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Any" class="extype" target="_top">Any</a></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>

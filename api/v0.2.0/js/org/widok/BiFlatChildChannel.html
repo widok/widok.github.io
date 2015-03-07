@@ -1,0 +1,1878 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>BiFlatChildChannel - org.widok.BiFlatChildChannel</title>
+          <meta name="description" content="BiFlatChildChannel - org.widok.BiFlatChildChannel" />
+          <meta name="keywords" content="BiFlatChildChannel org.widok.BiFlatChildChannel" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../lib/template.js"></script>
+      <script type="text/javascript" src="../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../index.html';
+            var hash = 'org.widok.BiFlatChildChannel';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="type">
+      <div id="definition">
+        <img src="../../lib/class_big.png" />
+        <p id="owner"><a href="../package.html" class="extype" name="org">org</a>.<a href="package.html" class="extype" name="org.widok">widok</a></p>
+        <h1>BiFlatChildChannel</h1><h3><span class="morelinks"><div>Related Doc:
+            <a href="package.html" class="extype" name="org.widok">package widok</a>
+          </div></span></h3><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <span class="name">BiFlatChildChannel</span><span class="tparams">[<span name="T">T</span>, <span name="U">U</span>]</span><span class="params">(<span name="parent">parent: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<span class="extype" name="org.widok.BiFlatChildChannel.T">T</span>]</span>, <span name="observer">observer: <a href="Channel$.html#Observer[T,U]=T=&gt;org.widok.Result[U]" class="extmbr" name="org.widok.Channel.Observer">Observer</a>[<span class="extype" name="org.widok.BiFlatChildChannel.T">T</span>, <a href="Channel.html" class="extype" name="org.widok.Channel">Channel</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>]]</span>)</span><span class="result"> extends <a href="ChildChannel.html" class="extype" name="org.widok.ChildChannel">ChildChannel</a>[<span class="extype" name="org.widok.BiFlatChildChannel.T">T</span>, <span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>] with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a>, <span class="extype" name="java.io.Serializable">Serializable</span>, <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a>, <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Equals" class="extype" target="_top">Equals</a>, <a href="ChildChannel.html" class="extype" name="org.widok.ChildChannel">ChildChannel</a>[<span class="extype" name="org.widok.BiFlatChildChannel.T">T</span>, <span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>], <a href="ChannelDefaultSize.html" class="extype" name="org.widok.ChannelDefaultSize">ChannelDefaultSize</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>], <a href="Channel.html" class="extype" name="org.widok.Channel">Channel</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>], <a href="WriteChannel.html" class="extype" name="org.widok.WriteChannel">WriteChannel</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>], <a href="reactive/propagate/Channel.html" class="extype" name="org.widok.reactive.propagate.Channel">reactive.propagate.Channel</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>], <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>], <a href="Disposable.html" class="extype" name="org.widok.Disposable">Disposable</a>, <a href="reactive/poll/Flush.html" class="extype" name="org.widok.reactive.poll.Flush">Flush</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>], <a href="reactive/stream/Size.html" class="extype" name="org.widok.reactive.stream.Size">Size</a>, <a href="reactive/stream/Cache.html" class="extype" name="org.widok.reactive.stream.Cache">Cache</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>], <a href="reactive/stream/MapExtended.html" class="extype" name="org.widok.reactive.stream.MapExtended">MapExtended</a>[<a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>, <span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>], <a href="reactive/stream/Map.html" class="extype" name="org.widok.reactive.stream.Map">Map</a>[<a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>, <span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>], <a href="reactive/stream/Filter.html" class="extype" name="org.widok.reactive.stream.Filter">Filter</a>[<a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>, <span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>, <span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>], <a href="reactive/stream/Aggregate.html" class="extype" name="org.widok.reactive.stream.Aggregate">Aggregate</a>[<a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>, <span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>], <a href="reactive/stream/Is.html" class="extype" name="org.widok.reactive.stream.Is">Is</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>], <a href="reactive/stream/Fold.html" class="extype" name="org.widok.reactive.stream.Fold">Fold</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>], <a href="reactive/stream/Take.html" class="extype" name="org.widok.reactive.stream.Take">Take</a>[<a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>, <span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>], <a href="reactive/stream/Tail.html" class="extype" name="org.widok.reactive.stream.Tail">Tail</a>[<a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>, <span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>], <a href="reactive/stream/Head.html" class="extype" name="org.widok.reactive.stream.Head">Head</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>], <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a>, <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Any" class="extype" target="_top">Any</a></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="org.widok.BiFlatChildChannel"><span>BiFlatChildChannel</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="scala.Product"><span>Product</span></li><li class="in" name="scala.Equals"><span>Equals</span></li><li class="in" name="org.widok.ChildChannel"><span>ChildChannel</span></li><li class="in" name="org.widok.ChannelDefaultSize"><span>ChannelDefaultSize</span></li><li class="in" name="org.widok.Channel"><span>Channel</span></li><li class="in" name="org.widok.WriteChannel"><span>WriteChannel</span></li><li class="in" name="org.widok.reactive.propagate.Channel"><span>Channel</span></li><li class="in" name="org.widok.ReadChannel"><span>ReadChannel</span></li><li class="in" name="org.widok.Disposable"><span>Disposable</span></li><li class="in" name="org.widok.reactive.poll.Flush"><span>Flush</span></li><li class="in" name="org.widok.reactive.stream.Size"><span>Size</span></li><li class="in" name="org.widok.reactive.stream.Cache"><span>Cache</span></li><li class="in" name="org.widok.reactive.stream.MapExtended"><span>MapExtended</span></li><li class="in" name="org.widok.reactive.stream.Map"><span>Map</span></li><li class="in" name="org.widok.reactive.stream.Filter"><span>Filter</span></li><li class="in" name="org.widok.reactive.stream.Aggregate"><span>Aggregate</span></li><li class="in" name="org.widok.reactive.stream.Is"><span>Is</span></li><li class="in" name="org.widok.reactive.stream.Fold"><span>Fold</span></li><li class="in" name="org.widok.reactive.stream.Take"><span>Take</span></li><li class="in" name="org.widok.reactive.stream.Tail"><span>Tail</span></li><li class="in" name="org.widok.reactive.stream.Head"><span>Head</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show all</span></li>
+            </ol>
+            <a href="http://docs.scala-lang.org/overviews/scaladoc/usage.html#members" target="_blank">Learn more about member selection</a>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        <div id="constructors" class="members">
+              <h3>Instance Constructors</h3>
+              <ol><li name="org.widok.BiFlatChildChannel#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="&lt;init&gt;(parent:org.widok.ReadChannel[T],observer:org.widok.Channel.Observer[T,org.widok.Channel[U]]):org.widok.BiFlatChildChannel[T,U]"></a>
+      <a id="&lt;init&gt;:BiFlatChildChannel[T,U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">new</span>
+      </span>
+      <span class="symbol">
+        <span class="name">BiFlatChildChannel</span><span class="params">(<span name="parent">parent: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<span class="extype" name="org.widok.BiFlatChildChannel.T">T</span>]</span>, <span name="observer">observer: <a href="Channel$.html#Observer[T,U]=T=&gt;org.widok.Result[U]" class="extmbr" name="org.widok.Channel.Observer">Observer</a>[<span class="extype" name="org.widok.BiFlatChildChannel.T">T</span>, <a href="Channel.html" class="extype" name="org.widok.Channel">Channel</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>]]</span>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@&lt;init&gt;(parent:org.widok.ReadChannel[T],observer:org.widok.Channel.Observer[T,org.widok.Channel[U]]):org.widok.BiFlatChildChannel[T,U]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:Any):Boolean"></a>
+      <a id="!=(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@!=(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef###" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="##():Int"></a>
+      <a id="##():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Int" class="extype" target="_top">Int</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@##():Int" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="org.widok.reactive.propagate.Channel#:=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id=":=(value:T):Unit"></a>
+      <a id=":=(U):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $colon$eq" class="name">:=</span><span class="params">(<span name="value">value: <span class="extype" name="org.widok.BiFlatChildChannel.U">U</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@:=(value:T):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="reactive/propagate/Channel.html" class="extype" name="org.widok.reactive.propagate.Channel">Channel</a></dd></dl></div>
+    </li><li name="org.widok.WriteChannel#&lt;&lt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="&lt;&lt;[U](ch:org.widok.ReadChannel[T],ignore:org.widok.ReadChannel[U]):org.widok.ReadChannel[Unit]"></a>
+      <a id="&lt;&lt;[U](ReadChannel[U],ReadChannel[U]):ReadChannel[Unit]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $less$less" class="name">&lt;&lt;</span><span class="tparams">[<span name="U">U</span>]</span><span class="params">(<span name="ch">ch: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>]</span>, <span name="ignore">ignore: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<span class="extype" name="org.widok.WriteChannel.&lt;&lt;.U">U</span>]</span>)</span><span class="result">: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@&lt;&lt;[U](ch:org.widok.ReadChannel[T],ignore:org.widok.ReadChannel[U]):org.widok.ReadChannel[Unit]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="WriteChannel.html" class="extype" name="org.widok.WriteChannel">WriteChannel</a></dd></dl></div>
+    </li><li name="org.widok.WriteChannel#&lt;&lt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="&lt;&lt;(ch:org.widok.ReadChannel[T]):org.widok.ReadChannel[Unit]"></a>
+      <a id="&lt;&lt;(ReadChannel[U]):ReadChannel[Unit]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $less$less" class="name">&lt;&lt;</span><span class="params">(<span name="ch">ch: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>]</span>)</span><span class="result">: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@&lt;&lt;(ch:org.widok.ReadChannel[T]):org.widok.ReadChannel[Unit]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="WriteChannel.html" class="extype" name="org.widok.WriteChannel">WriteChannel</a></dd></dl></div>
+    </li><li name="org.widok.Channel#&lt;&lt;&gt;&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="&lt;&lt;&gt;&gt;(other:org.widok.Channel[T],ignoreOther:org.widok.ReadChannel[Unit]):Unit"></a>
+      <a id="&lt;&lt;&gt;&gt;(Channel[U],ReadChannel[Unit]):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $less$less$greater$greater" class="name">&lt;&lt;&gt;&gt;</span><span class="params">(<span name="other">other: <a href="Channel.html" class="extype" name="org.widok.Channel">Channel</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>]</span>, <span name="ignoreOther">ignoreOther: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a>]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@&lt;&lt;&gt;&gt;(other:org.widok.Channel[T],ignoreOther:org.widok.ReadChannel[Unit]):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Channel.html" class="extype" name="org.widok.Channel">Channel</a></dd></dl></div>
+    </li><li name="org.widok.Channel#&lt;&lt;&gt;&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="&lt;&lt;&gt;&gt;(other:org.widok.Channel[T]):Unit"></a>
+      <a id="&lt;&lt;&gt;&gt;(Channel[U]):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $less$less$greater$greater" class="name">&lt;&lt;&gt;&gt;</span><span class="params">(<span name="other">other: <a href="Channel.html" class="extype" name="org.widok.Channel">Channel</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@&lt;&lt;&gt;&gt;(other:org.widok.Channel[T]):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Channel.html" class="extype" name="org.widok.Channel">Channel</a></dd></dl></div>
+    </li><li name="scala.AnyRef#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:Any):Boolean"></a>
+      <a id="==(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@==(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="org.widok.ReadChannel#&gt;&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="&gt;&gt;(ch:org.widok.WriteChannel[T]):org.widok.ReadChannel[Unit]"></a>
+      <a id="&gt;&gt;(WriteChannel[U]):ReadChannel[Unit]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $greater$greater" class="name">&gt;&gt;</span><span class="params">(<span name="ch">ch: <a href="WriteChannel.html" class="extype" name="org.widok.WriteChannel">WriteChannel</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>]</span>)</span><span class="result">: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@&gt;&gt;(ch:org.widok.WriteChannel[T]):org.widok.ReadChannel[Unit]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a></dd></dl></div>
+    </li><li name="org.widok.reactive.stream.Filter#all" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="all(value:B):org.widok.ReadChannel[Boolean]"></a>
+      <a id="all(U):ReadChannel[Boolean]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">all</span><span class="params">(<span name="value">value: <span class="extype" name="org.widok.BiFlatChildChannel.U">U</span></span>)</span><span class="result">: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@all(value:B):org.widok.ReadChannel[Boolean]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">All elements are equal to <code>value</code>
+</p><div class="fullcomment"><div class="comment cmt"><p>All elements are equal to <code>value</code>
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="reactive/stream/Filter.html" class="extype" name="org.widok.reactive.stream.Filter">Filter</a></dd><dt>See also</dt><dd><span class="cmt"><p><a href="reactive/stream/Filter.html#any(value:B):org.widok.ReadChannel[Boolean]" class="extmbr" name="org.widok.reactive.stream.Filter#any">any</a>
+</p></span></dd></dl></div>
+    </li><li name="org.widok.reactive.stream.Filter#any" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="any(value:B):org.widok.ReadChannel[Boolean]"></a>
+      <a id="any(U):ReadChannel[Boolean]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">any</span><span class="params">(<span name="value">value: <span class="extype" name="org.widok.BiFlatChildChannel.U">U</span></span>)</span><span class="result">: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@any(value:B):org.widok.ReadChannel[Boolean]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">At least one element is equal to <code>value</code>
+</p><div class="fullcomment"><div class="comment cmt"><p>At least one element is equal to <code>value</code>
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="reactive/stream/Filter.html" class="extype" name="org.widok.reactive.stream.Filter">Filter</a></dd><dt>See also</dt><dd><span class="cmt"><p><a href="reactive/stream/Filter.html#all(value:B):org.widok.ReadChannel[Boolean]" class="extmbr" name="org.widok.reactive.stream.Filter#all">all</a>
+</p></span></dd></dl></div>
+    </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="asInstanceOf[T0]:T0"></a>
+      <a id="asInstanceOf[T0]:T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@asInstanceOf[T0]:T0" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="org.widok.ReadChannel#attach" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="attach(f:T=&gt;Unit):org.widok.ReadChannel[Unit]"></a>
+      <a id="attach((U)⇒Unit):ReadChannel[Unit]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">attach</span><span class="params">(<span name="f">f: (<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>)</span><span class="result">: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@attach(f:T=&gt;Unit):org.widok.ReadChannel[Unit]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a></dd></dl></div>
+    </li><li name="org.widok.BiFlatChildChannel#back" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="back:org.widok.ReadChannel[Unit]"></a>
+      <a id="back:ReadChannel[Unit]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">back</span><span class="result">: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@back:org.widok.ReadChannel[Unit]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="org.widok.Channel#biMap" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="biMap[U](f:T=&gt;U,g:U=&gt;T):org.widok.Channel[U]"></a>
+      <a id="biMap[U]((U)⇒U,(U)⇒U):Channel[U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">biMap</span><span class="tparams">[<span name="U">U</span>]</span><span class="params">(<span name="f">f: (<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>) ⇒ <span class="extype" name="org.widok.Channel.biMap.U">U</span></span>, <span name="g">g: (<span class="extype" name="org.widok.Channel.biMap.U">U</span>) ⇒ <span class="extype" name="org.widok.BiFlatChildChannel.U">U</span></span>)</span><span class="result">: <a href="Channel.html" class="extype" name="org.widok.Channel">Channel</a>[<span class="extype" name="org.widok.Channel.biMap.U">U</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@biMap[U](f:T=&gt;U,g:U=&gt;T):org.widok.Channel[U]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Channel.html" class="extype" name="org.widok.Channel">Channel</a></dd></dl></div>
+    </li><li name="org.widok.Channel#bind" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="bind(other:org.widok.Channel[T],ignoreOther:org.widok.ReadChannel[Unit]):Unit"></a>
+      <a id="bind(Channel[U],ReadChannel[Unit]):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">bind</span><span class="params">(<span name="other">other: <a href="Channel.html" class="extype" name="org.widok.Channel">Channel</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>]</span>, <span name="ignoreOther">ignoreOther: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a>]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@bind(other:org.widok.Channel[T],ignoreOther:org.widok.ReadChannel[Unit]):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Channel.html" class="extype" name="org.widok.Channel">Channel</a></dd></dl></div>
+    </li><li name="org.widok.Channel#bind" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="bind(other:org.widok.Channel[T]):Unit"></a>
+      <a id="bind(Channel[U]):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">bind</span><span class="params">(<span name="other">other: <a href="Channel.html" class="extype" name="org.widok.Channel">Channel</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@bind(other:org.widok.Channel[T]):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Two-way binding; synchronises <code>this</code> and <code>other</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Two-way binding; synchronises <code>this</code> and <code>other</code>.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Channel.html" class="extype" name="org.widok.Channel">Channel</a></dd></dl></div>
+    </li><li name="org.widok.ReadChannel#buffer" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="buffer:org.widok.Buffer[T]"></a>
+      <a id="buffer:Buffer[U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">buffer</span><span class="result">: <a href="Buffer.html" class="extype" name="org.widok.Buffer">Buffer</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@buffer:org.widok.Buffer[T]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Buffers all produced elements</p><div class="fullcomment"><div class="comment cmt"><p>Buffers all produced elements</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a></dd></dl></div>
+    </li><li name="org.widok.ReadChannel#cache" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="cache(default:T):org.widok.ReadStateChannel[T]"></a>
+      <a id="cache(U):ReadStateChannel[U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">cache</span><span class="params">(<span name="default">default: <span class="extype" name="org.widok.BiFlatChildChannel.U">U</span></span>)</span><span class="result">: <a href="ReadStateChannel.html" class="extype" name="org.widok.ReadStateChannel">ReadStateChannel</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@cache(default:T):org.widok.ReadStateChannel[T]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a> → <a href="reactive/stream/Cache.html" class="extype" name="org.widok.reactive.stream.Cache">Cache</a></dd></dl></div>
+    </li><li name="org.widok.ReadChannel#cache" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="cache:org.widok.ReadPartialChannel[T]"></a>
+      <a id="cache:ReadPartialChannel[U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">cache</span><span class="result">: <a href="ReadPartialChannel.html" class="extype" name="org.widok.ReadPartialChannel">ReadPartialChannel</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@cache:org.widok.ReadPartialChannel[T]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a> → <a href="reactive/stream/Cache.html" class="extype" name="org.widok.reactive.stream.Cache">Cache</a></dd></dl></div>
+    </li><li name="org.widok.ReadChannel#child" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="child():org.widok.ReadChannel[T]"></a>
+      <a id="child():ReadChannel[U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">child</span><span class="params">()</span><span class="result">: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@child():org.widok.ReadChannel[T]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a></dd></dl></div>
+    </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="clone():Object"></a>
+      <a id="clone():AnyRef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@clone():Object" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.CloneNotSupportedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="org.widok.reactive.stream.Filter#contains" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="contains(value:B):org.widok.ReadChannel[Boolean]"></a>
+      <a id="contains(U):ReadChannel[Boolean]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">contains</span><span class="params">(<span name="value">value: <span class="extype" name="org.widok.BiFlatChildChannel.U">U</span></span>)</span><span class="result">: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@contains(value:B):org.widok.ReadChannel[Boolean]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Stream contains at least one occurrence of <code>value</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Stream contains at least one occurrence of <code>value</code>.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="reactive/stream/Filter.html" class="extype" name="org.widok.reactive.stream.Filter">Filter</a></dd><dt>Note</dt><dd><span class="cmt"><p>Channels: Once true, will never produce any other value.
+</p></span>, <span class="cmt"><p>Buffers: When the item is removed, it will produce false.</p></span></dd></dl></div>
+    </li><li name="org.widok.reactive.stream.Filter#count" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="count(value:B):org.widok.ReadChannel[Int]"></a>
+      <a id="count(U):ReadChannel[Int]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">count</span><span class="params">(<span name="value">value: <span class="extype" name="org.widok.BiFlatChildChannel.U">U</span></span>)</span><span class="result">: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Int" class="extype" target="_top">Int</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@count(value:B):org.widok.ReadChannel[Int]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Count number of occurrence of <code>value</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Count number of occurrence of <code>value</code>.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="reactive/stream/Filter.html" class="extype" name="org.widok.reactive.stream.Filter">Filter</a></dd><dt>Note</dt><dd><span class="cmt"><p>Channels: With every matching element, the counter is increased.
+</p></span>, <span class="cmt"><p>Buffers: When the element is removed, the counter is decreased.</p></span></dd></dl></div>
+    </li><li name="org.widok.ReadChannel#detach" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="detach(ch:org.widok.ChildChannel[T,_]):Unit"></a>
+      <a id="detach(ChildChannel[U,_]):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">detach</span><span class="params">(<span name="ch">ch: <a href="ChildChannel.html" class="extype" name="org.widok.ChildChannel">ChildChannel</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>, _]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@detach(ch:org.widok.ChildChannel[T,_]):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a></dd></dl></div>
+    </li><li name="org.widok.BiFlatChildChannel#dispose" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="dispose():Unit"></a>
+      <a id="dispose():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">dispose</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@dispose():Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="org.widok.BiFlatChildChannel">BiFlatChildChannel</a> → <a href="Channel.html" class="extype" name="org.widok.Channel">Channel</a> → <a href="Disposable.html" class="extype" name="org.widok.Disposable">Disposable</a></dd></dl></div>
+    </li><li name="org.widok.ReadChannel#distinct" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="distinct:org.widok.ReadChannel[T]"></a>
+      <a id="distinct:ReadChannel[U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">distinct</span><span class="result">: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@distinct:org.widok.ReadChannel[T]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Filters out (merges) duplicates</p><div class="fullcomment"><div class="comment cmt"><p>Filters out (merges) duplicates</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a> → <a href="reactive/stream/Aggregate.html" class="extype" name="org.widok.reactive.stream.Aggregate">Aggregate</a></dd></dl></div>
+    </li><li name="org.widok.ReadChannel#drop" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="drop(count:Int):org.widok.ReadChannel[T]"></a>
+      <a id="drop(Int):ReadChannel[U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">drop</span><span class="params">(<span name="count">count: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@drop(count:Int):org.widok.ReadChannel[T]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a> → <a href="reactive/stream/Take.html" class="extype" name="org.widok.reactive.stream.Take">Take</a></dd><dt>Note</dt><dd><span class="cmt"><p>Channels: Skips first <code>count</code> elements, then stop listening.
+                Subscribing to it will always yield the last result as
+                initial value.
+</p></span>, <span class="cmt"><p>Buffers: Creates a sub-buffer without the first <code>count</code> elements.</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="eq(x$1:AnyRef):Boolean"></a>
+      <a id="eq(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="org.widok.reactive.stream.Filter#exists" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="exists(f:B=&gt;Boolean):org.widok.ReadChannel[Boolean]"></a>
+      <a id="exists((U)⇒Boolean):ReadChannel[Boolean]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">exists</span><span class="params">(<span name="f">f: (<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@exists(f:B=&gt;Boolean):org.widok.ReadChannel[Boolean]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Checks for existence of a value for which <code>f</code> is true
+</p><div class="fullcomment"><div class="comment cmt"><p>Checks for existence of a value for which <code>f</code> is true
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="reactive/stream/Filter.html" class="extype" name="org.widok.reactive.stream.Filter">Filter</a></dd><dt>Note</dt><dd><span class="cmt"><p>Channels: false as long as <code>f</code> returns false, then true
+</p></span>, <span class="cmt"><p>Buffers: false as long as no row exists where <code>f</code> is true, then true</p></span></dd><dt>See also</dt><dd><span class="cmt"><p><a href="reactive/stream/Filter.html#forall(f:B=&gt;Boolean):org.widok.ReadChannel[Boolean]" class="extmbr" name="org.widok.reactive.stream.Filter#forall">forall</a>
+</p></span></dd></dl></div>
+    </li><li name="org.widok.ReadChannel#filter" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="filter(f:T=&gt;Boolean):org.widok.ReadChannel[T]"></a>
+      <a id="filter((U)⇒Boolean):ReadChannel[U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">filter</span><span class="params">(<span name="f">f: (<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@filter(f:T=&gt;Boolean):org.widok.ReadChannel[T]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Only include elements for which <code>f</code> is true</p><div class="fullcomment"><div class="comment cmt"><p>Only include elements for which <code>f</code> is true</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a> → <a href="reactive/stream/Filter.html" class="extype" name="org.widok.reactive.stream.Filter">Filter</a></dd></dl></div>
+    </li><li name="org.widok.ReadChannel#filterCycles" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="filterCycles:org.widok.ReadChannel[T]"></a>
+      <a id="filterCycles:ReadChannel[U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">filterCycles</span><span class="result">: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@filterCycles:org.widok.ReadChannel[T]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a></dd></dl></div>
+    </li><li name="org.widok.reactive.stream.Filter#filterNot" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="filterNot(f:B=&gt;Boolean):Container[A]"></a>
+      <a id="filterNot((U)⇒Boolean):ReadChannel[U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">filterNot</span><span class="params">(<span name="f">f: (<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@filterNot(f:B=&gt;Boolean):Container[A]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="reactive/stream/Filter.html" class="extype" name="org.widok.reactive.stream.Filter">Filter</a></dd></dl></div>
+    </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="finalize():Unit"></a>
+      <a id="finalize():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@finalize():Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.lang.Throwable]</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="org.widok.ReadChannel#flatMap" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="flatMap[U](f:T=&gt;org.widok.ReadChannel[U]):org.widok.ReadChannel[U]"></a>
+      <a id="flatMap[U]((U)⇒ReadChannel[U]):ReadChannel[U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">flatMap</span><span class="tparams">[<span name="U">U</span>]</span><span class="params">(<span name="f">f: (<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>) ⇒ <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<span class="extype" name="org.widok.ReadChannel.flatMap.U">U</span>]</span>)</span><span class="result">: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<span class="extype" name="org.widok.ReadChannel.flatMap.U">U</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@flatMap[U](f:T=&gt;org.widok.ReadChannel[U]):org.widok.ReadChannel[U]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Applies <code>f</code> on each element and flatten its result into the stream
+</p><div class="fullcomment"><div class="comment cmt"><p>Applies <code>f</code> on each element and flatten its result into the stream
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a> → <a href="reactive/stream/MapExtended.html" class="extype" name="org.widok.reactive.stream.MapExtended">MapExtended</a></dd></dl></div>
+    </li><li name="org.widok.ReadChannel#flatMapBuf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="flatMapBuf[U](f:T=&gt;org.widok.ReadBuffer[U]):org.widok.ReadBuffer[U]"></a>
+      <a id="flatMapBuf[U]((U)⇒ReadBuffer[U]):ReadBuffer[U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">flatMapBuf</span><span class="tparams">[<span name="U">U</span>]</span><span class="params">(<span name="f">f: (<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>) ⇒ <a href="ReadBuffer.html" class="extype" name="org.widok.ReadBuffer">ReadBuffer</a>[<span class="extype" name="org.widok.ReadChannel.flatMapBuf.U">U</span>]</span>)</span><span class="result">: <a href="ReadBuffer.html" class="extype" name="org.widok.ReadBuffer">ReadBuffer</a>[<span class="extype" name="org.widok.ReadChannel.flatMapBuf.U">U</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@flatMapBuf[U](f:T=&gt;org.widok.ReadBuffer[U]):org.widok.ReadBuffer[U]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a></dd></dl></div>
+    </li><li name="org.widok.ReadChannel#flatMapCh" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="flatMapCh[U](f:T=&gt;org.widok.Channel[U]):org.widok.Channel[U]"></a>
+      <a id="flatMapCh[U]((U)⇒Channel[U]):Channel[U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">flatMapCh</span><span class="tparams">[<span name="U">U</span>]</span><span class="params">(<span name="f">f: (<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>) ⇒ <a href="Channel.html" class="extype" name="org.widok.Channel">Channel</a>[<span class="extype" name="org.widok.ReadChannel.flatMapCh.U">U</span>]</span>)</span><span class="result">: <a href="Channel.html" class="extype" name="org.widok.Channel">Channel</a>[<span class="extype" name="org.widok.ReadChannel.flatMapCh.U">U</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@flatMapCh[U](f:T=&gt;org.widok.Channel[U]):org.widok.Channel[U]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">flatMap with back-propagation.</p><div class="fullcomment"><div class="comment cmt"><p>flatMap with back-propagation.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a></dd></dl></div>
+    </li><li name="org.widok.ReadChannel#flatMapSeq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="flatMapSeq[U](f:T=&gt;Seq[U]):org.widok.ReadChannel[U]"></a>
+      <a id="flatMapSeq[U]((U)⇒Seq[U]):ReadChannel[U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">flatMapSeq</span><span class="tparams">[<span name="U">U</span>]</span><span class="params">(<span name="f">f: (<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>) ⇒ <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="org.widok.ReadChannel.flatMapSeq.U">U</span>]</span>)</span><span class="result">: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<span class="extype" name="org.widok.ReadChannel.flatMapSeq.U">U</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@flatMapSeq[U](f:T=&gt;Seq[U]):org.widok.ReadChannel[U]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a></dd></dl></div>
+    </li><li name="org.widok.WriteChannel#flatProduce" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="flatProduce[U](value:Option[T],ignore:org.widok.ReadChannel[U]*):Unit"></a>
+      <a id="flatProduce[U](Option[U],ReadChannel[U]*):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">flatProduce</span><span class="tparams">[<span name="U">U</span>]</span><span class="params">(<span name="value">value: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>]</span>, <span name="ignore">ignore: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<span class="extype" name="org.widok.WriteChannel.flatProduce.U">U</span>]*</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@flatProduce[U](value:Option[T],ignore:org.widok.ReadChannel[U]*):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="WriteChannel.html" class="extype" name="org.widok.WriteChannel">WriteChannel</a></dd></dl></div>
+    </li><li name="org.widok.WriteChannel#flatProduce" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="flatProduce(value:Option[T]):Unit"></a>
+      <a id="flatProduce(Option[U]):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">flatProduce</span><span class="params">(<span name="value">value: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@flatProduce(value:Option[T]):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="WriteChannel.html" class="extype" name="org.widok.WriteChannel">WriteChannel</a></dd></dl></div>
+    </li><li name="org.widok.BiFlatChildChannel#flush" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="flush(f:U=&gt;Unit):Unit"></a>
+      <a id="flush((U)⇒Unit):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">flush</span><span class="params">(<span name="f">f: (<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@flush(f:U=&gt;Unit):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Call <code>f</code> for each element</p><div class="fullcomment"><div class="comment cmt"><p>Call <code>f</code> for each element</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="org.widok.BiFlatChildChannel">BiFlatChildChannel</a> → <a href="WriteChannel.html" class="extype" name="org.widok.WriteChannel">WriteChannel</a> → <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a> → <a href="reactive/poll/Flush.html" class="extype" name="org.widok.reactive.poll.Flush">Flush</a></dd></dl></div>
+    </li><li name="org.widok.ReadChannel#foldLeft" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="foldLeft[U](acc:U)(f:(U,T)=&gt;U):org.widok.ReadChannel[U]"></a>
+      <a id="foldLeft[U](U)((U,U)⇒U):ReadChannel[U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">foldLeft</span><span class="tparams">[<span name="U">U</span>]</span><span class="params">(<span name="acc">acc: <span class="extype" name="org.widok.ReadChannel.foldLeft.U">U</span></span>)</span><span class="params">(<span name="f">f: (<span class="extype" name="org.widok.ReadChannel.foldLeft.U">U</span>, <span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>) ⇒ <span class="extype" name="org.widok.ReadChannel.foldLeft.U">U</span></span>)</span><span class="result">: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<span class="extype" name="org.widok.ReadChannel.foldLeft.U">U</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@foldLeft[U](acc:U)(f:(U,T)=&gt;U):org.widok.ReadChannel[U]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a> → <a href="reactive/stream/Fold.html" class="extype" name="org.widok.reactive.stream.Fold">Fold</a></dd><dt>Note</dt><dd><span class="cmt"><p>Caches the accumulator value.</p></span></dd></dl></div>
+    </li><li name="org.widok.reactive.stream.Filter#forall" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="forall(f:B=&gt;Boolean):org.widok.ReadChannel[Boolean]"></a>
+      <a id="forall((U)⇒Boolean):ReadChannel[Boolean]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">forall</span><span class="params">(<span name="f">f: (<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@forall(f:B=&gt;Boolean):org.widok.ReadChannel[Boolean]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Checks whether <code>f</code> is true for all elements
+</p><div class="fullcomment"><div class="comment cmt"><p>Checks whether <code>f</code> is true for all elements
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="reactive/stream/Filter.html" class="extype" name="org.widok.reactive.stream.Filter">Filter</a></dd><dt>See also</dt><dd><span class="cmt"><p><a href="reactive/stream/Filter.html#exists(f:B=&gt;Boolean):org.widok.ReadChannel[Boolean]" class="extmbr" name="org.widok.reactive.stream.Filter#exists">exists</a>
+</p></span></dd></dl></div>
+    </li><li name="org.widok.WriteChannel#forkBi" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="forkBi[U](fwd:org.widok.Channel.Observer[T,U],bwd:org.widok.Channel.Observer[U,T],silent:Boolean):org.widok.Channel[U]"></a>
+      <a id="forkBi[U](Observer[U,U],Observer[U,U],Boolean):Channel[U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">forkBi</span><span class="tparams">[<span name="U">U</span>]</span><span class="params">(<span name="fwd">fwd: <a href="Channel$.html#Observer[T,U]=T=&gt;org.widok.Result[U]" class="extmbr" name="org.widok.Channel.Observer">Observer</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>, <span class="extype" name="org.widok.WriteChannel.forkBi.U">U</span>]</span>, <span name="bwd">bwd: <a href="Channel$.html#Observer[T,U]=T=&gt;org.widok.Result[U]" class="extmbr" name="org.widok.Channel.Observer">Observer</a>[<span class="extype" name="org.widok.WriteChannel.forkBi.U">U</span>, <span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>]</span>, <span name="silent">silent: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a> = <span class="symbol">false</span></span>)</span><span class="result">: <a href="Channel.html" class="extype" name="org.widok.Channel">Channel</a>[<span class="extype" name="org.widok.WriteChannel.forkBi.U">U</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@forkBi[U](fwd:org.widok.Channel.Observer[T,U],bwd:org.widok.Channel.Observer[U,T],silent:Boolean):org.widok.Channel[U]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Bi-directional fork for values</p><div class="fullcomment"><div class="comment cmt"><p>Bi-directional fork for values</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="WriteChannel.html" class="extype" name="org.widok.WriteChannel">WriteChannel</a></dd></dl></div>
+    </li><li name="org.widok.ReadChannel#forkBiFlat" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="forkBiFlat[U](obs:org.widok.Channel.Observer[T,org.widok.Channel[U]]):org.widok.Channel[U]"></a>
+      <a id="forkBiFlat[U](Observer[U,Channel[U]]):Channel[U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">forkBiFlat</span><span class="tparams">[<span name="U">U</span>]</span><span class="params">(<span name="obs">obs: <a href="Channel$.html#Observer[T,U]=T=&gt;org.widok.Result[U]" class="extmbr" name="org.widok.Channel.Observer">Observer</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>, <a href="Channel.html" class="extype" name="org.widok.Channel">Channel</a>[<span class="extype" name="org.widok.ReadChannel.forkBiFlat.U">U</span>]]</span>)</span><span class="result">: <a href="Channel.html" class="extype" name="org.widok.Channel">Channel</a>[<span class="extype" name="org.widok.ReadChannel.forkBiFlat.U">U</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@forkBiFlat[U](obs:org.widok.Channel.Observer[T,org.widok.Channel[U]]):org.widok.Channel[U]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Bi-directional fork for channels</p><div class="fullcomment"><div class="comment cmt"><p>Bi-directional fork for channels</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a></dd></dl></div>
+    </li><li name="org.widok.ReadChannel#forkUni" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="forkUni[U](observer:org.widok.Channel.Observer[T,U],filterCycles:Boolean):org.widok.ReadChannel[U]"></a>
+      <a id="forkUni[U](Observer[U,U],Boolean):ReadChannel[U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">forkUni</span><span class="tparams">[<span name="U">U</span>]</span><span class="params">(<span name="observer">observer: <a href="Channel$.html#Observer[T,U]=T=&gt;org.widok.Result[U]" class="extmbr" name="org.widok.Channel.Observer">Observer</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>, <span class="extype" name="org.widok.ReadChannel.forkUni.U">U</span>]</span>, <span name="filterCycles">filterCycles: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a> = <span class="symbol">false</span></span>)</span><span class="result">: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<span class="extype" name="org.widok.ReadChannel.forkUni.U">U</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@forkUni[U](observer:org.widok.Channel.Observer[T,U],filterCycles:Boolean):org.widok.ReadChannel[U]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Uni-directional fork for values</p><div class="fullcomment"><div class="comment cmt"><p>Uni-directional fork for values</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a></dd></dl></div>
+    </li><li name="org.widok.ReadChannel#forkUniFlat" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="forkUniFlat[U](observer:org.widok.Channel.Observer[T,org.widok.ReadChannel[U]]):org.widok.ReadChannel[U]"></a>
+      <a id="forkUniFlat[U](Observer[U,ReadChannel[U]]):ReadChannel[U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">forkUniFlat</span><span class="tparams">[<span name="U">U</span>]</span><span class="params">(<span name="observer">observer: <a href="Channel$.html#Observer[T,U]=T=&gt;org.widok.Result[U]" class="extmbr" name="org.widok.Channel.Observer">Observer</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>, <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<span class="extype" name="org.widok.ReadChannel.forkUniFlat.U">U</span>]]</span>)</span><span class="result">: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<span class="extype" name="org.widok.ReadChannel.forkUniFlat.U">U</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@forkUniFlat[U](observer:org.widok.Channel.Observer[T,org.widok.ReadChannel[U]]):org.widok.ReadChannel[U]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Uni-directional fork for channels</p><div class="fullcomment"><div class="comment cmt"><p>Uni-directional fork for channels</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a></dd></dl></div>
+    </li><li name="org.widok.ReadChannel#forkUniState" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="forkUniState[U](observer:org.widok.Channel.Observer[T,U],onFlush:=&gt;Option[U]):org.widok.ReadChannel[U]"></a>
+      <a id="forkUniState[U](Observer[U,U],⇒Option[U]):ReadChannel[U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">forkUniState</span><span class="tparams">[<span name="U">U</span>]</span><span class="params">(<span name="observer">observer: <a href="Channel$.html#Observer[T,U]=T=&gt;org.widok.Result[U]" class="extmbr" name="org.widok.Channel.Observer">Observer</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>, <span class="extype" name="org.widok.ReadChannel.forkUniState.U">U</span>]</span>, <span name="onFlush">onFlush: ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="org.widok.ReadChannel.forkUniState.U">U</span>]</span>)</span><span class="result">: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<span class="extype" name="org.widok.ReadChannel.forkUniState.U">U</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@forkUniState[U](observer:org.widok.Channel.Observer[T,U],onFlush:=&gt;Option[U]):org.widok.ReadChannel[U]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a></dd></dl></div>
+    </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getClass():Class[_]"></a>
+      <a id="getClass():Class[_]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@getClass():Class[_]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="org.widok.ReadChannel#head" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="head:org.widok.ReadChannel[T]"></a>
+      <a id="head:ReadChannel[U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">head</span><span class="result">: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@head:org.widok.ReadChannel[T]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Wraps first element as a channel</p><div class="fullcomment"><div class="comment cmt"><p>Wraps first element as a channel</p><p>Denotes first produced element after the <a href="ReadChannel.html#head:org.widok.ReadChannel[T]" class="extmbr" name="org.widok.ReadChannel#head">head</a> call; whether <a href="ReadChannel.html#head:org.widok.ReadChannel[T]" class="extmbr" name="org.widok.ReadChannel#head">head</a>
+has observers at this point is irrelevant as the value is cached (i.e.
+attaching repeatedly will always lead the same value)
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a> → <a href="reactive/stream/Head.html" class="extype" name="org.widok.reactive.stream.Head">Head</a></dd></dl></div>
+    </li><li name="org.widok.ReadChannel#is" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="is(value:T):org.widok.ReadChannel[Boolean]"></a>
+      <a id="is(U):ReadChannel[Boolean]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">is</span><span class="params">(<span name="value">value: <span class="extype" name="org.widok.BiFlatChildChannel.U">U</span></span>)</span><span class="result">: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@is(value:T):org.widok.ReadChannel[Boolean]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Current value is equal to <code>value</code></p><div class="fullcomment"><div class="comment cmt"><p>Current value is equal to <code>value</code></p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a> → <a href="reactive/stream/Is.html" class="extype" name="org.widok.reactive.stream.Is">Is</a></dd></dl></div>
+    </li><li name="org.widok.reactive.stream.Size#isEmpty" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isEmpty:org.widok.ReadChannel[Boolean]"></a>
+      <a id="isEmpty:ReadChannel[Boolean]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isEmpty</span><span class="result">: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@isEmpty:org.widok.ReadChannel[Boolean]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="reactive/stream/Size.html" class="extype" name="org.widok.reactive.stream.Size">Size</a></dd><dt>Note</dt><dd><span class="cmt"><p>Partial channels: Produce true if the current value is cleared.
+</p></span>, <span class="cmt"><p>Channels: Produce false with the first received value.</p></span>, <span class="cmt"><p>Buffers: Produce a new value once a row is added or removed.</p></span></dd></dl></div>
+    </li><li name="org.widok.ReadChannel#isHead" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isHead(value:T):org.widok.ReadChannel[Boolean]"></a>
+      <a id="isHead(U):ReadChannel[Boolean]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isHead</span><span class="params">(<span name="value">value: <span class="extype" name="org.widok.BiFlatChildChannel.U">U</span></span>)</span><span class="result">: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@isHead(value:T):org.widok.ReadChannel[Boolean]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Checks whether the given element is the first produced value
+</p><div class="fullcomment"><div class="comment cmt"><p>Checks whether the given element is the first produced value
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a> → <a href="reactive/stream/Head.html" class="extype" name="org.widok.reactive.stream.Head">Head</a></dd></dl></div>
+    </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="org.widok.ReadChannel#isNot" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isNot(value:T):org.widok.ReadChannel[Boolean]"></a>
+      <a id="isNot(U):ReadChannel[Boolean]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isNot</span><span class="params">(<span name="value">value: <span class="extype" name="org.widok.BiFlatChildChannel.U">U</span></span>)</span><span class="result">: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@isNot(value:T):org.widok.ReadChannel[Boolean]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Current value is not equal to <code>value</code></p><div class="fullcomment"><div class="comment cmt"><p>Current value is not equal to <code>value</code></p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a> → <a href="reactive/stream/Is.html" class="extype" name="org.widok.reactive.stream.Is">Is</a></dd></dl></div>
+    </li><li name="org.widok.ReadChannel#map" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="map[U](f:T=&gt;U):org.widok.ReadChannel[U]"></a>
+      <a id="map[U]((U)⇒U):ReadChannel[U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">map</span><span class="tparams">[<span name="U">U</span>]</span><span class="params">(<span name="f">f: (<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>) ⇒ <span class="extype" name="org.widok.ReadChannel.map.U">U</span></span>)</span><span class="result">: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<span class="extype" name="org.widok.ReadChannel.map.U">U</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@map[U](f:T=&gt;U):org.widok.ReadChannel[U]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Applies <code>f</code> on each element</p><div class="fullcomment"><div class="comment cmt"><p>Applies <code>f</code> on each element</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a> → <a href="reactive/stream/Map.html" class="extype" name="org.widok.reactive.stream.Map">Map</a></dd></dl></div>
+    </li><li name="org.widok.ReadChannel#mapTo" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="mapTo[U](f:T=&gt;U):org.widok.DeltaDict[T,U]"></a>
+      <a id="mapTo[U]((U)⇒U):DeltaDict[U,U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">mapTo</span><span class="tparams">[<span name="U">U</span>]</span><span class="params">(<span name="f">f: (<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>) ⇒ <span class="extype" name="org.widok.ReadChannel.mapTo.U">U</span></span>)</span><span class="result">: <a href="DeltaDict.html" class="extype" name="org.widok.DeltaDict">DeltaDict</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>, <span class="extype" name="org.widok.ReadChannel.mapTo.U">U</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@mapTo[U](f:T=&gt;U):org.widok.DeltaDict[T,U]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Map <code>f</code> on each element and turn stream into a dictionary
+</p><div class="fullcomment"><div class="comment cmt"><p>Map <code>f</code> on each element and turn stream into a dictionary
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a> → <a href="reactive/stream/MapExtended.html" class="extype" name="org.widok.reactive.stream.MapExtended">MapExtended</a></dd></dl></div>
+    </li><li name="org.widok.reactive.stream.Fold#max" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="max[U&gt;:T](init:U)(implicitnum:Numeric[U]):org.widok.ReadChannel[U]"></a>
+      <a id="max[U&gt;:U](U)(Numeric[U]):ReadChannel[U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">max</span><span class="tparams">[<span name="U">U &gt;: <span class="extype" name="org.widok.BiFlatChildChannel.U">U</span></span>]</span><span class="params">(<span name="init">init: <span class="extype" name="org.widok.reactive.stream.Fold.max.U">U</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="num">num: <span class="extype" name="scala.Numeric">Numeric</span>[<span class="extype" name="org.widok.reactive.stream.Fold.max.U">U</span>]</span>)</span><span class="result">: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<span class="extype" name="org.widok.reactive.stream.Fold.max.U">U</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@max[U&gt;:T](init:U)(implicitnum:Numeric[U]):org.widok.ReadChannel[U]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Calculates maximum value
+</p><div class="fullcomment"><div class="comment cmt"><p>Calculates maximum value
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="reactive/stream/Fold.html" class="extype" name="org.widok.reactive.stream.Fold">Fold</a></dd><dt>See also</dt><dd><span class="cmt"><p><a href="reactive/stream/Fold.html#foldLeft[U](acc:U)(f:(U,T)=&gt;U):org.widok.ReadChannel[U]" class="extmbr" name="org.widok.reactive.stream.Fold#foldLeft">foldLeft</a>
+</p></span></dd></dl></div>
+    </li><li name="org.widok.ReadChannel#merge" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="merge(ch:org.widok.ReadChannel[T]):org.widok.ReadChannel[T]"></a>
+      <a id="merge(ReadChannel[U]):ReadChannel[U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">merge</span><span class="params">(<span name="ch">ch: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>]</span>)</span><span class="result">: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@merge(ch:org.widok.ReadChannel[T]):org.widok.ReadChannel[T]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a></dd></dl></div>
+    </li><li name="org.widok.reactive.stream.Fold#min" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="min[U&gt;:T](init:U)(implicitnum:Numeric[U]):org.widok.ReadChannel[U]"></a>
+      <a id="min[U&gt;:U](U)(Numeric[U]):ReadChannel[U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">min</span><span class="tparams">[<span name="U">U &gt;: <span class="extype" name="org.widok.BiFlatChildChannel.U">U</span></span>]</span><span class="params">(<span name="init">init: <span class="extype" name="org.widok.reactive.stream.Fold.min.U">U</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="num">num: <span class="extype" name="scala.Numeric">Numeric</span>[<span class="extype" name="org.widok.reactive.stream.Fold.min.U">U</span>]</span>)</span><span class="result">: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<span class="extype" name="org.widok.reactive.stream.Fold.min.U">U</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@min[U&gt;:T](init:U)(implicitnum:Numeric[U]):org.widok.ReadChannel[U]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Calculates minimum value
+</p><div class="fullcomment"><div class="comment cmt"><p>Calculates minimum value
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="reactive/stream/Fold.html" class="extype" name="org.widok.reactive.stream.Fold">Fold</a></dd><dt>See also</dt><dd><span class="cmt"><p><a href="reactive/stream/Fold.html#foldLeft[U](acc:U)(f:(U,T)=&gt;U):org.widok.ReadChannel[U]" class="extmbr" name="org.widok.reactive.stream.Fold#foldLeft">foldLeft</a>
+</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ne(x$1:AnyRef):Boolean"></a>
+      <a id="ne(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="org.widok.reactive.stream.Size#nonEmpty" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="nonEmpty:org.widok.ReadChannel[Boolean]"></a>
+      <a id="nonEmpty:ReadChannel[Boolean]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">nonEmpty</span><span class="result">: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@nonEmpty:org.widok.ReadChannel[Boolean]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Negation of <a href="reactive/stream/Size.html#isEmpty:org.widok.ReadChannel[Boolean]" class="extmbr" name="org.widok.reactive.stream.Size#isEmpty">isEmpty</a>
+</p><div class="fullcomment"><div class="comment cmt"><p>Negation of <a href="reactive/stream/Size.html#isEmpty:org.widok.ReadChannel[Boolean]" class="extmbr" name="org.widok.reactive.stream.Size#isEmpty">isEmpty</a>
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="reactive/stream/Size.html" class="extype" name="org.widok.reactive.stream.Size">Size</a></dd></dl></div>
+    </li><li name="scala.AnyRef#notify" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notify():Unit"></a>
+      <a id="notify():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@notify():Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#notifyAll" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notifyAll():Unit"></a>
+      <a id="notifyAll():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@notifyAll():Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="org.widok.BiFlatChildChannel#observer" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="observer:org.widok.Channel.Observer[T,org.widok.Channel[U]]"></a>
+      <a id="observer:Observer[T,Channel[U]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">observer</span><span class="result">: <a href="Channel$.html#Observer[T,U]=T=&gt;org.widok.Result[U]" class="extmbr" name="org.widok.Channel.Observer">Observer</a>[<span class="extype" name="org.widok.BiFlatChildChannel.T">T</span>, <a href="Channel.html" class="extype" name="org.widok.Channel">Channel</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@observer:org.widok.Channel.Observer[T,org.widok.Channel[U]]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="org.widok.BiFlatChildChannel#onChannel" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="onChannel(ch:org.widok.Channel[U]):Unit"></a>
+      <a id="onChannel(Channel[U]):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">onChannel</span><span class="params">(<span name="ch">ch: <a href="Channel.html" class="extype" name="org.widok.Channel">Channel</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@onChannel(ch:org.widok.Channel[U]):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="org.widok.ReadChannel#or" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="or(ch:org.widok.ReadChannel[_]):org.widok.ReadChannel[Unit]"></a>
+      <a id="or(ReadChannel[_]):ReadChannel[Unit]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">or</span><span class="params">(<span name="ch">ch: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[_]</span>)</span><span class="result">: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@or(ch:org.widok.ReadChannel[_]):org.widok.ReadChannel[Unit]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a></dd></dl></div>
+    </li><li name="org.widok.BiFlatChildChannel#parent" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="parent:org.widok.ReadChannel[T]"></a>
+      <a id="parent:ReadChannel[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">parent</span><span class="result">: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<span class="extype" name="org.widok.BiFlatChildChannel.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@parent:org.widok.ReadChannel[T]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="org.widok.Channel#partialBiMap" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="partialBiMap[U](f:T=&gt;Option[U],g:U=&gt;Option[T]):org.widok.Channel[U]"></a>
+      <a id="partialBiMap[U]((U)⇒Option[U],(U)⇒Option[U]):Channel[U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">partialBiMap</span><span class="tparams">[<span name="U">U</span>]</span><span class="params">(<span name="f">f: (<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="org.widok.Channel.partialBiMap.U">U</span>]</span>, <span name="g">g: (<span class="extype" name="org.widok.Channel.partialBiMap.U">U</span>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>]</span>)</span><span class="result">: <a href="Channel.html" class="extype" name="org.widok.Channel">Channel</a>[<span class="extype" name="org.widok.Channel.partialBiMap.U">U</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@partialBiMap[U](f:T=&gt;Option[U],g:U=&gt;Option[T]):org.widok.Channel[U]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Channel.html" class="extype" name="org.widok.Channel">Channel</a></dd></dl></div>
+    </li><li name="org.widok.ReadChannel#partialMap" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="partialMap[U](f:PartialFunction[T,U]):org.widok.ReadPartialChannel[U]"></a>
+      <a id="partialMap[U](PartialFunction[U,U]):ReadPartialChannel[U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">partialMap</span><span class="tparams">[<span name="U">U</span>]</span><span class="params">(<span name="f">f: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.PartialFunction" class="extype" target="_top">PartialFunction</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>, <span class="extype" name="org.widok.ReadChannel.partialMap.U">U</span>]</span>)</span><span class="result">: <a href="ReadPartialChannel.html" class="extype" name="org.widok.ReadPartialChannel">ReadPartialChannel</a>[<span class="extype" name="org.widok.ReadChannel.partialMap.U">U</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@partialMap[U](f:PartialFunction[T,U]):org.widok.ReadPartialChannel[U]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Applies partial function <code>f</code> on each element; if the function is not
+defined for the current input, it is filtered out
+</p><div class="fullcomment"><div class="comment cmt"><p>Applies partial function <code>f</code> on each element; if the function is not
+defined for the current input, it is filtered out
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a> → <a href="reactive/stream/MapExtended.html" class="extype" name="org.widok.reactive.stream.MapExtended">MapExtended</a></dd></dl></div>
+    </li><li name="org.widok.reactive.stream.Filter#partition" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="partition(f:B=&gt;Boolean):(Container[A],Container[A])"></a>
+      <a id="partition((U)⇒Boolean):(ReadChannel[U],ReadChannel[U])"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">partition</span><span class="params">(<span name="f">f: (<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>)</span><span class="result">: (<a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>], <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>])</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@partition(f:B=&gt;Boolean):(Container[A],Container[A])" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Partitions stream into two sub-stream</p><div class="fullcomment"><div class="comment cmt"><p>Partitions stream into two sub-stream</p><p>The left stream contains all elements for which <code>f</code> is true, all other
+elements go to the right stream.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="reactive/stream/Filter.html" class="extype" name="org.widok.reactive.stream.Filter">Filter</a></dd></dl></div>
+    </li><li name="org.widok.BiFlatChildChannel#process" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="process(value:T):Unit"></a>
+      <a id="process(T):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">process</span><span class="params">(<span name="value">value: <span class="extype" name="org.widok.BiFlatChildChannel.T">T</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@process(value:T):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Return true if the stream is completed.</p><div class="fullcomment"><div class="comment cmt"><p>Return true if the stream is completed.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="org.widok.BiFlatChildChannel">BiFlatChildChannel</a> → <a href="ChildChannel.html" class="extype" name="org.widok.ChildChannel">ChildChannel</a></dd></dl></div>
+    </li><li name="org.widok.WriteChannel#produce" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="produce[U](value:T,ignore:org.widok.ReadChannel[U]*):Unit"></a>
+      <a id="produce[U](U,ReadChannel[U]*):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">produce</span><span class="tparams">[<span name="U">U</span>]</span><span class="params">(<span name="value">value: <span class="extype" name="org.widok.BiFlatChildChannel.U">U</span></span>, <span name="ignore">ignore: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<span class="extype" name="org.widok.WriteChannel.produce.U">U</span>]*</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@produce[U](value:T,ignore:org.widok.ReadChannel[U]*):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="WriteChannel.html" class="extype" name="org.widok.WriteChannel">WriteChannel</a></dd></dl></div>
+    </li><li name="org.widok.WriteChannel#produce" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="produce(value:T):Unit"></a>
+      <a id="produce(U):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">produce</span><span class="params">(<span name="value">value: <span class="extype" name="org.widok.BiFlatChildChannel.U">U</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@produce(value:T):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="WriteChannel.html" class="extype" name="org.widok.WriteChannel">WriteChannel</a> → <a href="reactive/propagate/Channel.html" class="extype" name="org.widok.reactive.propagate.Channel">Channel</a></dd></dl></div>
+    </li><li name="org.widok.reactive.stream.Fold#product" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="product[U&gt;:T](implicitnum:Numeric[U]):org.widok.ReadChannel[U]"></a>
+      <a id="product[U&gt;:U](Numeric[U]):ReadChannel[U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">product</span><span class="tparams">[<span name="U">U &gt;: <span class="extype" name="org.widok.BiFlatChildChannel.U">U</span></span>]</span><span class="params">(<span class="implicit">implicit </span><span name="num">num: <span class="extype" name="scala.Numeric">Numeric</span>[<span class="extype" name="org.widok.reactive.stream.Fold.product.U">U</span>]</span>)</span><span class="result">: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<span class="extype" name="org.widok.reactive.stream.Fold.product.U">U</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@product[U&gt;:T](implicitnum:Numeric[U]):org.widok.ReadChannel[U]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Calculates product
+</p><div class="fullcomment"><div class="comment cmt"><p>Calculates product
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="reactive/stream/Fold.html" class="extype" name="org.widok.reactive.stream.Fold">Fold</a></dd><dt>See also</dt><dd><span class="cmt"><p><a href="reactive/stream/Fold.html#foldLeft[U](acc:U)(f:(U,T)=&gt;U):org.widok.ReadChannel[U]" class="extmbr" name="org.widok.reactive.stream.Fold#foldLeft">foldLeft</a>
+</p></span></dd></dl></div>
+    </li><li name="org.widok.ReadChannel#publish" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="publish[U](ch:org.widok.WriteChannel[T],ignore:org.widok.ReadChannel[U]):org.widok.ReadChannel[Unit]"></a>
+      <a id="publish[U](WriteChannel[U],ReadChannel[U]):ReadChannel[Unit]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">publish</span><span class="tparams">[<span name="U">U</span>]</span><span class="params">(<span name="ch">ch: <a href="WriteChannel.html" class="extype" name="org.widok.WriteChannel">WriteChannel</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>]</span>, <span name="ignore">ignore: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<span class="extype" name="org.widok.ReadChannel.publish.U">U</span>]</span>)</span><span class="result">: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@publish[U](ch:org.widok.WriteChannel[T],ignore:org.widok.ReadChannel[U]):org.widok.ReadChannel[Unit]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a></dd></dl></div>
+    </li><li name="org.widok.ReadChannel#publish" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="publish(ch:org.widok.WriteChannel[T]):org.widok.ReadChannel[Unit]"></a>
+      <a id="publish(WriteChannel[U]):ReadChannel[Unit]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">publish</span><span class="params">(<span name="ch">ch: <a href="WriteChannel.html" class="extype" name="org.widok.WriteChannel">WriteChannel</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>]</span>)</span><span class="result">: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@publish(ch:org.widok.WriteChannel[T]):org.widok.ReadChannel[Unit]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a></dd></dl></div>
+    </li><li name="org.widok.ReadChannel#silentAttach" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="silentAttach(f:T=&gt;Unit):org.widok.ReadChannel[Unit]"></a>
+      <a id="silentAttach((U)⇒Unit):ReadChannel[Unit]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">silentAttach</span><span class="params">(<span name="f">f: (<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>)</span><span class="result">: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@silentAttach(f:T=&gt;Unit):org.widok.ReadChannel[Unit]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a></dd></dl></div>
+    </li><li name="org.widok.ChannelDefaultSize#size" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="size:org.widok.ReadChannel[Int]"></a>
+      <a id="size:ReadChannel[Int]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">size</span><span class="result">: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Int" class="extype" target="_top">Int</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@size:org.widok.ReadChannel[Int]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ChannelDefaultSize.html" class="extype" name="org.widok.ChannelDefaultSize">ChannelDefaultSize</a></dd></dl></div>
+    </li><li name="org.widok.WriteChannel#subscribe" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="subscribe[U](ch:org.widok.ReadChannel[T],ignore:org.widok.ReadChannel[U]):org.widok.ReadChannel[Unit]"></a>
+      <a id="subscribe[U](ReadChannel[U],ReadChannel[U]):ReadChannel[Unit]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">subscribe</span><span class="tparams">[<span name="U">U</span>]</span><span class="params">(<span name="ch">ch: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>]</span>, <span name="ignore">ignore: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<span class="extype" name="org.widok.WriteChannel.subscribe.U">U</span>]</span>)</span><span class="result">: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@subscribe[U](ch:org.widok.ReadChannel[T],ignore:org.widok.ReadChannel[U]):org.widok.ReadChannel[Unit]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="WriteChannel.html" class="extype" name="org.widok.WriteChannel">WriteChannel</a></dd></dl></div>
+    </li><li name="org.widok.WriteChannel#subscribe" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="subscribe(ch:org.widok.ReadChannel[T]):org.widok.ReadChannel[Unit]"></a>
+      <a id="subscribe(ReadChannel[U]):ReadChannel[Unit]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">subscribe</span><span class="params">(<span name="ch">ch: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>]</span>)</span><span class="result">: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@subscribe(ch:org.widok.ReadChannel[T]):org.widok.ReadChannel[Unit]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Redirect stream from <code>other</code> to <code>this</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Redirect stream from <code>other</code> to <code>this</code>.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="WriteChannel.html" class="extype" name="org.widok.WriteChannel">WriteChannel</a></dd></dl></div>
+    </li><li name="org.widok.reactive.stream.Fold#sum" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="sum[U&gt;:T](implicitnum:Numeric[U]):org.widok.ReadChannel[U]"></a>
+      <a id="sum[U&gt;:U](Numeric[U]):ReadChannel[U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">sum</span><span class="tparams">[<span name="U">U &gt;: <span class="extype" name="org.widok.BiFlatChildChannel.U">U</span></span>]</span><span class="params">(<span class="implicit">implicit </span><span name="num">num: <span class="extype" name="scala.Numeric">Numeric</span>[<span class="extype" name="org.widok.reactive.stream.Fold.sum.U">U</span>]</span>)</span><span class="result">: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<span class="extype" name="org.widok.reactive.stream.Fold.sum.U">U</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@sum[U&gt;:T](implicitnum:Numeric[U]):org.widok.ReadChannel[U]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Sums over all elements
+</p><div class="fullcomment"><div class="comment cmt"><p>Sums over all elements
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="reactive/stream/Fold.html" class="extype" name="org.widok.reactive.stream.Fold">Fold</a></dd><dt>See also</dt><dd><span class="cmt"><p><a href="reactive/stream/Fold.html#foldLeft[U](acc:U)(f:(U,T)=&gt;U):org.widok.ReadChannel[U]" class="extmbr" name="org.widok.reactive.stream.Fold#foldLeft">foldLeft</a>
+</p></span></dd></dl></div>
+    </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
+      <a id="synchronized[T0](⇒T0):T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="org.widok.ReadChannel#tail" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="tail:org.widok.ReadChannel[T]"></a>
+      <a id="tail:ReadChannel[U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">tail</span><span class="result">: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@tail:org.widok.ReadChannel[T]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Skips first element</p><div class="fullcomment"><div class="comment cmt"><p>Skips first element</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a> → <a href="reactive/stream/Tail.html" class="extype" name="org.widok.reactive.stream.Tail">Tail</a></dd></dl></div>
+    </li><li name="org.widok.ReadChannel#take" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="take(count:Int):org.widok.ReadChannel[T]"></a>
+      <a id="take(Int):ReadChannel[U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">take</span><span class="params">(<span name="count">count: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@take(count:Int):org.widok.ReadChannel[T]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a> → <a href="reactive/stream/Take.html" class="extype" name="org.widok.reactive.stream.Take">Take</a></dd><dt>Note</dt><dd><span class="cmt"><p>Channels: Takes first <code>count</code> elements, then stop listening.
+                Subscribing to it will always yield the last result as
+                initial value.
+</p></span>, <span class="cmt"><p>Buffers: Will always contain the first <code>count</code> (or less) elements
+               of the parent buffer.</p></span></dd></dl></div>
+    </li><li name="org.widok.ReadChannel#takeUntil" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="takeUntil(ch:org.widok.ReadChannel[_]):org.widok.ReadChannel[T]"></a>
+      <a id="takeUntil(ReadChannel[_]):ReadChannel[U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">takeUntil</span><span class="params">(<span name="ch">ch: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[_]</span>)</span><span class="result">: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@takeUntil(ch:org.widok.ReadChannel[_]):org.widok.ReadChannel[T]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Take all elements until <code>ch</code> produces any value</p><div class="fullcomment"><div class="comment cmt"><p>Take all elements until <code>ch</code> produces any value</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a> → <a href="reactive/stream/Take.html" class="extype" name="org.widok.reactive.stream.Take">Take</a></dd></dl></div>
+    </li><li name="org.widok.ReadChannel#toBuffer" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toBuffer:org.widok.Buffer[T]"></a>
+      <a id="toBuffer:Buffer[U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toBuffer</span><span class="result">: <a href="Buffer.html" class="extype" name="org.widok.Buffer">Buffer</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@toBuffer:org.widok.Buffer[T]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Buffers only current element</p><div class="fullcomment"><div class="comment cmt"><p>Buffers only current element</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a></dd></dl></div>
+    </li><li name="org.widok.Channel#toOpt" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toOpt:org.widok.Opt[T]"></a>
+      <a id="toOpt:Opt[U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toOpt</span><span class="result">: <a href="Opt.html" class="extype" name="org.widok.Opt">Opt</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@toOpt:org.widok.Opt[T]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Channel.html" class="extype" name="org.widok.Channel">Channel</a></dd></dl></div>
+    </li><li name="org.widok.BiFlatChildChannel#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toString():String"></a>
+      <a id="toString():String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@toString():String" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="org.widok.BiFlatChildChannel">BiFlatChildChannel</a> → <a href="Channel.html" class="extype" name="org.widok.Channel">Channel</a> → AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait():Unit"></a>
+      <a id="wait():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@wait():Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long,x$2:Int):Unit"></a>
+      <a id="wait(Long,Int):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Long" class="extype" target="_top">Long</a></span>, <span name="arg1">arg1: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long):Unit"></a>
+      <a id="wait(Long):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Long" class="extype" target="_top">Long</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@wait(x$1:Long):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="org.widok.ReadChannel#writeTo" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="writeTo(write:org.widok.WriteChannel[T]):org.widok.Channel[T]"></a>
+      <a id="writeTo(WriteChannel[U]):Channel[U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">writeTo</span><span class="params">(<span name="write">write: <a href="WriteChannel.html" class="extype" name="org.widok.WriteChannel">WriteChannel</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>]</span>)</span><span class="result">: <a href="Channel.html" class="extype" name="org.widok.Channel">Channel</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@writeTo(write:org.widok.WriteChannel[T]):org.widok.Channel[T]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a></dd></dl></div>
+    </li><li name="org.widok.ReadChannel#|" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="|(ch:org.widok.ReadChannel[_]):org.widok.ReadChannel[Unit]"></a>
+      <a id="|(ReadChannel[_]):ReadChannel[Unit]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bar" class="name">|</span><span class="params">(<span name="ch">ch: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[_]</span>)</span><span class="result">: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.BiFlatChildChannel@|(ch:org.widok.ReadChannel[_]):org.widok.ReadChannel[Unit]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a></dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.Serializable">
+              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></h3>
+            </div><div class="parent" name="java.io.Serializable">
+              <h3>Inherited from <span class="extype" name="java.io.Serializable">Serializable</span></h3>
+            </div><div class="parent" name="scala.Product">
+              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a></h3>
+            </div><div class="parent" name="scala.Equals">
+              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Equals" class="extype" target="_top">Equals</a></h3>
+            </div><div class="parent" name="org.widok.ChildChannel">
+              <h3>Inherited from <a href="ChildChannel.html" class="extype" name="org.widok.ChildChannel">ChildChannel</a>[<span class="extype" name="org.widok.BiFlatChildChannel.T">T</span>, <span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>]</h3>
+            </div><div class="parent" name="org.widok.ChannelDefaultSize">
+              <h3>Inherited from <a href="ChannelDefaultSize.html" class="extype" name="org.widok.ChannelDefaultSize">ChannelDefaultSize</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>]</h3>
+            </div><div class="parent" name="org.widok.Channel">
+              <h3>Inherited from <a href="Channel.html" class="extype" name="org.widok.Channel">Channel</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>]</h3>
+            </div><div class="parent" name="org.widok.WriteChannel">
+              <h3>Inherited from <a href="WriteChannel.html" class="extype" name="org.widok.WriteChannel">WriteChannel</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>]</h3>
+            </div><div class="parent" name="org.widok.reactive.propagate.Channel">
+              <h3>Inherited from <a href="reactive/propagate/Channel.html" class="extype" name="org.widok.reactive.propagate.Channel">reactive.propagate.Channel</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>]</h3>
+            </div><div class="parent" name="org.widok.ReadChannel">
+              <h3>Inherited from <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>]</h3>
+            </div><div class="parent" name="org.widok.Disposable">
+              <h3>Inherited from <a href="Disposable.html" class="extype" name="org.widok.Disposable">Disposable</a></h3>
+            </div><div class="parent" name="org.widok.reactive.poll.Flush">
+              <h3>Inherited from <a href="reactive/poll/Flush.html" class="extype" name="org.widok.reactive.poll.Flush">Flush</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>]</h3>
+            </div><div class="parent" name="org.widok.reactive.stream.Size">
+              <h3>Inherited from <a href="reactive/stream/Size.html" class="extype" name="org.widok.reactive.stream.Size">Size</a></h3>
+            </div><div class="parent" name="org.widok.reactive.stream.Cache">
+              <h3>Inherited from <a href="reactive/stream/Cache.html" class="extype" name="org.widok.reactive.stream.Cache">Cache</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>]</h3>
+            </div><div class="parent" name="org.widok.reactive.stream.MapExtended">
+              <h3>Inherited from <a href="reactive/stream/MapExtended.html" class="extype" name="org.widok.reactive.stream.MapExtended">MapExtended</a>[<a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>, <span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>]</h3>
+            </div><div class="parent" name="org.widok.reactive.stream.Map">
+              <h3>Inherited from <a href="reactive/stream/Map.html" class="extype" name="org.widok.reactive.stream.Map">Map</a>[<a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>, <span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>]</h3>
+            </div><div class="parent" name="org.widok.reactive.stream.Filter">
+              <h3>Inherited from <a href="reactive/stream/Filter.html" class="extype" name="org.widok.reactive.stream.Filter">Filter</a>[<a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>, <span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>, <span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>]</h3>
+            </div><div class="parent" name="org.widok.reactive.stream.Aggregate">
+              <h3>Inherited from <a href="reactive/stream/Aggregate.html" class="extype" name="org.widok.reactive.stream.Aggregate">Aggregate</a>[<a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>, <span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>]</h3>
+            </div><div class="parent" name="org.widok.reactive.stream.Is">
+              <h3>Inherited from <a href="reactive/stream/Is.html" class="extype" name="org.widok.reactive.stream.Is">Is</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>]</h3>
+            </div><div class="parent" name="org.widok.reactive.stream.Fold">
+              <h3>Inherited from <a href="reactive/stream/Fold.html" class="extype" name="org.widok.reactive.stream.Fold">Fold</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>]</h3>
+            </div><div class="parent" name="org.widok.reactive.stream.Take">
+              <h3>Inherited from <a href="reactive/stream/Take.html" class="extype" name="org.widok.reactive.stream.Take">Take</a>[<a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>, <span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>]</h3>
+            </div><div class="parent" name="org.widok.reactive.stream.Tail">
+              <h3>Inherited from <a href="reactive/stream/Tail.html" class="extype" name="org.widok.reactive.stream.Tail">Tail</a>[<a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>, <span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>]</h3>
+            </div><div class="parent" name="org.widok.reactive.stream.Head">
+              <h3>Inherited from <a href="reactive/stream/Head.html" class="extype" name="org.widok.reactive.stream.Head">Head</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>]</h3>
+            </div><div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Any" class="extype" target="_top">Any</a></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>
