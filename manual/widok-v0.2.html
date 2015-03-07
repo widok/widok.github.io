@@ -1,0 +1,1647 @@
+<!DOCTYPE html>
+<html lang="british">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>Widok User Manual v0.2</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <style type="text/css">q { quotes: "“" "”" "‘" "’"; }</style>
+  <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+  </style>
+  <link href="data:text/css,%2F%2A%0A%20%20%20This%20document%20has%20been%20created%20with%20Marked%2Eapp%20%3Chttp%3A%2F%2Fmarked2app%2Ecom%3E%0A%20%20%20Please%20leave%20this%20notice%20in%20place%2C%20along%20with%20any%20additional%20credits%20below%2E%0A%20%20%20%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%2D%0A%20%20%20Title%3A%20Kultiad%0A%20%20%20Author%3A%20Peter%20Sziebig%20%2D%20%40bigpe%3B%20Modified%20by%20Kieran%20Healy%20%2D%20%40kjhealy%0A%20%20%20Description%3A%20Easy%20to%20read%2E%20Pandoc%20style%20elements%2E%0A%2A%2F%0A%0A%0A%0A%0Ahtml%20%7B%0A%20%20%20%20font%2Dsize%3A%20100%25%3B%0A%7D%0Ahtml%2C%20button%2C%20input%2C%20select%2C%20textarea%20%7B%0A%20%20%20%20font%2Dfamily%3A%20sans%2Dserif%3B%0A%7D%0A%0Ahtml%2C%20body%2C%20button%2C%20input%2C%20select%2C%20textarea%20%7B%0A%20%20%20%20color%3A%20%2357534A%3B%0A%20%20%20%20font%2Dfamily%3A%20%22PT%20Serif%22%2C%22Calluna%22%2C%22Arno%20Pro%22%2Cserif%3B%0A%20%20%20%20font%2Dsize%3A%2018px%3B%0A%20%20%20%20font%2Dweight%3A%20300%3B%0A%7D%0A%0Abody%7B%0A%20%20%20%20margin%3A%200%20auto%3B%0A%20%20%20%20background%2Dcolor%3A%20%23FFFFFF%3B%0A%7D%0A%0Abody%2C%20textarea%20%7B%0A%20%20%20%20line%2Dheight%3A%201%2E4%3B%0A%7D%0A%0A%0Abody%3Aafter%20%7B%0A%20%20%20%20clear%3A%20both%3B%0A%20%20%20%20content%3A%20%22%22%3B%0A%20%20%20%20display%3A%20table%3B%0A%7D%0A%0Abody%20%7B%0A%20%20%20%20padding%2Dleft%3A%206rem%3B%0A%20%20%20%20padding%2Dright%3A%206rem%3B%0A%20%20%20%20margin%2Dleft%3A%20auto%3B%0A%20%20%20%20margin%2Dright%3A%20auto%3B%0A%20%20%20%20max%2Dwidth%3A%2042rem%3B%0A%20%20%20%20display%3A%20block%3B%0A%7D%0A%0A%0A%0Ah1%2C%20h2%2C%20h3%2C%20dt%20%7B%0A%20%20%20%20color%3A%20%23423F37%3B%0A%20%20%20%20font%2Dweight%3A%20700%3B%0A%7D%0A%0Ah1%20%7B%0A%20%20%20%20font%2Dsize%3A%202em%3B%0A%20%20%20%20margin%3A%200%2E67em%200%3B%0A%7D%0Ah2%2C%20%2Earticle%2Dlist%20%2Earticle%2Dtitle%20%7B%0A%20%20%20%20padding%2Dtop%3A%201em%3B%0A%20%20%20%20padding%2Dbottom%3A%200em%3B%0A%20%20%20%20border%2Dbottom%3A%20none%3B%0A%20%20%20%20font%2Dsize%3A%201%2E5em%3B%0A%20%20%20%20margin%3A%200%2E83em%200%3B%0A%7D%0Ah3%2C%20dt%20%7B%0A%20%20%20%20padding%2Dtop%3A%201em%3B%0A%20%20%20%20font%2Dsize%3A%201%2E17em%3B%0A%20%20%20%20font%2Dstyle%3A%20italic%3B%0A%20%20%20%20margin%3A%201em%200%3B%0A%7D%0Ah4%20%7B%0A%20%20%20%20font%2Dsize%3A%201em%3B%0A%20%20%20%20margin%3A%201%2E33em%200%3B%0A%7D%0Ah5%20%7B%0A%20%20%20%20font%2Dsize%3A%200%2E83em%3B%0A%20%20%20%20margin%3A%201%2E67em%200%3B%0A%7D%0Ah6%20%7B%0A%20%20%20%20font%2Dsize%3A%200%2E75em%3B%0A%20%20%20%20margin%3A%202%2E33em%200%3B%0A%7D%0A%0A%0Aa%20%7B%0A%20%20%20%20color%3A%20%238DB359%3B%0A%20%20%20%20cursor%3A%20pointer%3B%0A%20%20%20%20outline%3A%200%20none%3B%0A%20%20%20%20text%2Ddecoration%3A%20underline%3B%0A%7D%0A%0Aa%3Ahover%20%7B%0A%20%20%20%20outline%3A%200%20none%3B%0A%20%20%20%20color%3A%20%23739544%3B%0A%7D%0A%0A%0Ap%2C%20pre%20%7B%0A%20%20%20%20margin%3A%201em%200%3B%0A%7D%0A%0Acode%2C%20kbd%2C%20pre%2C%20samp%20%7B%0A%20%20%20%20font%2Dfamily%3A%20monospace%2Cserif%3B%0A%20%20%20%20font%2Dsize%3A%201em%3B%0A%20%20%20%20margin%3A%200%3B%0A%20%20%20%20padding%3A%200%3B%0A%0A%7D%0Apre%20%7B%0A%20%20%20%20white%2Dspace%3A%20pre%2Dwrap%3B%0A%20%20%20%20word%2Dwrap%3A%20break%2Dword%3B%0A%7D%0A%0Apre%20%7B%0A%20%20%20%20background%2Dcolor%3A%20%23F8F5F0%3B%0A%20%20%20%20font%2Dsize%3A%200%2E7rem%3B%0A%20%20%20%20overflow%2Dx%3A%20auto%3B%0A%20%20%20%20padding%3A%201%2E3rem%3B%0A%20%20%20%20position%3A%20relative%3B%0A%20%20%20%20white%2Dspace%3A%20pre%3B%0A%20%20%20%20word%2Dwrap%3A%20normal%3B%0A%7D%0Apre%2C%20code%2C%20kbd%2C%20samp%20%7B%0A%20%20%20%20margin%3A%200%3B%0A%7D%0Acode%2C%20kbd%2C%20pre%2C%20samp%20%7B%0A%20%20%20%20font%2Dfamily%3A%20monospace%2Cserif%3B%0A%7D%0A%0Acode%20%7B%0A%20%20%20%20color%3A%20%23423F37%3B%0A%7D%0A%0A%0Aaside%20%7B%0A%20%20%20%20display%3A%20block%3B%0A%20%20%20%20float%3A%20right%3B%0A%20%20%20%20width%3A%20390px%3B%0A%7D%0A%0A%0Ab%2C%20strong%20%7B%0A%20%20%20%20font%2Dweight%3A%20bold%3B%0A%20%20%20%20color%3A%20%23423F37%3B%0A%20%20%20%20font%2Dweight%3A%20700%3B%0A%7D%0A%0Ablockquote%20%7B%0A%20%20%20%20color%3A%20%23423F37%3B%0A%20%20%20%20margin%3A%201em%2040px%3B%0A%7D%0A%0Ablockquote%20%7B%0A%20%20%20%20margin%2Dbottom%3A%202em%3B%0A%20%20%20%20margin%2Dtop%3A%202em%3B%0A%7D%0A%0Afigure%20%7B%0A%09margin%2Dleft%3A%20%2D4%2E5rem%3B%0A%20%20%20%20margin%2Dright%3A%20%2D4%2E5rem%3B%0A%20%20%20%20margin%2Dbottom%3A%202em%3B%0A%20%20%20%20margin%2Dtop%3A%202em%3B%0A%7D%0A%0A%0Ahr%20%7B%0A%20%20%20%20%2Dmoz%2Dborder%2Dbottom%2Dcolors%3A%20none%3B%0A%20%20%20%20%2Dmoz%2Dborder%2Dleft%2Dcolors%3A%20none%3B%0A%20%20%20%20%2Dmoz%2Dborder%2Dright%2Dcolors%3A%20none%3B%0A%20%20%20%20%2Dmoz%2Dborder%2Dtop%2Dcolors%3A%20none%3B%0A%20%20%20%20border%2Dcolor%3A%20%2Dmoz%2Duse%2Dtext%2Dcolor%20%2Dmoz%2Duse%2Dtext%2Dcolor%20%23ECE6DA%3B%0A%20%20%20%20border%2Dimage%3A%20none%3B%0A%20%20%20%20border%2Dstyle%3A%20none%20none%20solid%3B%0A%20%20%20%20border%2Dwidth%3A%20medium%20medium%201px%3B%0A%20%20%20%20margin%3A%203em%206em%3B%0A%7D%0A%0A%0Aimg%20%7B%0A%20%20%20%20max%2Dwidth%3A%20100%25%3B%0A%20%20%20%20display%3A%20block%3B%0A%20%20%20%20border%3A%200%20none%3B%0A%7D%0A%0A%0Aol%20%3E%20li%3Abefore%20%7B%0A%20%20%20%20color%3A%20%23423F37%3B%0A%20%20%20%20content%3A%20counter%28ol%2C%20decimal%29%20%22%2E%22%3B%0A%20%20%20%20counter%2Dincrement%3A%20ol%3B%0A%20%20%20%20font%2Dweight%3A%20700%3B%0A%20%20%20%20margin%2Dright%3A%200%2E333em%3B%0A%20%20%20%20position%3A%20absolute%3B%0A%20%20%20%20right%3A%20100%25%3B%0A%7D%0A%0Aul%20%3E%20li%3Abefore%20%7B%0A%20%20%20%20background%2Dcolor%3A%20%23423F37%3B%0A%20%20%20%20border%2Dradius%3A%2014px%2014px%2014px%2014px%3B%0A%20%20%20%20content%3A%20%22%22%3B%0A%20%20%20%20height%3A%206px%3B%0A%20%20%20%20margin%2Dright%3A%200%2E333em%3B%0A%20%20%20%20margin%2Dtop%3A%200%2E55em%3B%0A%20%20%20%20position%3A%20absolute%3B%0A%20%20%20%20right%3A%20100%25%3B%0A%20%20%20%20width%3A%206px%3B%0A%7D%0A%0Aol%2C%20ul%2C%20dl%20%7B%0A%20%20%20%20margin%2Dleft%3A%202rem%3B%0A%20%20%20%20padding%3A%200%3B%0A%7D%0Aol%20%7B%0A%20%20%20%20counter%2Dreset%3A%20ol%3B%0A%7D%0Ali%20%2B%20li%2C%20dd%20%2B%20dt%20%7B%0A%20%20%20%20margin%2Dtop%3A%200%2E5em%3B%0A%7D%0A%0Aul%20%3E%20li%20%7B%0A%20%20%20%20position%3A%20relative%3B%0A%7D%0A%0Aol%20%3E%20li%20%7B%0A%20%20%20%20position%3A%20relative%3B%0A%7D%0Ali%20%7B%0A%20%20%20%20list%2Dstyle%3A%20none%20outside%20none%3B%0A%7D%0A%0A%0Afigure%20%3E%20figcaption%20%7B%0A%20%20%20%20margin%2Dtop%3A%200%2E5em%3B%0A%7D%0Asmall%2C%20dd%2C%20figcaption%20%7B%0A%20%20%20%20color%3A%20%23A19C91%3B%0A%20%20%20%20display%3A%20block%3B%0A%20%20%20%20font%2Dsize%3A%200%2E8rem%3B%0A%20%20%20%20font%2Dstyle%3A%20italic%3B%0A%20%20%20%20line%2Dheight%3A%201%2E2%3B%0A%7D%0A%0A%0Atbody%7Bdisplay%3Atable%2Drow%2Dgroup%7D%0Atfoot%7Bdisplay%3Atable%2Dfooter%2Dgroup%7D%0Atable%7Bmargin%2Dbottom%3A2em%3Bfont%2Dsize%3A%200%2E8em%3Bpadding%3A0%3Bborder%2Dcollapse%3Acollapse%3B%2Dwebkit%2Dbox%2Dshadow%3A1px%201px%202px%20rgba%280%2C0%2C0%2C%2E35%29%3Bwidth%3A80%25%3Bmargin%3A0%20auto%202em%20auto%7D%0Atable%20th%2Ctable%20td%7Bpadding%3A10px%2010px%209px%3Bline%2Dheight%3A18px%3Btext%2Dalign%3Aleft%7D%0Atable%20th%7B%0Apadding%2Dtop%3A9px%3B%21important%3Btext%2Dtransform%3Auppercase%3Bvertical%2Dalign%3Amiddle%7D%0Atable%20td%7Bvertical%2Dalign%3Atop%3Bborder%2Dtop%3A1px%20solid%20%23ddd%3B%7D%0Atable%20tbody%20th%7Bborder%2Dtop%3A1px%20solid%20%23ddd%3Bvertical%2Dalign%3Atop%7D%0Atable%7Bborder%3A1px%20solid%20%23ddd%3Bborder%2Dcollapse%3Aseparate%3B%2Aborder%2Dcollapse%3Acollapse%3B%2Dwebkit%2Dborder%2Dradius%3A4px%3B%2Dmoz%2Dborder%2Dradius%3A4px%3Bborder%2Dradius%3A4px%7D%0Atable%20th%2Bth%2Ctable%20td%2Btd%2Ctable%20th%2Btd%7Bborder%2Dleft%3A1px%20solid%20%23ddd%7D%0Atable%20thead%20tr%3Afirst%2Dchild%20th%3Afirst%2Dchild%2Ctable%20tbody%20tr%3Afirst%2Dchild%20td%3Afirst%2Dchild%7B%2Dwebkit%2Dborder%2Dradius%3A4px%200%200%200%3B%2Dmoz%2Dborder%2Dradius%3A4px%200%200%200%3Bborder%2Dradius%3A4px%200%200%200%7D%0Atable%20thead%20tr%3Afirst%2Dchild%20th%3Alast%2Dchild%2Ctable%20tbody%20tr%3Afirst%2Dchild%20td%3Alast%2Dchild%7B%2Dwebkit%2Dborder%2Dradius%3A0%204px%200%200%3B%2Dmoz%2Dborder%2Dradius%3A0%204px%200%200%3Bborder%2Dradius%3A0%204px%200%200%7D%0Atable%20tbody%20tr%3Alast%2Dchild%20td%3Afirst%2Dchild%7B%2Dwebkit%2Dborder%2Dradius%3A0%200%200%204px%3B%2Dmoz%2Dborder%2Dradius%3A0%200%200%204px%3Bborder%2Dradius%3A0%200%200%204px%7D%0Atable%20tbody%20tr%3Alast%2Dchild%20td%3Alast%2Dchild%7B%2Dwebkit%2Dborder%2Dradius%3A0%200%204px%200%3B%2Dmoz%2Dborder%2Dradius%3A0%200%204px%200%3Bborder%2Dradius%3A0%200%204px%200%7D%0Atbody%20tr%3Anth%2Dchild%28odd%29%7Bbackground%2Dcolor%3Argba%280%2C0%2C0%2C0%2E03%29%7D%0A%0Acaption%7Bdisplay%3Atable%2Dcaption%3Bfont%2Dweight%3A300%3Bfont%2Dsize%3A1%2E3em%3Btext%2Dtransform%3Auppercase%3Bletter%2Dspacing%3A2px%3Bword%2Dspacing%3A%2E2em%3Bbackground%3Argba%280%2C0%2C0%2C%2E75%29%3Bcolor%3A%23EEE%3Bpadding%3A4px%3B%2Dwebkit%2Dborder%2Dradius%3A4px%3Bmargin%3A4px%200%3B%2Dwebkit%2Dbox%2Dshadow%3A2px%202px%202px%20rgba%280%2C0%2C0%2C%2E35%29%7D%0A%0A%2F%2A%20grey%20out%20placeholders%20%2A%2F%0A%3A%2Dmoz%2Dplaceholder%20%7B%0A%20%20color%3A%20%23bfbfbf%3B%0A%7D%0A%3A%3A%2Dwebkit%2Dinput%2Dplaceholder%20%7B%0A%20%20color%3A%20%23bfbfbf%3B%0A%7D%0A%0A%0A%2Earticle%2Ddate%20%7B%0A%20%20%20%20color%3A%20%23C7C2B8%3B%0A%20%20%20%20display%3A%20block%3B%0A%20%20%20%20font%2Dsize%3A%200%2E8rem%3B%0A%7D%0A%0A%2Etitle%7B%0A%20%20%20%20padding%2Dbottom%3A%201em%3B%0A%7D%0A%0A%2Eauthor%7B%0A%20%20padding%2Dtop%3A%200%2E5em%3B%0A%20%20font%2Dsize%3A1%2E24em%3B%0A%20%20line%2Dheight%3A0%2E5em%3B%0A%7D%0A%0A%2Edate%20%7B%0A%20%20%20%20color%3A%20%23C7C2B8%3B%0A%20%20%20%20display%3A%20block%3B%0A%20%20%20%20font%2Dsize%3A%200%2E8rem%3B%0A%7D%0A%0A%2Ecaption%20%7B%0A%20%20%20display%3A%20block%3B%0A%20%20%20font%2Dsize%3A%200%2E8rem%3B%0A%20%20%20font%2Dstyle%3A%20italic%3B%0A%7D%0A%0A%2Esmall%7B%0A%20font%2Dsize%3A0%2E8em%3B%0A%7D%0A%0A%2Eaffiliation%7B%0A%20margin%2Dtop%3A%200%3B%0A%20padding%2Dtop%3A%200%3B%0A%20font%2Dsize%3A0%2E9em%3B%0A%20font%2Dstyle%3A%20italic%3B%0A%7D%0A%0A" rel="stylesheet">
+</head>
+<body>
+<header>
+<h3 class="date">March 2015</h3>
+
+<h1 class="title">Widok User Manual v0.2</h1>
+
+
+<h2 class="author">Tim Nieradzik</h2>
+<p class="affilation"><em>University of Bremen</em></p>
+
+</header>
+
+<nav id="TOC">
+<ul>
+<li><a href="#introduction">Introduction</a><ul>
+<li><a href="#comparison">Comparison</a></li>
+</ul></li>
+<li><a href="#getting-started">Getting Started</a><ul>
+<li><a href="#prerequisites">Prerequisites</a></li>
+<li><a href="#project-structure">Project structure</a></li>
+<li><a href="#code">Code</a></li>
+<li><a href="#compilation">Compilation</a></li>
+</ul></li>
+<li><a href="#concepts">Concepts</a><ul>
+<li><a href="#basic-application">Basic application</a></li>
+<li><a href="#single-page-applications">Single-page applications</a></li>
+<li><a href="#multi-page-applications">Multi-page applications</a></li>
+<li><a href="#pages">Pages</a></li>
+<li><a href="#widgets">Widgets</a></li>
+<li><a href="#reactive-programming">Reactive programming</a></li>
+</ul></li>
+<li><a href="#build-process">Build process</a><ul>
+<li><a href="#jdk">JDK</a></li>
+<li><a href="#development-releases">Development releases</a></li>
+<li><a href="#production-releases">Production releases</a><ul>
+<li><a href="#additional-optimisations">Additional optimisations</a></li>
+</ul></li>
+<li><a href="#continuous-compilation">Continuous compilation</a></li>
+<li><a href="#configure-paths">Configure paths</a></li>
+<li><a href="#sbt-web">sbt-web</a><ul>
+<li><a href="#sass">Sass</a></li>
+<li><a href="#font-awesome">Font-Awesome</a></li>
+<li><a href="#artifacts">Artifacts</a></li>
+</ul></li>
+<li><a href="#code-sharing">Code sharing</a></li>
+<li><a href="#colours">Colours</a></li>
+</ul></li>
+<li><a href="#router">Router</a><ul>
+<li><a href="#interface">Interface</a></li>
+<li><a href="#routes">Routes</a><ul>
+<li><a href="#design-decisions">Design decisions</a></li>
+</ul></li>
+<li><a href="#application-provider">Application provider</a></li>
+</ul></li>
+<li><a href="#widgets-1">Widgets</a><ul>
+<li><a href="#html">HTML</a><ul>
+<li><a href="#aliases">Aliases</a></li>
+</ul></li>
+<li><a href="#usage">Usage</a></li>
+<li><a href="#writing-custom-widgets">Writing custom widgets</a></li>
+<li><a href="#binding-to-events">Binding to events</a></li>
+<li><a href="#composed-widgets">Composed widgets</a></li>
+<li><a href="#implicits">Implicits</a></li>
+</ul></li>
+<li><a href="#reactive-programming-1">Reactive programming</a><ul>
+<li><a href="#motivation">Motivation</a></li>
+<li><a href="#concepts-1">Concepts</a></li>
+<li><a href="#requirements">Requirements</a></li>
+<li><a href="#implementation">Implementation</a></li>
+<li><a href="#reactive-data-structures">Reactive data structures</a></li>
+<li><a href="#channels">Channels</a><ul>
+<li><a href="#operations">Operations</a></li>
+<li><a href="#state-channels">State channels</a></li>
+<li><a href="#call-semantics">Call semantics</a></li>
+</ul></li>
+<li><a href="#buffers">Buffers</a></li>
+<li><a href="#dictionaries">Dictionaries</a></li>
+<li><a href="#sets">Sets</a></li>
+<li><a href="#binding-to-widgets">Binding to Widgets</a></li>
+<li><a href="#tests">Tests</a></li>
+</ul></li>
+<li><a href="#bindings">Bindings</a><ul>
+<li><a href="#bootstrap">Bootstrap</a><ul>
+<li><a href="#external-stylesheet">External stylesheet</a></li>
+<li><a href="#label">Label</a></li>
+<li><a href="#glyphicons">Glyphicons</a></li>
+<li><a href="#forms">Forms</a></li>
+<li><a href="#layout">Layout</a></li>
+<li><a href="#navigation">Navigation</a></li>
+<li><a href="#navigation-bar">Navigation bar</a></li>
+<li><a href="#alert">Alert</a></li>
+<li><a href="#progress-bar">Progress bar</a></li>
+<li><a href="#panel">Panel</a></li>
+<li><a href="#pagination">Pagination</a></li>
+<li><a href="#list-groups">List groups</a></li>
+<li><a href="#grids">Grids</a></li>
+<li><a href="#modal">Modal</a></li>
+<li><a href="#media">Media</a></li>
+<li><a href="#breadcrumb">Breadcrumb</a></li>
+<li><a href="#table">Table</a></li>
+<li><a href="#typeahead">Typeahead</a></li>
+</ul></li>
+<li><a href="#font-awesome-1">Font-Awesome</a></li>
+</ul></li>
+<li><a href="#developing">Developing</a><ul>
+<li><a href="#api">API</a></li>
+<li><a href="#compilation-1">Compilation</a></li>
+<li><a href="#releases">Releases</a></li>
+<li><a href="#manual">Manual</a></li>
+</ul></li>
+<li><a href="#changelog">Changelog</a><ul>
+<li><a href="#version-0.2">Version 0.2</a><ul>
+<li><a href="#general-work">General work</a></li>
+<li><a href="#event-propagation">Event propagation</a></li>
+<li><a href="#widgets-2">Widgets</a></li>
+<li><a href="#routing">Routing</a></li>
+<li><a href="#trivia">Trivia</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#support">Support</a></li>
+</ul>
+</nav>
+
+<p class="small"><strong>Abstract: </strong><em>Widok is a reactive web framework for the JVM and Scala.js. It enables you to develop interactive client-server applications entirely in Scala. The client code is transpiled to JavaScript, while sharing the same interfaces on the server. Abstractions such as <em>widgets</em> and reactive data structures allow for concise and reliable code. Widok ships native bindings for popular CSS frameworks which let you iterate faster.</em></p>
+
+<h1 id="introduction">Introduction</h1>
+<p>Widok is a reactive web framework for the JVM and Scala.js. Its key concepts are:</p>
+<ul>
+<li><strong>Pages:</strong> Widok enforces modularisation of your web application. You split your application into <em>pages</em>. A <em>router</em> watches the browser query and loads the respective page.</li>
+<li><strong>Widgets:</strong> The layout is specified in terms of composable widgets. Widgets are bound to dynamically changing values which are rendered on-the-fly in the browser.</li>
+<li><strong>Bindings:</strong> Widok ships bindings for CSS frameworks like Bootstrap and Font-Awesome.</li>
+<li><strong>Reactive programming:</strong> Reactive data structures, which implement a simple model of data propagation, are provided. Widok has reactive counterparts for variables, arrays, maps and sets. Instead of dealing with constant values, you specify the data flow as streams, on which you operate with higher-order functions like <code>map()</code> or <code>filter()</code>.</li>
+</ul>
+<h2 id="comparison">Comparison</h2>
+<p>In contrast to traditional web frameworks, a Widok application would implement the entire rendering logic and user interaction on the client-side. The sole purpose of the server would be to exchange data with the client. This approach leads to lower latencies and is more suitable for interactive applications.</p>
+<p>Instead of writing HTML templates and doing manual DOM manipulations, Widok advocates widgets which are inspired by traditional GUI development. Widgets are first-class objects, allowing you to return them in functions. This can be useful when rendering a data stream consisting of widgets, or when you want to display a different widget depending on the device the client is using.</p>
+<p>Another strength of Widok is that you can develop client-server applications entirely in Scala and CSS. Scala.js transpiles your code to JavaScript. Having only one implementation language reduces redundancy due to code sharing. This is especially useful for protocols. It also lets you develop safer web applications since you could use the same validation code on the client as on the server.</p>
+<p>Widok is fully supported by IntelliJ IDEA. As Scala is a statically typed language you can use your IDE for refactoring and tab completion, increasing your productivity. Similarly, many bugs can be already identified during compile-time. Browser source maps will help you pinpoint run-time errors in the original source code. Scala.js supports continuous compilation which lets you iterate faster.</p>
+<p>Finally, Widok is not necessarily bound to web applications. As it compiles to regular JavaScript code, you could develop <a href="http://iojs.org/">io.js</a> applications or even native user interfaces with <a href="http://nwjs.io/">NW.js</a>. The JVM build comprises the reactive library, so that you can use it on the server-side as well.</p>
+<h1 id="getting-started">Getting Started</h1>
+<p>This chapter will guide you through creating your first Widok project.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>To develop web applications with Widok the only dependency you will need is <a href="http://www.scala-sbt.org/">sbt</a>. Once installed, it will automatically fetch Scala.js and all libraries Widok depends on.</p>
+<p>You may also want to use an IDE for development. Widok is well-supported by <a href="https://www.jetbrains.com/idea/">IntelliJ IDEA</a> with the <a href="https://github.com/JetBrains/intellij-scala">Scala plugin</a>. The use of an IDE is recommended as the interfaces Widok provides are fully typed, which lets you do tab completion.</p>
+<h2 id="project-structure">Project structure</h2>
+<p>Your project will have the following structure:</p>
+<pre><code>├── application.html
+├── project
+│   ├── Build.scala
+│   ├── plugins.sbt
+├── src
+│   └── main
+│       └── scala
+│           └── example
+│               └── Application.scala</code></pre>
+<p>Create a directory for your project. Within your project folder, create a sub-directory <code>project</code> with the two files <code>plugins.sbt</code> and <code>Build.scala</code>:</p>
+<ul>
+<li><code>plugins.sbt</code> specifies sbt plug-ins, notably Scala.js</li>
+</ul>
+<pre class="sourceCode scala"><code class="sourceCode scala">logLevel := Level.<span class="fu">Warn</span>
+
+<span class="fu">addSbtPlugin</span>(<span class="st">&quot;org.scala-js&quot;</span> % <span class="st">&quot;sbt-scalajs&quot;</span> % <span class="st">&quot;0.6.0&quot;</span>)</code></pre>
+<ul>
+<li><code>Build.scala</code> is the build configuration of your project. The configuration itself is specified in Scala code, which allows for more flexibility. The chapter <a href="#build-process"><q>Build process</q></a> explains some of the possibilities in the web context.</li>
+</ul>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">import</span> sbt.<span class="fu">_</span>
+<span class="kw">import</span> sbt.<span class="fu">Keys</span>.<span class="fu">_</span>
+<span class="kw">import</span> org.<span class="fu">scalajs</span>.<span class="fu">sbtplugin</span>.<span class="fu">_</span>
+<span class="kw">import</span> org.<span class="fu">scalajs</span>.<span class="fu">sbtplugin</span>.<span class="fu">ScalaJSPlugin</span>.<span class="fu">autoImport</span>.<span class="fu">_</span>
+
+<span class="kw">object</span> Build <span class="kw">extends</span> sbt.<span class="fu">Build</span> {
+  <span class="kw">val</span> buildOrganisation = <span class="st">&quot;example&quot;</span>
+  <span class="kw">val</span> buildVersion = <span class="st">&quot;0.1-SNAPSHOT&quot;</span>
+  <span class="kw">val</span> buildScalaVersion = <span class="st">&quot;2.11.6&quot;</span>
+  <span class="kw">val</span> buildScalaOptions = Seq(
+    <span class="st">&quot;-unchecked&quot;</span>, <span class="st">&quot;-deprecation&quot;</span>
+  , <span class="st">&quot;-encoding&quot;</span>, <span class="st">&quot;utf8&quot;</span>
+  , <span class="st">&quot;-Xelide-below&quot;</span>, annotation.<span class="fu">elidable</span>.<span class="fu">ALL</span>.<span class="fu">toString</span>
+  )
+
+  <span class="kw">lazy</span> <span class="kw">val</span> main = <span class="fu">Project</span>(id = <span class="st">&quot;example&quot;</span>, base = <span class="fu">file</span>(<span class="st">&quot;.&quot;</span>))
+    .<span class="fu">enablePlugins</span>(ScalaJSPlugin)
+    .<span class="fu">settings</span>(
+      libraryDependencies ++= Seq(
+        <span class="st">&quot;io.github.widok&quot;</span> %%% <span class="st">&quot;widok&quot;</span> % <span class="st">&quot;0.2.0&quot;</span>
+      )
+    , organization := buildOrganisation
+    , version := buildVersion
+    , scalaVersion := buildScalaVersion
+    , scalacOptions := buildScalaOptions
+    , persistLauncher := <span class="kw">true</span>
+    )
+}</code></pre>
+<p>Your source code goes underneath <code>src/main/scala/example/</code>.</p>
+<h2 id="code">Code</h2>
+<p>Create a source file named <code>Main.scala</code> with the following contents:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">package</span> example
+
+<span class="kw">import</span> org.<span class="fu">widok</span>.<span class="fu">_</span>
+<span class="kw">import</span> org.<span class="fu">widok</span>.<span class="fu">bindings</span>.<span class="fu">HTML</span>
+
+<span class="kw">object</span> Main <span class="kw">extends</span> PageApplication {
+  <span class="kw">def</span> <span class="fu">view</span>() = <span class="fu">Inline</span>(
+    HTML.<span class="fu">Heading</span>.<span class="fu">Level1</span>(<span class="st">&quot;Welcome to Widok!&quot;</span>)
+  , HTML.<span class="fu">Paragraph</span>(<span class="st">&quot;This is your first application.&quot;</span>)
+  )
+
+  <span class="kw">def</span> <span class="fu">ready</span>() {
+    <span class="fu">log</span>(<span class="st">&quot;Page loaded.&quot;</span>)
+  }
+}</code></pre>
+<p>Finally, you need to create an HTML file <code>application.html</code> in the root directory. It references the compiled JavaScript sources:</p>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span>
+<span class="kw">&lt;html&gt;</span>
+  <span class="kw">&lt;head&gt;</span>
+    <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">&quot;utf-8&quot;</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;title&gt;</span>Widok example<span class="kw">&lt;/title&gt;</span>
+  <span class="kw">&lt;/head&gt;</span>
+  <span class="kw">&lt;body</span><span class="ot"> id=</span><span class="st">&quot;page&quot;</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;script</span>
+<span class="ot">      type=</span><span class="st">&quot;text/javascript&quot;</span>
+<span class="ot">      src=</span><span class="st">&quot;./target/scala-2.11/example-fastopt.js&quot;</span>
+    <span class="kw">&gt;&lt;/script&gt;</span>
+
+    <span class="kw">&lt;script</span>
+<span class="ot">      type=</span><span class="st">&quot;text/javascript&quot;</span>
+<span class="ot">      src=</span><span class="st">&quot;./target/scala-2.11/example-launcher.js&quot;</span>
+    <span class="kw">&gt;&lt;/script&gt;</span>
+  <span class="kw">&lt;/body&gt;</span>
+<span class="kw">&lt;/html&gt;</span></code></pre>
+<h2 id="compilation">Compilation</h2>
+<p>This is all you need for a minimal Widok project. To compile your application, run:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">sbt</span> fastOptJS</code></pre>
+<p>Now you can open <code>application.html</code> in your browser. The page should show a heading with a paragraph. Obviously, the Scala code you wrote translates to:</p>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;h1&gt;</span>Welcome to Widok!<span class="kw">&lt;/h1&gt;</span>
+<span class="kw">&lt;p&gt;</span>This is your first application.<span class="kw">&lt;/p&gt;</span></code></pre>
+<p>Upon page load this gets dynamically inserted into the node with the ID <code>page</code>. When you open up the browser’s web console, it will show the message you specified in <code>ready()</code>.</p>
+<h1 id="concepts">Concepts</h1>
+<p>In this chapter we will mention all key concepts of Widok. The following chapters will deal with these topics in detail.</p>
+<h2 id="basic-application">Basic application</h2>
+<p>Consider a one-file project consisting of:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">object</span> Main <span class="kw">extends</span> Application {
+  <span class="kw">def</span> <span class="fu">main</span>() {
+    <span class="fu">stub</span>()
+  }
+}</code></pre>
+<p>A global object of type <code>Application</code> defines the entry point of the application<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>. You could use methods from Widok’s <code>DOM</code> object to access and modify the DOM.</p>
+<p>Compile this application:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala">$ sbt fastOptJS</code></pre>
+<p>Open your <code>application.html</code> in the browser and it will print <code>stub</code> in the web console. The example doesn’t use any browser-related functionality. Therefore, it would also run under io.js.</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cat</span> target/scala-2.11/*js <span class="kw">|</span> <span class="kw">iojs</span>
+<span class="kw">stub</span></code></pre>
+<h2 id="single-page-applications">Single-page applications</h2>
+<p>The application from the <a href="#getting-started">previous chapter</a> roughly looked like this:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">package</span> example
+
+<span class="kw">import</span> org.<span class="fu">widok</span>.<span class="fu">_</span>
+
+<span class="kw">object</span> Main <span class="kw">extends</span> PageApplication {
+  <span class="kw">def</span> <span class="fu">view</span>() = <span class="fu">Inline</span>()
+  <span class="kw">def</span> <span class="fu">ready</span>() { }
+}</code></pre>
+<p>For a single-page application you need to declare an object which inherits from <code>PageApplication</code>, whereby Scala.js knows that it shall be the entry-point of the program.</p>
+<p>Furthermore, the two methods <code>view()</code> and <code>ready()</code> must be implemented. The views are rendered when the page is loaded. Afterwards, <code>ready()</code> gets called.</p>
+<blockquote>
+<p><strong>Note:</strong> The <code>Inline()</code> view is a container that groups multiple widgets without affecting the design<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>.</p>
+</blockquote>
+<h2 id="multi-page-applications">Multi-page applications</h2>
+<p>While for small applications a single-page approach may be sufficient, you should consider making use of the in-built router and split your application into multiple pages for better modularity:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">package</span> example
+
+<span class="kw">import</span> org.<span class="fu">widok</span>.<span class="fu">_</span>
+
+<span class="kw">object</span> Routes {
+  <span class="kw">val</span> main     = <span class="fu">Route</span>(<span class="st">&quot;/&quot;</span>           , pages.<span class="fu">Main</span>    )
+  <span class="kw">val</span> test     = <span class="fu">Route</span>(<span class="st">&quot;/test/:param&quot;</span>, pages.<span class="fu">Test</span>    )
+  <span class="kw">val</span> notFound = <span class="fu">Route</span>(<span class="st">&quot;/404&quot;</span>        , pages.<span class="fu">NotFound</span>)
+
+  <span class="kw">val</span> routes = Set(main, test, notFound)
+}
+
+<span class="kw">object</span> Main <span class="kw">extends</span> <span class="fu">RoutingApplication</span>(
+  Routes.<span class="fu">routes</span>
+, Routes.<span class="fu">notFound</span>
+)</code></pre>
+<p>A multi-page application must extend <code>RoutingApplication</code> which is passed a list of routes and a fallback route. Here, the <code>Routes</code> objects defines the available routes. The query part of a route can be parameterised by prefixing a colon. For instance, <code>param</code> is a named parameter for the route <code>test</code>. The router only matches strings. Further validations and conversions could be performed in the page itself.</p>
+<p>Create a new file for each page:</p>
+<ul>
+<li><code>pages/Main.scala</code></li>
+</ul>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">package</span> example.<span class="fu">pages</span>
+
+<span class="kw">import</span> org.<span class="fu">widok</span>.<span class="fu">_</span>
+<span class="kw">import</span> org.<span class="fu">widok</span>.<span class="fu">bindings</span>.<span class="fu">HTML</span>
+
+<span class="kw">import</span> example.<span class="fu">_</span>
+
+<span class="kw">case</span> <span class="kw">class</span> <span class="fu">Main</span>() <span class="kw">extends</span> Page {
+  <span class="kw">def</span> <span class="fu">view</span>() = HTML.<span class="fu">Anchor</span>(<span class="st">&quot;Link to second page&quot;</span>)
+    .<span class="fu">url</span>(Routes.<span class="fu">test</span>(<span class="st">&quot;param&quot;</span>, <span class="st">&quot;first page&quot;</span>))
+
+  <span class="kw">def</span> <span class="fu">ready</span>(route: InstantiatedRoute) {
+    <span class="fu">log</span>(s<span class="st">&quot;Page 'main' loaded with route '$route'&quot;</span>)
+  }
+
+  <span class="kw">override</span> <span class="kw">def</span> <span class="fu">destroy</span>() {
+    <span class="fu">log</span>(<span class="st">&quot;Page 'main' left&quot;</span>)
+  }
+}</code></pre>
+<p>Contrary to single-page applications, <code>ready()</code> needs one parameter which contains information about the chosen route and its parameters.</p>
+<p>This page uses <code>HTML.Anchor()</code> which is a widget representing a link. The target URL is set to an instantiated route, namely <code>test</code>. Every route can be instantiated, although all parameters according to the route specification must be provided. The <code>apply()</code> method of a route is overloaded. For only one route parameter, the first argument denotes the named parameter and the second its value. If a route has more than one parameter, a map with the values must be passed instead. Instantiating routes is to be preferred over links with hand-written paths. Referencing routes ensures during compile-time that no invalid routes are referred to. During runtime, assertions will verify whether all correct parameters were specified.</p>
+<p>When clicking the link, the router will notice this change and render the new route. The actual HTML file of the page is not reloaded, though.</p>
+<p>By default, <code>destroy()</code> is a stub, but may be overridden when navigating between routes requires resource management.</p>
+<ul>
+<li><code>pages/Test.scala</code></li>
+</ul>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">package</span> example.<span class="fu">pages</span>
+
+<span class="kw">import</span> org.<span class="fu">widok</span>.<span class="fu">_</span>
+
+<span class="kw">case</span> <span class="kw">class</span> <span class="fu">Test</span>() <span class="kw">extends</span> Page {
+  <span class="kw">val</span> query = Channel[String]()
+  <span class="kw">def</span> <span class="fu">view</span>() = <span class="fu">Inline</span>(<span class="st">&quot;Received parameter: &quot;</span>, query)
+
+  <span class="kw">def</span> <span class="fu">ready</span>(route: InstantiatedRoute) {
+    query := route.<span class="fu">args</span>(<span class="st">&quot;param&quot;</span>)
+  }
+}</code></pre>
+<p>Here, we are registering a channel and pass it the current value of the query parameter <code>param</code>. A channel can be considered as a stream you can send messages to. Each message is then multiplexed to the subscribers. <code>query</code> has one subscriber here. As it is used in <code>view()</code>, it is converted into a view. Whenever a new value is produced on <code>query</code> (using <code>:=</code>), it gets rendered automatically in the browser. If the user changes the query parameter of the current page, the router will detect this and re-render the page.</p>
+<ul>
+<li><code>pages/NotFound.scala</code></li>
+</ul>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">package</span> example.<span class="fu">pages</span>
+
+<span class="kw">import</span> org.<span class="fu">scalajs</span>.<span class="fu">dom</span>
+
+<span class="kw">import</span> org.<span class="fu">widok</span>.<span class="fu">_</span>
+<span class="kw">import</span> org.<span class="fu">widok</span>.<span class="fu">bindings</span>.<span class="fu">HTML</span>
+
+<span class="kw">import</span> example.<span class="fu">Routes</span>
+
+<span class="kw">case</span> <span class="kw">class</span> NotFound() <span class="kw">extends</span> Page {
+  <span class="kw">def</span> <span class="fu">view</span>() = HTML.<span class="fu">Heading</span>.<span class="fu">Level1</span>(<span class="st">&quot;Page not found&quot;</span>)
+
+  <span class="kw">def</span> <span class="fu">ready</span>(route: InstantiatedRoute) {
+    dom.<span class="fu">setTimeout</span>(() =&gt; Routes.<span class="fu">main</span>().<span class="fu">go</span>(), <span class="dv">2000</span>)
+  }
+}</code></pre>
+<p><code>NotFound</code> was set as a fall-back route. It is loaded when no other route matches or when the fall-back route is loaded explicitly. Here, we are showing how to call JavaScript functions using the <a href="https://github.com/scala-js/scala-js-dom">DOM bindings</a>. It redirects to the <code>main</code> page after two seconds by calling <code>go()</code> on the instantiated route.</p>
+<h2 id="pages">Pages</h2>
+<p>As in the multi-page application, it is advisable to put all pages in a package as to separate them from other parts of the application, like models, validators or partials<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>.</p>
+<p>When the page is loaded, Widok looks for the element with the ID <code>page</code> in the DOM and renders <code>view()</code> in this node. The entire contents is destroyed when the route changes.</p>
+<p><code>view()</code> must return the whole layout of the page. To prevent duplication among pages, partials should be defined. Common candidates for partials are navigation bars, panels or layout elements. But as partials are just regular functions returning a widget, they can contain logic and you may render different widgets depending on whether the user accesses the website on a mobile device or on a desktop.</p>
+<p>For instance, Bootstrap splits pages into header, body and footer. You could create a trait <code>CustomPage</code> that contains all shared elements like header and footer and requires you only to define <code>body()</code> in the pages.</p>
+<h2 id="widgets">Widgets</h2>
+<p>The most notable difference to the traditional approach is that instead of writing HTML code you are dealing with type-safe widgets. Widok provides widget bindings for HTML tags, and custom bindings for Bootstrap and Font-Awesome. It is possible to embed HTML code using the <code>HTML.Raw()</code> widget. You could even access DOM elements using <code>DOM.getElementById()</code> as in JavaScript. However, this is discouraged in Widok which provides better ways to interact with elements.</p>
+<h2 id="reactive-programming">Reactive programming</h2>
+<p>To showcase some of the capabilities of reactive programming for UI development, take the following example:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">package</span> example
+
+<span class="kw">import</span> org.<span class="fu">widok</span>.<span class="fu">_</span>
+<span class="kw">import</span> org.<span class="fu">widok</span>.<span class="fu">html</span>.<span class="fu">_</span>
+
+<span class="kw">object</span> App <span class="kw">extends</span> PageApplication {
+  <span class="kw">val</span> name = <span class="fu">Var</span>(<span class="st">&quot;&quot;</span>)
+  <span class="kw">val</span> hasName = name.<span class="fu">map</span>(_.<span class="fu">nonEmpty</span>)
+
+  <span class="kw">def</span> <span class="fu">view</span>() = <span class="fu">div</span>(
+    <span class="fu">h1</span>(<span class="st">&quot;Welcome to Widok!&quot;</span>)
+  , <span class="fu">p</span>(<span class="st">&quot;Please enter your name:&quot;</span>)
+
+  , <span class="fu">text</span>().<span class="fu">bind</span>(name)
+
+  , <span class="fu">p</span>(<span class="st">&quot;Hello, &quot;</span>, name)
+      .<span class="fu">show</span>(hasName)
+
+  , <span class="fu">button</span>(<span class="st">&quot;Change my name&quot;</span>)
+      .<span class="fu">onClick</span>(_ =&gt; name := <span class="st">&quot;tux&quot;</span>)
+      .<span class="fu">show</span>(name.<span class="fu">unequal</span>(<span class="st">&quot;tux&quot;</span>))
+
+  , <span class="fu">button</span>(<span class="st">&quot;Log out&quot;</span>)
+      .<span class="fu">onClick</span>(_ =&gt; name := <span class="st">&quot;&quot;</span>)
+      .<span class="fu">show</span>(hasName)
+  )
+
+  <span class="kw">def</span> <span class="fu">ready</span>() { }
+}</code></pre>
+<p>The first striking change from the previous examples is that we now use the HTML aliases (<code>import org.widok.html._</code>).</p>
+<p>More importantly, this example shows that widgets provide methods to interact with channels. For example, the method <code>bind()</code> on textual input fields realises two-way binding, i.e., every key stroke produces a new value on the channel and notifies all other subscribers.</p>
+<p>Another related method is <code>show()</code> which will only show a certain widget if the passed channel produces the value <code>true</code>.</p>
+<p><code>Var()</code> is a channel with an empty value as a default value and is bound to <code>name</code>. Well-known combinators such as <code>map()</code> and <code>filter()</code> are also defined on channels. In the example, <code>map()</code> is used for <code>hasName</code> such that the channel notifies its subscribers whenever <code>name</code> is updated.</p>
+<h1 id="build-process">Build process</h1>
+<p>The chapter <a href="#getting-started"><q>Getting Started</q></a> proposed a simple sbt configuration. sbt is a flexible build tool and can be extended with plug-ins and custom tasks. Some useful advice on using sbt for web development is given here.</p>
+<p>For more information on the build process, please refer to the <a href="http://www.scala-js.org/doc/sbt/run.html">Scala.js documentation</a>.</p>
+<h2 id="jdk">JDK</h2>
+<p>The <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Oracle JDK</a> leads to slightly shorter compilation times than <a href="http://openjdk.java.net/">OpenJDK</a>.</p>
+<p>With the default configuration, sbt tends to allocate a lot of memory, so that you may run into out-of-memory situations. This can be mitigated by limiting the heap size with the <code>JAVA_OPTS</code> environment variable:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">export</span> <span class="ot">JAVA_OPTS=</span><span class="st">&quot;</span><span class="ot">$JAVA_OPTS</span><span class="st"> \</span>
+<span class="st">        -XX:InitialHeapSize=128m \</span>
+<span class="st">        -XX:MaxHeapSize=512m \</span>
+<span class="st">        -XX:+CMSClassUnloadingEnabled&quot;</span>
+<span class="kw">export</span> <span class="ot">SBT_OPTS=</span><span class="st">&quot;</span><span class="ot">$JAVA_OPTS</span><span class="st">&quot;</span></code></pre>
+<h2 id="development-releases">Development releases</h2>
+<p>Code optimisations are time-consuming and usually negligible during development. To compile the project without optimisations, use the <code>fastOptJS</code> task:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">sbt</span> fastOptJS</code></pre>
+<p>This generates two files in <code>target/scala-2.11/</code>:</p>
+<ul>
+<li><code>$ProjectName-fastopt.js</code></li>
+<li><code>$ProjectName-launcher.js</code></li>
+</ul>
+<p>The former is the whole project including dependencies within a single JavaScript file, while the latter contains a call to the entry point. It is safe to concatenate these two files and ship them to the client.</p>
+<h2 id="production-releases">Production releases</h2>
+<p>Scala.js uses Google’s <a href="https://developers.google.com/closure/compiler/">Closure Compiler</a> to apply code optimisations. To create an optimised build, use the <code>fullOptJS</code> task:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">sbt</span> fullOptJS</code></pre>
+<p>You may want to add a constant to your sbt configuration to toggle compiler settings depending on whether you need a production or development release. For example, <code>-Xelidable-below</code> could be used to remove assertions from production releases for better performance.</p>
+<h3 id="additional-optimisations">Additional optimisations</h3>
+<p>The Scala.js compiler provides settings to fine-tune the build process.</p>
+<p>To further reduce the build size, class names could be replaced by an empty string. The semantics of a program should never rely on class names. This optimisation is therefore safe to set. However, if your want to retain some class names, you could define exceptions, for example for classes from a certain namespace.</p>
+<p>Another option is to enable unchecked <code>asInstanceOf</code> casts. A cast should always be well-defined. If this cannot be ensured, a manual <code>isInstanceOf</code> check needs to be performed anyway. Expecting an exception to be thrown is a suboptimal way of dealing with potentially undefined casts. Under this assumption, <code>asInstanceOf</code> casts should work if unchecked. Scala.js lets you change the semantics for the sake of better performance.</p>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">import</span> org.<span class="fu">scalajs</span>.<span class="fu">core</span>.<span class="fu">tools</span>.<span class="fu">sem</span>.<span class="fu">_</span>
+
+...
+
+      scalaJSSemantics ~= (_
+        .<span class="fu">withRuntimeClassName</span>(_ =&gt; <span class="st">&quot;&quot;</span>)
+        .<span class="fu">withAsInstanceOfs</span>(CheckedBehavior.<span class="fu">Unchecked</span>)
+      )</code></pre>
+<p>Since class names can be useful for debugging purposes and illegal casts may happen during development, these two options should only be set for production releases.</p>
+<h2 id="continuous-compilation">Continuous compilation</h2>
+<p>sbt can detect changes in source files and recompile only when needed. To do so, prefix <code>~</code> to your build task (either <code>fastOptJS</code> or <code>fullOptJS</code>), for example:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">sbt</span> ~fastOptJS</code></pre>
+<p>This leads to faster development cycles than executing <code>fastOptJS</code> on your own.</p>
+<h2 id="configure-paths">Configure paths</h2>
+<p>If the web server should point directly to the most recently built version, you do not need to copy over the generated files each time. Instead, the paths can be customised. A recommended application hierarchy is the following:</p>
+<ul>
+<li><code>web/index.html</code>: Self-written entry-point of the application</li>
+<li><code>web/js/</code>: Generated JavaScript files</li>
+<li><code>web/css/</code>: Generated CSS stylesheets</li>
+<li><code>web/fonts/</code>: A copy of all font files (for example, Bootstrap glyphicons or Font-Awesome)</li>
+</ul>
+<p>To do so, specify the paths in the build configuration as follows:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">val</span> outPath = <span class="kw">new</span> File(<span class="st">&quot;web&quot;</span>)
+<span class="kw">val</span> jsPath = outPath / <span class="st">&quot;js&quot;</span>
+<span class="kw">val</span> cssPath = outPath / <span class="st">&quot;css&quot;</span>
+<span class="kw">val</span> fontsPath = outPath / <span class="st">&quot;fonts&quot;</span></code></pre>
+<p>Scala.js’ output path can be remapped using:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala">  .<span class="fu">settings</span>(
+    ...
+    artifactPath <span class="fu">in</span> (Compile, packageScalaJSLauncher) :=
+      jsPath / <span class="st">&quot;launcher.js&quot;</span>
+  , artifactPath <span class="fu">in</span> (Compile, fastOptJS) :=
+      jsPath / <span class="st">&quot;application.js&quot;</span>
+  )</code></pre>
+<p>Make sure to also add the following three paths to your <code>.gitignore</code>:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">web/css/</span>
+<span class="kw">web/js/</span>
+<span class="kw">web/fonts/</span></code></pre>
+<h2 id="sbt-web">sbt-web</h2>
+<p>Many popular web libraries are published to Maven Central as regular <code>.jar</code> files, so-called <a href="http://www.webjars.org/">WebJars</a>. See the <a href="http://www.scala-js.org/doc/sbt/depending.html">official Scala.js documentation</a> on how to depend on these.</p>
+<p><a href="https://github.com/sbt/sbt-web">sbt-web</a> is an sbt plug-in to manage these WebJars and to produce web artifacts as part of the build process. To enable <code>sbt-web</code>, add two imports:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">import</span> com.<span class="fu">typesafe</span>.<span class="fu">sbt</span>.<span class="fu">web</span>.<span class="fu">SbtWeb</span>
+<span class="kw">import</span> com.<span class="fu">typesafe</span>.<span class="fu">sbt</span>.<span class="fu">web</span>.<span class="fu">Import</span>.<span class="fu">_</span></code></pre>
+<p>And enable the plug-in:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala">  .<span class="fu">enablePlugins</span>(SbtWeb)</code></pre>
+<p>For example, to download the <a href="https://github.com/twbs/bootstrap-sass">Sass version of the Bootstrap bindings</a> as well as Font-Awesome, add these two lines to <code>libraryDependencies</code>:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala">libraryDependencies ++= Seq(
+  ...
+  <span class="st">&quot;org.webjars&quot;</span> % <span class="st">&quot;bootstrap-sass&quot;</span> % <span class="st">&quot;3.3.1&quot;</span>
+, <span class="st">&quot;org.webjars&quot;</span> % <span class="st">&quot;font-awesome&quot;</span> % <span class="st">&quot;4.3.0-1&quot;</span>
+)</code></pre>
+<blockquote>
+<p><strong>Note:</strong> sbt-web is not necessary to use Bootstrap or Font-Awesome, albeit it facilitates the customisation and upgrading of web dependencies. The chapter <a href="#bindings"><q>Bindings</q></a> explains how to use a CDN instead.</p>
+</blockquote>
+<h3 id="sass">Sass</h3>
+<p><a href="http://sass-lang.com/">Sass</a> is a CSS dialect with useful extensions. One of its strengths is that you can modularise your stylesheet and store it in separate files. Since Bootstrap is available as Sass, the <a href="https://github.com/ShaggyYeti/sbt-sass">sbt-sass plug-in</a> for sbt-web lets you create one monolithic, minified CSS file for your whole application. You may find that the widgets Bootstrap provides are not sufficient for your purposes. Using Sass, you would not end up with additional CSS files that need to be included in your <code>application.html</code>, which in turn will increase load times.</p>
+<p>Assuming that you want to use Bootstrap and Font-Awesome in your application, create the directory <code>src/main/assets/</code> with the file <code>application.scss</code> containing:</p>
+<pre class="scss"><code>$icon-font-path: &quot;../fonts/&quot;;
+@import &quot;lib/bootstrap-sass/stylesheets/bootstrap.scss&quot;;
+
+$fa-font-path: &quot;../fonts/&quot;;
+@import &quot;lib/font-awesome/scss/font-awesome.scss&quot;;</code></pre>
+<p>Then, add to your <code>plugins.sbt</code>:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala">resolvers += Resolver.<span class="fu">url</span>(
+  <span class="st">&quot;GitHub repository&quot;</span>
+, <span class="fu">url</span>(<span class="st">&quot;http://shaggyyeti.github.io/releases&quot;</span>)
+)(Resolver.<span class="fu">ivyStylePatterns</span>)
+
+<span class="fu">addSbtPlugin</span>(<span class="st">&quot;default&quot;</span> % <span class="st">&quot;sbt-sass&quot;</span> % <span class="st">&quot;0.1.9&quot;</span>)</code></pre>
+<p>And configure the output path of the produced CSS files in your <code>Build.scala</code>:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala">resourceManaged in sass in Assets := cssPath</code></pre>
+<p>Finally, add to your <code>.gitignore</code>:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">.sass-cache/</span></code></pre>
+<p>sbt-sass requires that the official Sass compiler is installed on your system.</p>
+<h3 id="font-awesome">Font-Awesome</h3>
+<p>In order to automatically copy the Font-Awesome files to your configured path <code>fontsPath</code>, you can define a sbt-web task:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">val</span> copyFontsTask = {
+  <span class="kw">val</span> webJars = WebKeys.<span class="fu">webJarsDirectory</span> in Assets
+  webJars.<span class="fu">map</span> { path =&gt;
+    <span class="kw">val</span> fonts = path / <span class="st">&quot;lib&quot;</span> / <span class="st">&quot;font-awesome&quot;</span> / <span class="st">&quot;fonts&quot;</span>
+    fonts.<span class="fu">listFiles</span>().<span class="fu">map</span> { src =&gt;
+      <span class="kw">val</span> tgt = fontsPath / src.<span class="fu">getName</span>
+      IO.<span class="fu">copyFile</span>(src, tgt)
+      tgt
+    }.<span class="fu">toSeq</span>
+  }
+}.<span class="fu">dependsOn</span>(WebKeys.<span class="fu">webJars</span> in Assets)</code></pre>
+<p>And register it via:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala">sourceGenerators in Assets &lt;+= copyFontsTask</code></pre>
+<h3 id="artifacts">Artifacts</h3>
+<p>When you issue the sbt task <code>assets</code>, sbt-web will generate your web artifacts, like CSS files.</p>
+<h2 id="code-sharing">Code sharing</h2>
+<p>Scala.js provides a simple infrastructure to having separate sub-projects for JavaScript and JVM sources, which can share code. This is quite common for client-server applications which could have a common protocol specified in Scala code. You can work on your entire project in the IDE and easily jump between client and server code.</p>
+<p>Such projects are called <em>cross-projects</em> in Scala.js. You can find more information in the <a href="http://www.scala-js.org/doc/sbt/cross-building.html">official documentation</a>.</p>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">import</span> org.<span class="fu">scalajs</span>.<span class="fu">sbtplugin</span>.<span class="fu">cross</span>.<span class="fu">CrossProject</span>
+
+<span class="kw">object</span> Build <span class="kw">extends</span> sbt.<span class="fu">Build</span> {
+  <span class="kw">lazy</span> <span class="kw">val</span> crossProject =
+    <span class="fu">CrossProject</span>(
+      <span class="st">&quot;server&quot;</span>, <span class="st">&quot;client&quot;</span>, <span class="fu">file</span>(<span class="st">&quot;.&quot;</span>), CrossType.<span class="fu">Full</span>
+    )
+    .<span class="fu">settings</span>(
+      <span class="co">/* Shared settings */</span>
+    )
+    .<span class="fu">jsSettings</span>(
+      <span class="co">/* Scala.js settings */</span>
+    )
+    .<span class="fu">jvmSettings</span>(
+      <span class="co">/* JVM settings */</span>
+    )
+
+  <span class="kw">lazy</span> <span class="kw">val</span> js = crossProject.<span class="fu">js</span>
+  <span class="kw">lazy</span> <span class="kw">val</span> jvm = crossProject.<span class="fu">jvm</span>
+}</code></pre>
+<p>You will also need to move your current <code>src/</code> folder to <code>js/</code>. The JVM project goes underneath <code>jvm/src/main/scala/</code> and the shared source files underneath <code>shared/src/main/scala/</code>.</p>
+<h2 id="colours">Colours</h2>
+<p>Colours can be activated in sbt and Scala by setting two environment variables:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">export</span> <span class="ot">JAVA_OPTS=</span><span class="st">&quot;</span><span class="ot">$JAVA_OPTS</span><span class="st"> -Dscala.color&quot;</span>
+<span class="kw">export</span> <span class="ot">SBT_OPTS=</span><span class="st">&quot;</span><span class="ot">$JAVA_OPTS</span><span class="st">&quot;</span></code></pre>
+<h1 id="router">Router</h1>
+<p>When developing applications that consist of more than one page, a routing system becomes inevitable.</p>
+<p>The router observes the fragment identifier of the browser URL. For example, in <code>application.html#/page</code> the part after the hash mark denotes the fragment identifier, that is <code>/page</code>. The router is initialised with a set of known routes. A fallback route may also be specified.</p>
+<h2 id="interface">Interface</h2>
+<p>The router may be used as follows:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">object</span> Main <span class="kw">extends</span> Application {
+  <span class="kw">val</span> main = <span class="fu">Route</span>(<span class="st">&quot;/&quot;</span>, pages.<span class="fu">Main</span>)
+  <span class="kw">val</span> test = <span class="fu">Route</span>(<span class="st">&quot;/test/:param&quot;</span>, pages.<span class="fu">Test</span>)
+  <span class="kw">val</span> test2 = <span class="fu">Route</span>(<span class="st">&quot;/test/:param/:param2&quot;</span>, pages.<span class="fu">Test</span>)
+  <span class="kw">val</span> notFound = <span class="fu">Route</span>(<span class="st">&quot;/404&quot;</span>, pages.<span class="fu">NotFound</span>)
+
+  <span class="kw">val</span> routes = Set(main, test, notFound)
+
+  <span class="kw">def</span> <span class="fu">main</span>() {
+    <span class="kw">val</span> router = <span class="fu">Router</span>(enabled, fallback = Some(notFound))
+    router.<span class="fu">listen</span>()
+  }
+}</code></pre>
+<p><code>routes</code> denotes the set of enabled routes. It should also contain the <code>notFound</code> route. Otherwise, the page could not be displayed when <code>#/404</code> is loaded.</p>
+<h2 id="routes">Routes</h2>
+<p>To construct a new route, pass the path and its reference to <code>Route()</code>. Pages may be overloaded with different paths as above with <code>test</code> and <code>test2</code>.</p>
+<p>A path consists of <em>parts</em> which are separated by slashes. For instance, the <code>test</code> route above has two parts: <code>test</code> and <code>:param</code>. A part beginning with a colon is a <em>placeholder</em>. Its purpose is to match the respective value in the fragment identifier and to bind it to the placeholder name. Note that a placeholder always refers to the whole part.</p>
+<p>A route can be <em>instantiated</em> by calling it, setting all of its placeholders:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="co">// Zero parameters</span>
+<span class="kw">val</span> route: InstantiatedRoute = Main.<span class="fu">main</span>()
+
+<span class="co">// One parameter</span>
+<span class="kw">val</span> route = Main.<span class="fu">test</span>(<span class="st">&quot;param&quot;</span>, <span class="st">&quot;value&quot;</span>)
+
+<span class="co">// Multiple parameters</span>
+<span class="kw">val</span> route: InstantiatedRoute =
+  Main.<span class="fu">test2</span>(
+    Map(
+      <span class="st">&quot;param&quot;</span> -&gt; <span class="st">&quot;value&quot;</span>,
+      <span class="st">&quot;param2&quot;</span> -&gt; <span class="st">&quot;value2&quot;</span>
+    )
+  )
+
+<span class="co">// Redirect to `route`</span>
+route.<span class="fu">go</span>()</code></pre>
+<p>To query the instantiated parameters, access the <code>args</code> field in the first parameter passed to <code>ready()</code>.</p>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">case</span> <span class="kw">class</span> <span class="fu">Test</span>() <span class="kw">extends</span> Page {
+  ...
+  <span class="kw">def</span> <span class="fu">ready</span>(route: InstantiatedRoute) {
+    <span class="fu">log</span>(route.<span class="fu">args</span>(<span class="st">&quot;param&quot;</span>))
+
+    <span class="co">// Accessing optional parameters with get()</span>
+    <span class="co">// This returns an Option[String]</span>
+    <span class="fu">log</span>(route.<span class="fu">args</span>.<span class="fu">get</span>(<span class="st">&quot;param2&quot;</span>))
+  }
+}</code></pre>
+<h3 id="design-decisions">Design decisions</h3>
+<p>Due to its limitations, the router could be efficiently implemented. Matching string-only parts in routes allows for better reasoning than regular expressions. When the router is constructed, it sorts all routes by their length and checks whether there are any conflicts. Also, the restriction that each parameter must be named makes code more readable when referring to parameters of an instantiated route. If validation of parameters is desired, this must be done in <code>ready()</code>.</p>
+<h2 id="application-provider">Application provider</h2>
+<p>As the router defines usually the entry point of an application, Widok provides an application provider that enforces better separation:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">object</span> Routes {
+  <span class="kw">val</span> main = <span class="fu">Route</span>(<span class="st">&quot;/&quot;</span>, pages.<span class="fu">Main</span>)
+  ...
+  <span class="kw">val</span> notFound = <span class="fu">Route</span>(<span class="st">&quot;/404&quot;</span>, pages.<span class="fu">NotFound</span>)
+
+  <span class="kw">val</span> routes = Set(main, ..., notFound)
+}
+
+<span class="kw">object</span> Main <span class="kw">extends</span> <span class="fu">RoutingApplication</span>(
+  Routes.<span class="fu">routes</span>
+, Routes.<span class="fu">notFound</span>
+)</code></pre>
+<p>This is to be preferred when no further logic should be executed in the entry point prior to setting up the router.</p>
+<h1 id="widgets-1">Widgets</h1>
+<p>A widget is a type-safe abstraction for an element displayed by the browser. The entire page layout is described using widgets. Thus, widget instantiations can be nested. Furthermore, custom widgets can be defined for better code reuse. A custom widget is usually composed of other widgets, changing their attributes such as CSS tags.</p>
+<p>Instead of accessing DOM elements using <code>getElementById()</code>, a widget doesn’t have any ID by default. Instead, it maintains a reference to the DOM element. This way, widgets that may have the same ID cannot collide and no ill-defined type-casts may occur.</p>
+<p>Mutation methods on a widget return the instance. This allows to arbitrarily nest widgets and change their attributes by chaining method calls, without the need to store the widget in a local variable.</p>
+<h2 id="html">HTML</h2>
+<p>Widok provides widgets for many HTML elements. The bindings have a more intuitive naming than their HTML counterparts, although aliases were defined, too. The module the HTML widgets reside in is <code>org.widok.bindings.HTML</code>. If your project doesn’t define any conflicting types, it is safe to import the whole contents into the namespace.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong>Alias</strong></th>
+<th style="text-align: left;"><strong>Widget</strong></th>
+<th style="text-align: left;"><strong>Notes</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">section</td>
+<td style="text-align: left;">Section</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">header</td>
+<td style="text-align: left;">Header</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">footer</td>
+<td style="text-align: left;">Footer</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">nav</td>
+<td style="text-align: left;">Navigation</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">h1</td>
+<td style="text-align: left;">Heading.Level1</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">h2</td>
+<td style="text-align: left;">Heading.Level2</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">h3</td>
+<td style="text-align: left;">Heading.Level3</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">h4</td>
+<td style="text-align: left;">Heading.Level4</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">h5</td>
+<td style="text-align: left;">Heading.Level5</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">h6</td>
+<td style="text-align: left;">Heading.Level6</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">p</td>
+<td style="text-align: left;">Paragraph</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">b</td>
+<td style="text-align: left;">Text.Bold</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">strong</td>
+<td style="text-align: left;">Text.Bold</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">i</td>
+<td style="text-align: left;">Text.Italic</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">small</td>
+<td style="text-align: left;">Text.Small</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">br</td>
+<td style="text-align: left;">LineBreak</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">hr</td>
+<td style="text-align: left;">HorizontalLine</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">div</td>
+<td style="text-align: left;">Container.Generic</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">span</td>
+<td style="text-align: left;">Container.Inline</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">raw</td>
+<td style="text-align: left;">Raw</td>
+<td style="text-align: left;"><code>span</code> with <code>innerHTML</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">form</td>
+<td style="text-align: left;">Form</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">button</td>
+<td style="text-align: left;">Button</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">label</td>
+<td style="text-align: left;">Label</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">a</td>
+<td style="text-align: left;">Anchor</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">img</td>
+<td style="text-align: left;">Image</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">radio</td>
+<td style="text-align: left;">Input.Radio</td>
+<td style="text-align: left;"><code>input</code> with <code>type=&quot;radio&quot;</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">checkbox</td>
+<td style="text-align: left;">Input.Checkbox</td>
+<td style="text-align: left;"><code>input</code> with <code>type=&quot;checkbox&quot;</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">file</td>
+<td style="text-align: left;">Input.File</td>
+<td style="text-align: left;"><code>input</code> with <code>type=&quot;file&quot;</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">select</td>
+<td style="text-align: left;">Input.Select</td>
+<td style="text-align: left;"><code>input</code> with <code>type=&quot;select&quot;</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">text</td>
+<td style="text-align: left;">Input.Text</td>
+<td style="text-align: left;"><code>input</code> with <code>type=&quot;text&quot;</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">textarea</td>
+<td style="text-align: left;">Input.Textarea</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">password</td>
+<td style="text-align: left;">Input.Password</td>
+<td style="text-align: left;"><code>input</code> with <code>type=&quot;password&quot;</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">number</td>
+<td style="text-align: left;">Input.Number</td>
+<td style="text-align: left;"><code>input</code> with <code>type=&quot;number&quot;</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">option</td>
+<td style="text-align: left;">Input.Select.Option</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ul</td>
+<td style="text-align: left;">List.Unordered</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ol</td>
+<td style="text-align: left;">List.Ordered</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">li</td>
+<td style="text-align: left;">List.Item</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">table</td>
+<td style="text-align: left;">Table</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">thead</td>
+<td style="text-align: left;">Table.Head</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">th</td>
+<td style="text-align: left;">Table.HeadColumn</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">tbody</td>
+<td style="text-align: left;">Table.Body</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">tr</td>
+<td style="text-align: left;">Table.Row</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">td</td>
+<td style="text-align: left;">Table.Column</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">cursor</td>
+<td style="text-align: left;">Cursor</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="aliases">Aliases</h3>
+<p>By importing <code>org.widok.html._</code> you can use regular HTML tags instead of the more verbose notations.</p>
+<h2 id="usage">Usage</h2>
+<p>A widget inherits from the type <code>Widget</code>. Widgets are implemented as <code>case class</code>es and can therefore be used like regular function calls. The simplest widget is <code>Raw()</code> which allows to render HTML markup:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">val</span> widget = <span class="fu">Raw</span>(<span class="st">&quot;&lt;b&gt;&lt;i&gt;Text&lt;/i&gt;&lt;/b&gt;&quot;</span>)</code></pre>
+<p>This is equivalent to:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">val</span> widget = Text.<span class="fu">Bold</span>(
+  Text.<span class="fu">Italic</span>(<span class="st">&quot;Text&quot;</span>)
+)</code></pre>
+<p>Most widgets take children. If this is the case, child widgets are passed per convention with the constructor. Widget parameters are set using chainable method calls:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="fu">Anchor</span>(
+  Text.<span class="fu">Bold</span>(<span class="st">&quot;Wikipedia&quot;</span>)
+).<span class="fu">url</span>(<span class="st">&quot;http://en.wikipedia.org/&quot;</span>)
+ .<span class="fu">title</span>(<span class="st">&quot;en.wikipedia.org&quot;</span>)</code></pre>
+<h2 id="writing-custom-widgets">Writing custom widgets</h2>
+<p>Widgets should be designed with type-safety in mind. For example, the only children <code>List.Unordered()</code> accepts are instances of <code>List.Item</code>. When creating custom widgets, think of a class hierarchy which closely resembles the intended nesting. This will allow to catch usage errors during compile-time.</p>
+<p>A custom widget may be defined as follows:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">case</span> <span class="kw">class</span> Panel(contents: View*) <span class="kw">extends</span> Widget[Panel] {
+  <span class="kw">val</span> rendered = DOM.<span class="fu">createElement</span>(<span class="st">&quot;div&quot;</span>, contents)
+  <span class="fu">css</span>(<span class="st">&quot;panel&quot;</span>)
+  <span class="fu">css</span>(<span class="st">&quot;panel-default&quot;</span>)
+}</code></pre>
+<p>This corresponds to:</p>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;panel panel-default&quot;</span><span class="kw">&gt;</span>
+    ... rendered children ...
+<span class="kw">&lt;/div&gt;</span></code></pre>
+<p>If a custom widget doesn’t need to be used as a type, it is sufficient to define it as a function:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">def</span> Panel(contents: View*) = Container.<span class="fu">Generic</span>(contents: _*)
+  .<span class="fu">css</span>(<span class="st">&quot;panel&quot;</span>)
+  .<span class="fu">css</span>(<span class="st">&quot;panel-default&quot;</span>)</code></pre>
+<h2 id="binding-to-events">Binding to events</h2>
+<p>A widget provides functionality to interact with the DOM. Methods with the prefix <code>on*()</code> exist for all events and take a callback.</p>
+<p>To listen to JavaScript’s <code>onclick</code> and <code>ondblclick</code> events of a button, write:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala">Button(<span class="st">&quot;Click&quot;</span>)
+  .<span class="fu">onClick</span>(e =&gt; <span class="fu">println</span>(<span class="st">&quot;Click: &quot;</span> + e.<span class="fu">timeStamp</span>))
+  .<span class="fu">onDoubleClick</span>(e =&gt; <span class="fu">println</span>(<span class="st">&quot;Double click: &quot;</span> + e.<span class="fu">timeStamp</span>))</code></pre>
+<p>All DOM events are published as channels. A channel produces data which is passed on to its subscribers. The above is a shortcut for:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">val</span> btn = Button(<span class="st">&quot;Click&quot;</span>)
+btn.<span class="fu">click</span>.<span class="fu">attach</span>(...)
+btn.<span class="fu">doubleClick</span>.<span class="fu">attach</span>(...)</code></pre>
+<p>This allows for an event to have multiple subscribers. This is important in web applications where data gets propagated to various layers of the application. For example, consider a shopping cart where the user updates the quantity of a certain product. At the same time the header needs to get updated with the newly calculated price. Making the DOM events available as streams widens the range of possibilities. As <code>click</code> is a stream of events, we could decide to take into account only the first event:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala">btn.<span class="fu">click</span>.<span class="fu">head</span>.<span class="fu">attach</span>(e =&gt; <span class="fu">println</span>(e.<span class="fu">timeStamp</span>))</code></pre>
+<p>Another prominent use case of channels are dynamic changes of widgets, such as the visibility:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala">HTML.<span class="fu">Container</span>.<span class="fu">Generic</span>(<span class="st">&quot;Button clicked&quot;</span>)
+  .<span class="fu">show</span>(btn.<span class="fu">click</span>.<span class="fu">head</span>.<span class="fu">map</span>(_ =&gt; <span class="kw">false</span>))</code></pre>
+<p><code>show()</code> expects a Boolean channel. Depending on the values that are sent to the channel a widget is shown or not. Here, the widget is hidden as soon as we click the button.</p>
+<p>Data propagation mechanisms are explained in more detail in the next chapter <a href="#reactive-programming"><q>Reactive programming</q></a>.</p>
+<h2 id="composed-widgets">Composed widgets</h2>
+<p>Widok provides a couple of composed widgets without external rendering dependencies. They are defined in the package <code>org.widok.widgets</code>:</p>
+<ul>
+<li><code>LoremIpsum</code>: Prints Lorem Ipsum as a paragraph</li>
+<li><code>Placeholder</code>: Generates placeholder images on-the-fly</li>
+</ul>
+<h2 id="implicits">Implicits</h2>
+<p>Widok defines a couple of implicits to make your code more concise. For example, if there is only one element you may drop the <code>Inline()</code> and write:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">def</span> <span class="fu">view</span>() = HTML.<span class="fu">Paragraph</span>(<span class="st">&quot;Litwo! Ojczyzno moja!&quot;</span>)</code></pre>
+<p>Instead of:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">def</span> <span class="fu">view</span>() = <span class="fu">Inline</span>(HTML.<span class="fu">Paragraph</span>(<span class="st">&quot;Litwo! Ojczyzno moja!&quot;</span>))</code></pre>
+<p>Another implicit is evaluated here, which converts the string into a widget. There are also implicits to render buffers and channels.</p>
+<h1 id="reactive-programming-1">Reactive programming</h1>
+<h2 id="motivation">Motivation</h2>
+<p>User interfaces are heavily data-driven. Values do not only need to be displayed once, but continuously modified as the user interacts with the interface. Interactivity requires data dependencies which ultimately lead to deeply intertwined code. Imperative code in particular is prone to this shortcoming since dependencies are hard to express. As web applications are increasingly more interactive, a flow-driven approach is desirable. Focussing on flows, the essence of the program will be to specify the data dependencies and how values propagate to the user interface and back.</p>
+<p>To tackle this issue, Widok follows a reactive approach. Consider an application to visualise stock market data. You are listening to a real-time stream producing values. Then, you want to display only the most current stock price to the user. This is solved by creating a <q>container</q> which is bound to a DOM node. Whenever you feed a new stock price to it, an atomic update takes place in the browser, only changing the value of the associated DOM node.</p>
+<p>Another example is a monitoring service which allows you to control on-the-fly the log level of a web application. A select box will list all possible log levels, like <code>debug</code> or <code>critical</code>. When the page is first loaded, it obtains the current log level from the server. Changing its value, however, must back-propagate and send the selection to the server. All other clients that are connected are notified of the change as well.</p>
+<p>For a simple application that illustrates client-side data propagation, see our <a href="https://github.com/widok/todomvc">TodoMVC implementation</a>.</p>
+<h2 id="concepts-1">Concepts</h2>
+<p>Reactive programming is a paradigm that focuses on:</p>
+<ol type="a">
+<li>propagation of data, specifically changes, and</li>
+<li>data flow.</li>
+</ol>
+<p>Concretely, a data structure is said to be <em>reactive</em> (or <em>streaming</em>) if it models its state as streams. It does this by defining change objects (<em>deltas</em>) and mapping its operations onto these. The published stream is read-only and can be subscribed. If the stream does not have any subscribers, the state would not get persisted and is lost.</p>
+<blockquote>
+<p><strong>Example:</strong> A reactive list implementation could map all its operations like <code>clear()</code> or <code>insertAfter()</code> on the two delta types <code>Insert</code> and <code>Delete</code>. A subscriber can interpret the deltas and persist the computed list in an in-memory buffer.</p>
+</blockquote>
+<p>Another property of a reactive data structure is that it does not only stream deltas, but also state observations. Sticking to the reactive list example, the deltas could allow streaming observations on the list’s inherent properties — one being the length, another the existence of a certain element, i.e. <code>contains(value)</code>.</p>
+<p>Finally, a <em>mutable</em> reactive data structure is an extension with the sole difference that it maintains an internal state which always represents the computed result after a delta was received. This is a hybrid solution bridging mutable object-oriented objects with reactive data structures. The mutable variant of our reactive list could send its current state when a subscriber is registering. This ultimately leads to better legibility of code as subscribers can register at any point without caring whether the expected data has been propagated already. The second reason is that otherwise we would need multiple instances of mutual objects that interpret the deltas. This is often undesired as having multiple such instances incurs a memory overhead.</p>
+<p>To recap, a reactive data structure has four layers:</p>
+<ul>
+<li><strong>State:</strong> interpretation of the delta stream and <q>converting</q> it into a mutable object</li>
+<li><strong>Mutation operations:</strong> functions to produce deltas on the stream<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a></li>
+<li><strong>Polling operations:</strong> blocking functions to query the state</li>
+<li><strong>Streaming operations:</strong> publish the state changes as a stream</li>
+</ul>
+<p>Obviously, the first three layers are the very foundation of object-orientation. It is different in that a) modifications are encoded as deltas and b) there are streaming operations.</p>
+<p>For now we just covered the first component of reactive programming: data propagation. The second cornerstone, data flow, is equally important, though. Streams describe data flow in terms of dependencies. Considering you want to plot a line as a graph using the formula <span class="math"><em>y</em> = <em>m</em><em>x</em> + <em>b</em></span> and the user provides the values for <span class="math"><em>m</em></span> and <span class="math"><em>b</em></span>, then you would wrap these inputs in channels and express the dependencies using combinators<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a>:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">val</span> m = Opt[Int]()
+<span class="kw">val</span> b = Opt[Int]()
+
+<span class="co">// Produces when user provided `m` and `b`</span>
+<span class="kw">val</span> mAndB: ReadChannel[(Int, Int)] = m.<span class="fu">combine</span>(b)
+
+<span class="co">// Function channel to calculate `y` for current input</span>
+<span class="kw">val</span> y: ReadChannel[Int =&gt; Int] =
+  mAndB.<span class="fu">map</span> { <span class="kw">case</span> (m, b) =&gt;
+    (x: Int) =&gt; m * x + b
+  }</code></pre>
+<p>The user could listen to <code>y</code> and whenever it receives a new function, it can just call it for all the <code>x</code> in the interval of the shown graph. The example shows that messages in streams are not bound to data objects and even immutable functions could be passed around.</p>
+<p>The data propagation is illustrated by the following diagram:</p>
+<figure>
+<embed src="data:application/pdf;base64,JVBERi0xLjQKMSAwIG9iago8PAovVGl0bGUgKP7/KQovQ3JlYXRvciAo/v8pCi9Qcm9kdWNlciAo/v8AUQB0ACAANAAuADgALgA0ACAAXCgAQwBcKQAgADIAMAAxADEAIABOAG8AawBpAGEAIABDAG8AcgBwAG8AcgBhAHQAaQBvAG4AIABhAG4AZAAvAG8AcgAgAGkAdABzACAAcwB1AGIAcwBpAGQAaQBhAHIAeQBcKAAtAGkAZQBzAFwpKQovQ3JlYXRpb25EYXRlIChEOjIwMTUwMjA0MDg1NjI3LTA2JzAwJykKPj4KZW5kb2JqCjMgMCBvYmoKPDwKL1R5cGUgL0V4dEdTdGF0ZQovU0EgdHJ1ZQovU00gMC4wMgovY2EgMS4wCi9DQSAxLjAKL0FJUyBmYWxzZQovU01hc2sgL05vbmU+PgplbmRvYmoKNCAwIG9iagpbL1BhdHRlcm4gL0RldmljZVJHQl0KZW5kb2JqCjYgMCBvYmoKPDwKL1R5cGUgL0NhdGFsb2cKL1BhZ2VzIDIgMCBSCj4+CmVuZG9iago1IDAgb2JqCjw8Ci9UeXBlIC9QYWdlCi9QYXJlbnQgMiAwIFIKL0NvbnRlbnRzIDcgMCBSCi9SZXNvdXJjZXMgOSAwIFIKL0Fubm90cyAxMCAwIFIKL01lZGlhQm94IFswIDAgMTEwIDg1XQo+PgplbmRvYmoKOSAwIG9iago8PAovQ29sb3JTcGFjZSA8PAovUENTcCA0IDAgUgovQ1NwIC9EZXZpY2VSR0IKL0NTcGcgL0RldmljZUdyYXkKPj4KL0V4dEdTdGF0ZSA8PAovR1NhIDMgMCBSCj4+Ci9QYXR0ZXJuIDw8Cj4+Ci9Gb250IDw8Cj4+Ci9YT2JqZWN0IDw8Cj4+Cj4+CmVuZG9iagoxMCAwIG9iagpbIF0KZW5kb2JqCjcgMCBvYmoKPDwKL0xlbmd0aCA4IDAgUgovRmlsdGVyIC9GbGF0ZURlY29kZQo+PgpzdHJlYW0KeJztvU2PJrmSpbfPX5HrARTt/CbXvRCghYBGL7QQtBBSGjUGkQO1ZqG/r/Mc8zdeMiqiVD1dVbfydlZd3Mw45UGnk0ajfds//I///L9//b/+29d/+Md//r+/frv//Md//pK+Xvr3f+CP2b5++/7lX7/+65d/+vJP+n/+/Ncvj1+4/O9/+/Zfv/xDDPUlkH/+x/9Zf/t/v+av/5N++i9f/9f/TX/8H/cQPPD9S0r8+eo/Z32Zuc1xdQG/+JGn/uXL//Kfvv5Xvfl6aXXkXvqMSb7/WZP9757c87uS/91/9Te9mT/ypV9t5ev/839++c988B8853/ngt6/eq2X2vIoPUZ4/jjzyzVXaznHQOePf+LO/Nroub/M1Fa+6td0vZQ1r2utv4tV/fjLvn8p82W2NnI68NcDXy/jSnXlJnwf5zN8H+c3beofs+w/2Fb/PN0/3un+W35NXy/tynWO9hch4N+NRj7+su9fxnpZ11XXib8e+M6T9nE+w//NvOqPWfYfbKt/8qof73T/Lb+maPGvvGa7vpb+0uOfvwsa+fjLvn/p42X2q6/edvx1x2t7WcGUkLee43yGH+P8JhL9Y5b9B9vqn7zqxzvdf8uvqVOiQq999K89vcx6jdX/Pmjk4y/7/qXNF6t6Ze34646P9JJqzWMyu22cz/BjnN9Eon/Msv9gW/2TV/14p/uP37O/NFX8LTfz54H4KxpF/iqr+tPk+Vff6p+n+8c73X9fRpG/Co38NHn+1bf6J6/68U7335dR5K9CIz9Nnn/1rf7Jq3680/33ZRT5q9DIT5PnX32rf/KqH+90/zR5/jR5/sUPxOfxt6m/1DRWuurX/jgNWR9V14s1Dl3pG64rQfy+X1JH+o63/BJz1YXwsipwXTu6XspVqpZRKsyXDc/XCyMkq987nl9SazWX9nV7Yy4vsRH16za/Df22f8+Ga1fay9UkoIy546m8eD/K3N+4o8/5aewnvn3P645vX7+9cVupj9f7mwjhP/9Wan/udtJuX+dul+trytIc/Y/2caX959cvq7xUvfZKB77a219TfWmprbXGgQ7NcftZn/q6/1yvt2G3N9TtDcdP35hn3eeVh17b9fex4/nDN+RjHt++5GOer8fPz6/Z3rB9+ble7MM//zjWx78K+/oP5Vv45X/Mz//4aykc//T/k+JRNOucx+gm0Fp6aaWwiunlWqW11nf89R2+chliVIFncaeRGvhodY6xvgotTb+cTPC9pNVGBa1dWyoJn2PQ6loTNipc8JjFY9Rcmx7n6TlSXz2DlraKuN3XIs6ZSu5p7qjG0A+zz1X6u6f7Na6Z4itzH0UvETpGmRrE8+ipJt0CHmP2MfXWmPUs0LHQpTVY44ovTH2k8rWUl0vf3brRdaWSCmxLeGqz58vfONKQ8Oeni5avZH9LmynNNkHF1etcflbkV/sqMYbWo9cR66HV1RHhaTH4pGkfX1hfrt4vzfDdeogXSVGq63r39Kya24wv1wqUqXno8rim/oPfN5uWfHg9hOsmzNrQxOeuJK2bp1MtLWtphOZ5jV7TO7TNWnLMY8PbywxpGLrR/KpentPnuHm7Xpp+gWdt2oShVj3S+9ISM8O1LlEoaBm56PONJpGiUK9JbmO1mYOGJ/vH09qOOi6vyZxNeGe1taazB00+UO/NyDrt+f3TreS0YgVXT2lc3jExhS7uwDxSyhIgZoyRr8Yz/hZtdNFBgXJy0T3vL2z6PgkI79A5snhLu+nsgR/rp20tXf+7PsdFXhomjfwLvGjrr+wToqmO2ryuWZ+riw1USNLBiO/RYdPOx9kTwaY4T6utq+TF01myjGjQK6Vz5ZOQtDy5tavtqHnAqFVXY3r3dKs93xxj9VKuaT5S+hBHN10mFj72RsLb1Ict4+VK18jmIyKMJd7gL7/0m9qFHdUR0uGbdcYYb/ixfhu//Azf+aVErP/051zSx4XwT3/cjZF1VSeRpLZWf9XnZwSd7xamiphKOfDXA9em67DpRIJv43yGi6BE/7Bc4fMlDd0as3+OS0JOeUqaeDfO5/hznv8C/eriEteu+4y+c8YkUV+jXjsOvxCJT5FnRofQBTPNWUe6eu4NVDdH6xbjxf9gFl0XmlSBeolSJYgIbWXoPtUYGk4ErsffoWvo/PWbh77hoj3xL4lGXz3ydYn/QEdNV5+Ogedx1ZxEhNoA2JAOUvC+VGcoNkOfm7PYqW+gIdno0tNTpyCviYVVl9/saYjZb6jPxpzzmmKa+9OSABLrl2LkVaYOsc5F1/z5LOahU3nziksHNrU+B7PuuS5YmDZk6lt0WfoLl66dMQ5U67H0rZk1PXHcG5nbVCNLkEzI7AU6ab1UUJ2qPtlDbbNudGQLf0sRu1kSS9jFYqHV3ElcZumG2Hf8Q/r4FpRjkSJ7dDHVKoUMykG/kxgTyuUDh8eVWXU1gupumzWFVKRlEF8y5ehrSs83JypVokn298RV6O/RRcy9lM239P72DtV1yCmJ1X7D24t+X2N4xy4dBQlt3oM6RguOWHUoJAZ4x9pDWWTW2sZxmaL0Vf0SIfKF2uA0Y9clXXDdej2GJIa2o3HjZbE5vWZ/WuxYEh4XKCNniDVZotExqjflXBI1503BZUpUY/W6X6MjwdOtSXZhb7rEGBFtOlGEmDxRkkMqeuA6EGK30p4tL2iJbqVfJKTlq5YAuJhjt3TctXTjIZ2t1mO/JH6IBbSv/sLO5Xjs+If0YcoZkoU7cgcz6dDwhSdP+EQjkljGDKuE6yUpYL5wXqWjMEPdjtzYoBIYc9OFvaHf8OKJyu3S258W/6sSw9F0tcTtknRjb4qOKb5f0KLD2xIzlAZ8iVKv5fnp3OjTrBfr1l8tWy/WjMUH0zt0avcgAI/xhnfJt2LErOviIr/EgtjfS8IwC1/wQHOVm3IkFk+ds/iWJFlJXw+u5dIHVH+5hIHMqZ4I4pI9BqgY0Uqj7Og31nTVIa4yjqdFiNouvZSRxcqmth1UDEms0tQHtx45xxjoJXhSmYcYdpIgLvTC7tJ9CsTxpdxk3FLSjgZC9HYJaowNh/F2nStMGycuguOLPYrkIQR0OJdE6nGPrSuPS0SopC5tYrnH1hCz+PZskkYrp4ODoqsjt6DVUlP3GDrnScKk0SqGk+75NbT35DF0V2mXOk+Lwpr3S/evVnGyA9rQpvWLW/CBeowi5arN693TkpGkWHjWOsNNiw0qNiOZPlDt3Jz3GLoAJId61qJBMQNufPZgwA0KfHgWyK8E/naWPsOfZ+z1F6dv1ThE3w9cL9PZluAbI+liQcQ1dWaJxjcFdWTPe5913wQqEtTyewypZvoQU5BIb2RJe4FLJ72mz3AuOqrT6EDq19yF6iiuHhT0QD2GznKpY757Gv6Wis+IdkqPTE6U9Jreqyk2SzW6rps7iCLF/42LfCXI+lRWCUcrhTShfatoHwd6VQvgMcYbLuFEJKQP/rqP3BCSJPakYx5SPznXwc+3WWt3dDu0HCe7XmIZloHqbDrw5n+ltTq5l5+ox9DvVbb1fFpXlMQlczqNmnXXeV+unGeL910pc4J9sqFBjjm4TkDi5GiLKotmVMqGDrbP+wd0Az+vuiXFTNoKGpRSJx6CaRuZqfUcUvADr4gRq2MfAe1aqWVbpNhiGoFC9WOxUpW7VjLM5XOpW1RaTudp8RXp1kbxi+Y+3qG6mjD/xhgbLtbfJDt8PUcW00uayDEP8RLJWbmz6/usxXu0hNJivu5fKD4lIU3n+Ou+Hk/UY/QqCm7j3dOtXqOEaXwbudrUvX4xj6L1SuWctdDcpd2fX3ig23oc+NvqHSO/rfQ2j2Nftllvu7h94bHjH9CHKUev93V43OLfD5wbR2wmw9V2fOpW1VdKTvPecC0tULETccnkt+o+ufLYdSHPHNFN329dSBy7Ts/80q2U4dL2eEiu79zuOsltlAP17V5QvZGPjqe1ehhZQEcrvmaQJlKV+OZnJT7p6OXgI7p3FwEcwpu2rCNbLhZIrLKAVrHKhix1oKKPInHqHuOJi0I6PAoUM0yztpd03eRApSZJ7LuMwpfyLalcl4STbFVE+96l3XjWYgxzedYR8xnSzuiY4nbUY2QpFG2Od0+LzmxaBtUGiQfZv6DTiFEFVBJ16/eaChTzjbFh7yJQdqByB/vpJIY21gTVGkgB8NpJeJDEnGMMsTDdk8Yl7qG58PTS1TljdjpJFTsFO17QCvqOmj60SqWN/u5pLnwEMNDSxchN2eKNFtfYlynGG98ifE1UQOO6lbnQOWGaaApKyBy7ZurV5Fin2BetertPusQQMVzT+pLaoN31eRTjXXDyKXFIWnLu71Dtt5Sndo/xwBu3wci2XJ/4BTPH88PJyBX7D7eVlGCJT57fhA6N6tjYZXFzIiiu73cKqK4rbDncP5ILuMi9HvquGqhUlTLv+eV2e6AqBnId0VjrhZ4cN54mLRHWaBrYx3fUY1zacISB/WntOfxp3SPPPoL2tNJaNd9hTbKu7r6gm8G3hOahvW/Mw+u0tGNXTzt/ev2EbyFdVWlIPlnW5tltLR4cDVxXNHaMjgaiq0dfWtAvp/UpSR5ic006WUW5FfcVoWMlK/qiYc5VzbcLd/uAHFdhDMQ7G3FBi/gSZFcbIos47dxRjdFwqOp+6++ebphqLsvy6DBsoNChObdhVPvLa2IMCQcFNqH5ifhRX79WfZaIUUorqDZ4IagLTeJVsAOhEuuwhjCGftDWW17qdgVIyWJlJS2LDDi2fDs233ts8U2pKZ6fBBndJsxvXhzJGdq57qCZY34aIeQogkCXxGIHgYqXiuTrrglp9YY4xnVqU15rib9lwf+2p7XZui3wWoRGdqHLV0zWZZrfokJJc7D1QLjO0ELBYP100S5OCGb55AvaVqAsPXO+Q81/ggtseGO/RuVMFth6LqPGSRUdV4+sXdScjIpHicauGGOOC5NF2Iw0qWEq01dlXAmm4VqwQFScmOKbV91Rr6m0o7VSO55uouolRSxGTli/q8NqLx3VkGN1I0k3SLHnyTdX8ulbYtvIDBslSK4U19RVfqDPc/Ttk/P1y5OXs1ZtWQrVY9IySm87/mpc52AGT8LGIzbN3LWTsFXLvgs/ngOFUR9bSsEDdTreVkW/uPIMbpfEMIPSOAnDI0uiXzB3TqTUHVtJtSpJZ6KWoDQJL9pwj405VGtrutQlWa6w1gzNZHrPpF32lNuOBmeoulXb9e7pJCJZMQ9xDkkFppIlAe1KwV2lHlzzphJRsLY+dIQiVUp/ZVXr0hB+eor5jBjjg7VGomsXXFrSjnmXrjhEVyIfkYLE1ZfPO9ObUCzCE9yjBTdq0vwKqAijltBEpeOX0N4qwszSm+L0LcSaizgzDbZsu9tO6sS6i6363bn2D8v3wvY0Gk/Jq9znWtc0OzZevF9hf9Fhv3D1mo6XdiwFx9Ud3cc0j5JUKSk4eDl8bpUD1bGQmCflMcbYcDExyaw+C0ukVVLoi5LFKpxrcNNea907puNmO27FnJi5hH36BqYTr0fCqn0d9jKhyG2Iy4e9rCKCSXrmFGxPI8zoFki23MPhJSyASs3XqfSNr5NTWrrHEAXnHDdzmRN+9ZUdl9yTQppooiFSLE506m6QyEqo0oEjK4zmeaCR6NxYTkkoIqYP8ReLfKB6NRd0zAMrZLctLlVsKp41clvKfhofsi4Nf8s14UE76jF0kKo9C8fTBcPN9DzENBvmN6EZH3Cgl1QNMeKbTscSZw9NuetcVgdSceZbv/cWi0k2ip6wQooSUx2PNZVmpyGDs4gJaXyevrT7M2QunbKBIVt7i+ids09/5oyGrkj0h+6f4CEZdwi6ImKjiGWF/wWmloyK7yzbYp6ox4Dv99bfPX1pu60rVlhgw/Ygepz47sttkQjTjulUUvS46VSXIxoJTyNl5ceaSsJd71GtuJa6xxhvOPITVtTra4xsZzHcRvIbyobnUSwiIEPgplrpPvtT0w7LEvSLIFixN2nRkm2ykqgSDhNWSfdWDvvWA73PS8bSejy90Qfy0+gwXaGaxkrhVZBUYMHTY4h2u21/HWasO6aZF0oBuiWlgRCBXCBa14aueLb4TPY4Lx/wWe7Bhs8CK9xtkwhD5fcDL+gT18pXBAPizMjQw2f4k6pej3E+w5FadWpzfYdrFSSIS04g2FBXZUvV66vZSwqboKgaKzwr4sIXQQ/fGEPzgrGYE+uuq2IJmqHEP/GdkLuGTZagKeTJHY1gSFwKNb17WkKV5uG7RhJaxaTZCJjRqWwhUy98ZTPGaHhlWon7yo4Jnm4azr4tTOW94NVm/ZCj47biIr6sawj39Xx7KW881puPTDETnX7d3B5bvNd8G2KXOpg8P13brS/Pb3SpPCXF2OJ56baRrsuKttcJ/hHyqT5FMkT2WouUr5jHA/Vad5xisQfb003nK8c3av4ZDa6hR6Z6hWdVd4f+uWIMnTNoyfOTfMTNCarXEYNiK7COi/giYae6Sa44f60JczSRcDGKrp9iPRAUTDcX3rvmL5TsrBOaDrRze+g3yz3GAz9o9RIR8ff+azjXDSZT4w2Vp5vmCc5D+hXKQvV5xS2pW0ZvFaojP4iS4UZlONuNmQvXa/cN3Gcl8sZrIt5YwkeOBijWBYoJF7EnO5qjdt8szbar5hUsOJhE6T41eHN7eEsI1cWnyT5qcUp4GB584Nsn/MGcgwCosUZY756xAA1ZFAdqP6MWdhzL1mVHyesxzuf4MzpB46ADjev6HN+jH/ZxPsP3ef7N4lH+tOoI+a+cZvB7Tu6vmwiQ/5bxyX+7tIY9o21Pa1i+sUlVPNMaVhG7XR2L6Yaveuc1pj2wf0OPtIYNP9IadvyZZLC9cUtI2OZ3pDVs33OkNTQCecT0r7LjDbuUSe9IpNjQPa1hw4+0hg3fkzqeb9wTQD5c798vrSGdUfs6a32eiQ1Se/GmSyrdcd0n99/3VIAd5U7ffnZiw/bzlnawvWFLUWAiR2ZDOlMY4AP3m48HJa999I5rnwmD7TN9PX7evuf5hv3bzzX7Q3Mb/nIFKn43jvwfqhbJHxapOgq2R+mR+WtyxjCePVax2FmEdX7DXw8c8alInK+Bi48OLMzkA8wpbXR8HZLItAw4TJ09IMlU8v6wyXHU6vhlib5kP+gYjGoptizHO5cpZguLczS7WLKflo7XunRloVKxWo40oQeqMRoeR6J7jqfxV+SVI+a8Eh6qTRLqSKfINMDIPWwzHhgM9HzETF8E0klxGlijZ159Rsy5OANp1huKpD/4mhhjwyOGq371yNKKJN6ShSZtPGnBmMd6i+/XUksVyvEt7bY9EkctPqR/eToRIZIddb3E0EeK9RB15zJ21GtaC17B8u5pfZ10Uc9jaTwpQN4tkSre4cSULqK7GEPKijZgkEdiF08XR/vKjidtc/bTTXMm8khoX+iDzmGQllnKqjHGhj9jwnf6+wzf6e9fWJXSJbZPrwoCPwHy371a2KzIIMBetibmSNCFYzqZL+esFUjvUKnODsmIFX/gmLetXH7dRy4vDuoUie7z0A0v7b/Hlzb9oK1NkTmBdr28thq4Xz1i+XvGWATaSXCJmP0HGruWZiYG9Hw64UyKLAHEhEtbwu4snavubJLUCFFbseID30mNCP+KCpdif7AvRm4Dvi6d3x091uPAK7GoxTs/cG/whZBdygQBmx5aIWRYKOFDOnw39YjocE9pv0gByZw9/GWiVxik/TKipen1wJt3zR31eqxxZ5JsT28rjU1cau6qXz+mj2+/Tav7Xfj2n5VlIGEoISqGHvzMMpA4lEWvI6Uzen/Hd313H+czfNebNY6zttr8HN/18nOen+F7lsGADaaEa+GwLMBVnUlzxJwPJFt7SvYsg4EhDrP1OLMMBjLzHCXsmo8sgzGxq7Tr9pTdWQYn+swy2PFnloFHJt457VkGngehne3MMmDWhKSEZeqRZcAX9pwhwC1vAJoembefWQbcjUOvzPN4umDKS/ZgPLMMhsO1Uw575jPLQLvAPVTa2rMMELQf8QDPLIMd3bMMTvyRZcDIYlL2dzyzDAapapIhUj6zDHz7cLP1PcvAHFLXaDvyCT6mj2/37aDbiUS4I8tgcCXoN8Lm9cDhs3iNr7pnGcBnk9h2RLY9swws+1zO0tqyDAZedAkq19izDE70mWWw488sA4+sU1HLnmUw7I+VWFXPLANmXSXCRObAI8uAL2xc32XPGzA3rGFz27MMBj537c68jqf7C+bW2x78yDIQOlLRiqQzy0CUfXUYbd2zDIajv4lb3rMMdnTPMtjxZ5YBI2tbfDaeWQaah05XH7FbzywDZl1x+649y4AvdAhIO3b8Q/qAcuaFAXe0tM4sA+FE5iHcbFkG0/FCs0cexMMPOonN0uW0+uk1FR6eusPHOvObOX/LMpikxtncc2YZTA7LhZSxZxlMEiuvZu/cM8vgRJ9ZBjv+zDIQ2kW2Ndc9y4DZzTsKbs8y4FuI3sx9zzLgyzXeSodXffpG0EGpp1ddeCfkbKx3T1dxlD7bnmXAvoi2UuQNPLMM0OfEJHoZe5bBsK+s5vBSPLIMxroDveaZZbDje5bBiT+yDMZ6C5LZsgyGc+Ww/J9ZBsJj89KeZQCKg3eNPcsA9A7wOLIMBkGaK5GZvGUZgKacaljqH3kDA3+xqKIeqMe4eln5zEnQDaYdT47Ge2YZDGIj9M/qZ5bBwLtZIx5/zzJgD+yubmc2wX6WPsPPLIPzvzyzDHZ8zzIQrssuIQZuWQZQEHpZmXuWAdSms4VB6MgymJc9Gy38gY8sA062mHUP79cjb2Amh5iWemQT+DSI76wUnr/taZ2i+sjWurMMZnL0SolYumeWATYOTldkOzyyDDh/4jD23TyzDE70mWWw488sg33kZ5bBPo89y2Cf9TPLgC/EQTbbnjfAeugUtXbkHnhNQ1iYx9MXV4xYWt6zDOCst8P+yDJgFwcGvbJnGUyig1cdEa32yDL4mG7Mz7klRWB9nVkGE5lJI4YU/MAnwRQIXnmPT5+EH+A2z2c0O+YtZjLTHvsOKmH2KmmPkz/RZ1T9iT9i8M+RH/H6+zz26P591s9cgP0Ln3kD+3rsWQaTKFFRcF7vnpauTF74u5FTVMn5xTyuhl73ftYUFKB2xPmFG3qsx4Zvq7eNvK302zze7cvbrI9dfPvCY8c/oI+bcoiUeXeLfz/wPctgx59ZBt4bHSb295llwFzmGqgiR5YBX3SJcfWxZxnM0LSp1LHlDQjFREGo15FlMIn9lIBwHdkH3Plot+XaswyQJiRs1VnPLIOZ39jVlmUAqqk6FvGZZXCizyyDE39kGYAiLJS0Zxkge6TRRs9nlgG4ePoVmQqPLANmjUGilz1vgC80pz9Qj7GoBxJ5DW9Pu8xFZJc8swxAdRrTnZHwlmUwKZqgE1nLnmXADmgdc+SKPLIMhEqbuSyR7FkGE0e9LsE69yyDSWmJSnTenjfAjjtm40A9huiQyOh3TyPzX6PtWQZC7WVv+cwyAJ987dyzDDhhTpOre5YBaBcPjiyPZ5YBuJMMxp5lMOu9dX3PMjjRZ5bBju9ZBif+yDLwGyU+9LRnGYCSTVTSmWVgflEqBLfdKaBh+tizDFgPaSw5pzPLALxgOM57lsE0K6BAyp43ACrqhFUdWQbsVyam9/3THf7U855lMB0PLl1knVkGE2PjnYe2ZxnAWdixUs5sgo/5lqUraUiI/XmeWQbGMzGae5aBUOmX1frUM8tgOptWnPY6swzmMN++IuLokWUwhxXkO5btkTcwUTW1q+vIPfAY0h1GmUf2wZzIuWOMsmcZCNV6S5ouZ5aBcOTVkeqeZSBUy4a3Yc8yEDqxb+dyZhnM5eh5y0t7lsEkYjJFHsgzy4Cxh9TbyA59ZBkwv7nWyNeZZcDXXDnkqGeWwUSFEgNJ/dCEJNKSTpXSO72JUOixej/0KaGt6N/Iu3hkGQglMP8R1/aWZTCbA69yRCQ+sgyE4vIekX/+yDI40WeWwY4/sww8MuaAvmcZMA+qUEXE6jPLgFk3UqT6nmXAF05M7XnPG5jDZHiNfmYZQDfioM4j254Ws3HQe9+zDKAPaZRXyLHPLAPTwkVy7Z5lsFPCM8tgR/csg4/P1y9P3jPLQG9NlGUq48wyAHcRq7RnGUzyoYmh63uWAaiuWXw7R5YBq9K03pEl9cgygNKarTF7lgEnUgzdVtI9y4AV7+Hd2bIMoEvpwo6CfuYNTIewphH1D55ZBnAGzf6KbOG3p4lmIUI47VkGQrs4cY9veWYZmBe1NkJXeWQZsKqFuhd1zzL4eK2R6FYm82dZj96zDBYxlLPOyKd6ZBksXIRa1TH2LIOFPYRggHVmGSxqr3VcaHuWgdBGCbh0nNRFVmBOzvjfz/W6KH/WfC9sT1vjITVzzzKYRPiunMP+8swyEE4w4F2T5JFlMHFolMgWfGYZ7OieZXDijywDRp5Uehl7loFmJxbbe+zBM8tAOMlopV57loFQzS3i559308JeRsGfctrLluuo1JaPPLpFrnWeZa49y0CobhTkgjPLYOFwJlC+71kG3nGqYqc9y+BEn1kGJ/7IMgAlgHe1PcuA901R2V1H5S3LADzNiJt9ZhlAY1KfMXZueQMLk6SmX+eZZQDtZRuz3j0t/TG1u4bAnWVApFISpQT6zDKATkn8i0zLR5YBKIkFZexZBqBayRoR+M8sA3BdLuPmLHeWAbtVI4h0yzJY5Ha3PCML5ZllwMkgRTx4yCPLYJG9SrWOtucNLFdMbD0koGeWwbrM90tkO7w9zSnq14ysq0eWwcK/l3EUnlkGnK6kUxx0+sgyWNRhaUSc7FkGJ/rMMtjxZ5aBRyY5pe5ZBp4HMmY6swyYNfJrWJYeWQaL6F+9OzIEHnkDrJLIYIV965ll4B2QJNvPpzf6eGYZQGMZA0M5sww4RziMV9+zDKDeIik2JKVHlgEnYIgc49lnlsHHfJZ7kFg7V9RJZ5bBju/ZBAu/RXTj+BTfI7H3cT7D9yyDHX9mGYDiy4ss2EeWwaISUh09qvA8swwWRrLh6JYty2BV58usceQNCJ1UIIzKUM8sgwVboYzmgS8f3GvGXfPIMhCKvb6GX++ZZQC+xBHCfv/IMljUPBMHveqeZcD6JclgcVs9swyES0Ss99PPLAOen2iCc88yYOwiqh91zzJg1rqpcZYdWQZ8uwTE20b6yDJg9XTcVznyBtiBBYdpZ5bBou6UDnor754W6y0rVvWRZbCwpdxx3XuWweLSIHgp71kGQnVA11016ZFlAFpcDO3MMhCuyZmlblkGoLguItP6kWWwo3uWwY4ftEqdSic8/Br+zDIgUlUq7RX5sY8sA8o8Sx4vLe9ZBotyjiiZ5cwyYC6dC6zuWQasVCKPbu1ZBsvxQZLZ55ll4PW+6049swxAqUIZ3pJHlgH7mKSihofhmWXwMX8w57A5mwo6ZyzAQhZtg+q2R9TCju/ZBPs4n+PP6ITV8XloKfPn+B79sI/zGf5vzjL4I+JR/rS+Zj+zDH6kLIMfr6/Z51kGVD9L0toul+1MES0fkVEtOnjt+OuXgRMBB0Dd8VFeLj/uMsmYoki72tH2ErH1JSI7HnglMIJOJj0iGd/wSfnKi5treyNpn5AJvuTn/Db02/49G/5KtdNJuRvKMT1x6pqKHbsswPONO/qcn+s8PvDte14P/Pn12xu3lfp4vX+/LANdg/3akwzETDeATg/pkQKw4clVaf3Xnu9A/HmgiGDbzzba7D/PZwLA8w1re0Ne+4/fmOnaJ9bb23s3vJe3v26v2FF2Zvu5OyJ9+/n5Odsbtk8/V+wPTTH4y/WV+93Y8X+oFoJ/WJhqNUeI+r30eCLeLt0ljiKjeMdfD3y5GlCyGExZGmmiqBclHHel3uVJEhIfo6yLaE6XpZFgLkXdVSMxnLYoPFbxcE0peXtF2Ir9CsfpMpoJkfIY48Ia1nbUY6whOXiW42mUsIrhJUbGLZddCEaCNmVFmMetUbgQTKW4UJoxa0z2xWWV6lVdcZUv1MvnFUVzpIFfRpP0/3HdYxARSolpxpjSa6qfnpRl7v4WwuBd8ItiS6Lx6m8ZxIFGqZ/OegxCRZn10AjLRZiQb+s4v5DwO4LOrnfrYS/CoqfD/jRi+Er60W9clfR9l2ug6P3wHuIknlHUBs2rOaiMypiYqZuLO4xCzVhTgtar4jI+0dmIA8pf7/ImgbveFtcRbJP5FX1W5IN9iBc7xu3ceI9jmMErz51Jobjs6nrU1GfRKMBCvwj6AKyXjNHPwWnVIckXBdRNw12f5uIug5CZGhVHsSsPow3zRpzpBxolr1Itub9/OtE8IVYwE3o/ooQSVvIVlUVnsq8kaGRlyhf6W6QrE8brQl1SG3N8+ewD1WZDqdtXKT92l8d6w4/1wz5W+t0Z6EOc/cHCWtYv8N6rM00oc6SzhD8DjobtaOYoR+YKpPE9E8/ZffY411GfMGcpyBSdrE7kwepRompKDh4gkunSl3c0ih9RVv3ehefTuvjzjPrKGS8qJQlpbYFVJmpCU/cw9gYzAAXAY137wr/rMkcTl41RSdLOb9hQKhwmnYUoC7Thx/o9+eVn+MEv/yVKBYxMZwwqK4rfUFvbRZQK7gZ6jkwtPnZc7wTFbDIG3v3510/GeY0yTURmYgIrEW43aoo3jBYmxg13aj3hgvCm4xsoJqBXE5X3HtfhgSXy5jDyl5gpwctXn+9wmKYovrynScrP6DTl9+N/OP+7iMHq4hpjnLdTc9CGQ9aO1d7x/XZqLtCu6XmtFyZ4yjUU+23c5wduPCgd95VCBVm8P26WIY6YLS437OGi6HZz46go0vDW4VeqO39teMN0ns5bSGM0lxCu7eDSjYB5MdV4mpht7T9oT3OOGd9S7BKPMQaFXJbxopdQqQaUqt7L55fSXyTRnehyU496j3Hj506QoKfjN95TxhNnHOL/8vwFPijpTMo0npRM+7mYi743eYZSdRLFh0qEKc1I0nbuRrsru+fm3AFWcFA2crWdDzRniUmbSSfXaHg2xINHfvd0JhC71bibSRX0/lJ1I424semzEqVS2Pfh0AXzGGoRddPIvPsnOSwH9x8odUVa9xh1eKUYo/iaxoXIl89q3y0oBb+m7xsJmIM4FWhVnLXHPk5CZx2KAN5w8cda1+KIOdAyxl0vFecpEz1RjInTYR87fuzj8zx9hr/nXtiy6T9zRe3QNqhN+R1crDflqAfaS6EiOGnuQ5tALCwVe3VHJQqgTC4savDsqNPzidInQv18upO5UlNUICa80CgO+ZmjmrJkgKvcY/BC17FLDlyjg1Rzaa12V/qfGIg10ROtd+svjfHEWXFdivgHGBmfTNzaFBTVK0F1Z5feS1CxqMFubGYtOasEZWaybZefRhYlwX+nS60HMTmzvaNi/Mi6leo4nh4ubsbGeuTJvQSqJ50NxDxESMnJPg1vwih3fwIuMJGEyw80KsM11wKmbhLUc6DRnqjHGBuurZAk7qcJx0tRt1b8aBA68zF9uHjgfImeUaYpkhmyw5pYwUlgd+ADKSBW+6IXxRXysqQlCgRpZ8Kj9G6lNhxDv9YsuWiMWR8BkJ/iJ90vfOAOsfoUT1RkFXGg+zFL/DPVa0DMKKHSzaFG1TXdiOl2MxsXd7gbzTF2jtjDm+qlJVAfLb/kRJVej5G4l5LHyFGkn9V1PN+1dtQ71MQeKXF4Pk12UL1lQWaxXMBiSSCmOCGnDOHdWo5wUdJod8VhMp/FPlt3IKh4jmsqE7pPUawNvZADEeVjjAfOyaFIr4Zj5EESwi1/XZ00HuZBdk4Kqqdgx3V/i24CnewW2uCgdxffQnwGAbqupB8pxo2gmrbw1Gyo1zTjyL31u+fTWrlEWTJrfRL0m1f6A7qEYnvGgWvOw5nCx2de10nuIUC67bjQZYf1CikYF27FTKTNhUXsupLNRYUI+ZBJk9RP3ec8jW8+hwa6qDuW1ju0I726rMWJF0Ifp8fAqdhj/dAL6j0PaU2S86KLAOURbQIj7FZ0XS0TiuIcJMAXUteXLgcmuYs0ue5sl0nC2YZqjESElgt2b/jrgT/X6fWTdX2NFcerdVembnpCBMmKP2e/4Xwp1QayabOSGIEljaS9RBykK1NbrG+xWiQ6ksHjatOJfAyeJmKC8PutkviJDumAV36M8cQlctESKN7oPCXfxQ15yAbCLL0EUjePRWEdMQaOV4RFd4wR0Uyv7SQRKpVdMusO8Jb+/05eO1f2gR8rvq3T6yfr6hV3sfV8xU4/dQUo4Oq0Ozxl8O76OEQH7zjr0qQDXn5abK7My+uCf9YGfNGFJJrlAIheHelSwoKTEuJr/go6OfhBzRWRZr5DMUdMpyKeONm7BbqlhIWOzC3LEeXevMf8mULSJD9m2cXcce0OchqCDkk6zv4W1LDQfBtJn7nGGZT0FjTb0U/qbfYlKG2FRN1pxzNMg7qfUwlZQWIX0cOgWH7ZKnYtEQt+rwee/3W1kOUWFg2+hXqnxJ24qn6GpbxDR9ft4/CGHU9kemZCExg5a4FXVKLXypBgxyrxZHSAaG9lMLwelIvw3W0D1Ag6hk+1vN+J3QUkaea4o992ejpu0I/p7Dc6Vn8X6+mflejPlX+75hpZrRXXERbU68Xx7SKEDX/dcRRiqh0v489xfgWX+DeQOV6jzD3dIsqneGvOGSOc/vXdPD/Dn/P8ly9boextRt+/uIB7pUj6jmM/qxh0XG+1EQIfVsJMRs1dHffqThyyPVCniAqert4r+Qnth3LH0UOAyosIlin8ZG9oIliGxrlfXQL2DXcMHhqZC8ZWxCtX1nzUEPQ8MLJYlaJYRi136Wa0sc5qmU0tvBm2yGaKU4CWRLUT2+BCQUw7apsVNfHJLdyfdvJBp/GYRyb60KjENRopeh5EK0UjE3rsTjIHPGux+LutTQ3t0l+IKl3bgSZX9C2P9jpvOD1NJNiEYDtoFtpcfzZKC9t2hrXR3VJIv2kjUvOqy8kwQe/ihY9xRqnyQg2IY8c/pI9vQTmSgitCM6NowzAsfmelBr/Ry467FUJr14h6xo1c5fASiDeSMuC6ytM5GGGZy6gCUcNat0md9jTUHMl2fHtyMNmBQjkRN+wx3vBnlVWPTFGECbq0jeTuVKfgFBqpNf9aT/3RwOEu046RIDHgZWtnqyRke9cloLk0OuuBDJR21NbbKYq7Wjue7q5JR9NaDA2LljXTFv5EkQhTThmJGNGg4IWQptVj1jWierCTkyKcfDYyLTVmOlA6fkQnsPASPHDMklFUwfbzi/50XmkKgDR7Ghpqb9RExrlze03wVuhh9otd5HTbgiz1t8yoZf624x/Sx11y/nI2tmuOEzQ2xm0tleRHvg241KRFlJz+ipjjqrFYxd3m0Fs93RdjR6MY7swut7c/TeFhPY8SBuVgZptRShgjq9+nS5fo/K8uytuJ2Y9atxfBA9mFfSnuh7GRqq4UBq/rQImOTvnWVg4cgQRrtosDX3Sp8P6KmxFPxy9KqJqoRBQ9oizhXVAXclqXKSoi/4LIqVQwzXNccGR6IYn3I2BxQ112mrNGSfzz6YLdu5v3ESSK2Z190eJprf0+gXndJbQ5aoTtucLrXSgffZsOz5NZL7K3l8nF1tZsup7IVNddQvuBV3dxdMWJ13d4EYkQN8Zfg/rNuTIl5e+i3W3gOMP8nENU8dioT3X69pzusJxc7B2jStRbHxSQipL4EgSxwxlNNCl/lG/XkaBiEpX3NSMbAMi8k8CyzLXIwiLqjCkRaZoO1HcVzBtT8v60ptSrG5G5pj8WmHg5YaX37Oh+3u6S54+y/5yaMd0Py+tEsZD75r2WpNYoofs8S5/h2xl7fXf66Iar1Vr5bvjwwDFPVkglRkpOEfGO0r583RQkdknYrPdZ0nKgUhlKCrMlQuh0uDjHSxcb4arQisiXpFZO9l2TBpQQ4DjOlMUoQUEPNEpUV7xg7XgaJdFlN8PUT6U4F64m+JwUK3+LW4LFGOioro9N7GZ1NR7OH+TYRkgT0miu9Q6Ntod3WfI3PJnxoensI1Nje8y7PPrbPKSfYiy23rrP+iL6NV3xSCbLM5geVww6A+shBkyJoQ31mkodqTMWcnsaYyuWbz9A20PvizYLy57fR8rPurlD0V1MZjmvET8a8fLsCqxRvZs67iFufEA35ufkRiJF3DTYnBDjMtSI+zOk4AeOff+OeUe4cystox3jZKDkc5SH52BUl31y3f8r+uHacxDVGwiwuqvMnGgjvWLcXp0Nj+bvZp7byFimRzC+bR7kAkwnxJyzJnJ5xRu3L9RpaDChcz0eaHiXSoR4n0+TY7mCe20j647K8+Zpz3lwfMSe5jlrwoVRJ88vPNBtPQ78bfWOkbeV3uZx7Ms2620Xty/cdvwD+rgpZyQnt+y39fcDd2C1C3m9vsOpHQK38940Z4M1uh51IhLiuiMvuO66UPiAKL6B8ZAaTORS+et79HpzNWBtqa9/N4TqZV47ah6wHAOwjqexsOFDiIrC+HeL+YhEqYqdi/dp0aJkV3PlzauE24yAcPqBNNeCcbNgHHioytd4h/bidMl7jCcu3dB1y0BJnb2s7dGiYgwrStyX5JM15xS4ClG0SCAXFx5ArzFxgRAoqU2If7dZJSKlJUSZAtfZUY8h+YVE5ndPLzNKr3TGLLw88tJppJwQ7wMOLw91fqaLXIKTtttM2eRCoM7wLWI79IUy876cSMB3U6Wy3T4xuBVJk6wT2xkCdhPfaqEti8YSni92HNmqHmj497SdOed3T8Nirxb7IkkSLc1KgThl9pqK7q4UvlesZGLZV+jn+AWzrxw6g4ygBJLaqXBq4UmMdfXYF8dE3adUAvAssXp3MgfU6yAO/5X0fwIiT9TBHOnh73zgVI16a5tw4NIDaEbgmSyWqZvvS2qhallza/FJURruiB5RpjcnopNW2e8U0DvrCPQiovkWBqIslwVVN9q+1wm/a8jlg+l1q1qwIQoEgiYK+nmthwvi5B2N/cI5WN8/TWNy0ns9MuUGwywQXnajU9pYuekmkkyN9xzZpF6nxo5dc+dPr5/wLUtXJH03V1tixaWK0rPxe+B0vF4hTUSCY6NwWiFfw0eL2iDdDEg6Ki51kz/FTq1J4l1Bdxgj7BuRu2OP0HQlNjuh00rhycNh65rnTzT8jwvWX46nMdmWTDaT3cpOULJnM/Kbra3gz2i3JwbFr4e2nCNV1z6XhjfOaAjyKfxm0MkMliJuMB8+XSfqWjsfuDlmCe/bxP1ffFyIgXqMPaabJPPlYhLUqLDn9arED/ggirHaVsPXXDnkqOrqIRRcwW9dMx98aELjxTXdZn+nN5GrRjbmoU814vLaZDuskaEW2xdG3bw7lEALUJNtwDAK0REtiVi/iQx5MwRC7cJ2Re2Q2t6h+S6u5DHe8ISNmvBEs6BxFYeQuC7WRTYh8xB196DKQXJwRLW4/TlMNGxGUl6qqSxSrUbQsOvb2+ccKcM7evutO5WAjqcpqUARHj+dWcflPZfyMK8QJRu1dsbtPx/015kzOIZOALx8owRUWxrgXe/Qxzn69sn5+uXJw1ClCyR80Rfu1ZR33JRGveYaK5updj18buhkl1OsLKbM7lWJZLWQk1Fl3lZFvK5Fn7RJManuMUbU3zE3oUhTsn++J583r4qrH1wxRo3SARbTxT2vK+gym5cZvauaNtf36IQFbmhwBrEgPBb705SNXLXHPBql8KapRGs8enwLhNbrTSVkVvYVKhjpsyEMZcSNYl0gGpz5HHyw1rd/dUBf3WIINmEEHPue6ANol20h6ZhoETwOBRNSy8GNuF/tqSTLcsV1opO3UBztIZMgI7IJoVnjMXOh1N2x7e55Urs3j8zD81zjs7jLPuxPX8itpc37XFPdbxCZEHVE4vqnzWRE7zjg0I2fONducj95utLXNod1F6svvPxAdTOSDh5jvOGca7FIxDWMt0RUmlYREGzxWdy0qYdNa9x1b/0t9EOm+aDPte4pXQ3dRfWu1Y67SeshpoLGcdrLhEvMclPl82nd+Rb1OdciSkzcnQ9IJYXGSa/LK9b06fu1ot8nmrl3PNQWn3bqGuYDhXMR4TBjjA2XoECBGT/diP4Nr8BEDPHI+FdL0GSho5MlavBE96Gw0CVsKt00liVEdz9NmFoJz77IyvXDNtRjXNxheRxPJwe2+/5JrmpsXyjqf0u13LObtEK76VRkSjUVq/QSMnXoQTGvB2chYJtkcNA08VSEot9nnve+0Ay9B2dBHKJybndKvzaxxEpfFLgExa1HEQ3OuVuE9RhDB5FAR+8XaabC7U/WgNXc+dE9qxPuk64eEtADNY3B9zG0709ziijB0IKzLDt+O6zHSbZft7BUj5GpsR4dxS7MJMQ0XNTIcFCd1xS9ab1D511yyWO84WyoCLaY1uFSNKFsLmWMRTrmcbUR97FOQu6OZGHWoo4cliUK+OM7EUoEGEWzrQSSue81LXdRmg2N81IXac7vnn6jj+LyVlhwoTHt/pghP+nAzHyflzwWCdnmhXgVhk8GcQ+3pLTc2t4+2TYvO203s/S3T/isvf/4LETX4UuUtoEmCAd+4pxpEufniAQpgotW0MNn+IOqXt+N8zGO1Ir3IP0ClzpoNgs6UaBv9Uy7Oe3bpjKF9SnUs+qKVPaENyLhbgs5nm6N3Un/T/lWUrSeeUTMwUBSHHNHPYYU79LnfPf0usuANFd+u3CF6NuvK1xuzEP3fbGu0V3PXirXuqXnxJXbaQghchtGxRAolQ9K4FcP0womxW5do1v5XvfTDzzWm5JNt2QuyWcR40OcLRVJ/fTEjMV9RRT+QMC36leiw42/kWgv20ix4Gc7ZVk9scV1hYyLj6VHLAIVK+a1oxG5QLBEeLe2p3HxEAixBUk7NiOq8FrSRj+/42Go9HTfpxce4+mYDQc451B6dal7dsVZI5QY4QspFOLsGsflXOMKLYNKbb6DaG8cxdxZPTwHeb1DLS9cdzTIG37QasENPEt0//sMl7Yg/fqOkEmDSFLfZVTo5sZ3vBf168x3udr7I7XQFWJ8ozrW/hFVIirBFUyPUNEz2hQr5TpU9oCiARJyRFRJNUOxm2WI0OYdEXIhg4cjoyLJNJ8aERFVBsPpIcY1Ik5Eety6+83efODbJ/zBnIMY9eZW4kcsQEcWdbjBGbWw4Y4qWHaJvO7j/Ar+jE7oRClWPBef4kf0wznPz/DnPP9m8Si/JdH/937vz0T/v3yi/++fr/uXSPR3gC68MZ2J/ht+JPpv+Jai39zJnEjcHUWpca1jt4d64oNGFWFqOBL96fJAy/dW90R/92iK9mLb/Db0SPTf8CPRf8O3FP3tjTv6nN+R6L99z5Hov3399sZtpT5e79810V9awCP9PhL9N+BI9N/wLWU/XfOt5d6GOjdqB1w/4QDq28DbO8rzHUzl+aNT/befj1T/Dd+S9rdXHOgdvP0GpHQm+2+ftL/j+fnnqv2hyf54/aJ2hPXPaCj5d5Hs//GXfT86lj7x1x0f7lBGncBIQXyM8xl+jPObboTfe9n/sFBVXBZtNhSGLWL5u9P4KEmZDzzS+1KrJbQKAkjI98K3VKipbU0tMqDCSa8lIY3PWoxkv3AquHYUYfngqK4jhVZByUTsFmGB7jVS80jyHRWUgL/oHBRRcIWt6sNRE1doX436pVL8OiIdJa/uGL1SbamaaM0EP8QYFDBcek2f0UkpbHRXgww4py+D0mHR7Z2Kqa3kHb2Dv5z5+e5p6RQufQ+acKVZT6ddIhknRgmMvUNEKukn5Hk41Y7sCbtl734p3aUPSg1rvwiMPn1GsQiGk/7ACTyVFnUn9nb0wGZ8TMqReSb4SqbfmFZshl27vZJ8zuppF/t4+8awJBif1wwnMzoW4UugSdsUs+YDuIY2NFy+SUOSKXA8zdycJTPdKqxdd8wiLoqYMy4dB27ZFZyoem2cvOewBLtEV/LIF37DsM1cmj3Rid1ldzXwvN3GWoSOHQxLf6q35k8TvYouj+0+0gBBRXGeB/XxKDF/097Di9XJxMNdaC0c8ysVzjv1m++UQeL2IAvTKcETZd6ueH03ibrvzlc2YeD4O/HNeuRcKoq23S7HX57f36jE/C5c6s8KqsfqF/JaNHdZZEASQEzeBhudd/x1x4cZgJvPvO7j/ApOuT22MkLjKGXd5qe4G9O0dnep3+b5Gb7P02EtPUzH+4zMgwvc8fwCYkUwZ9bu+ZACUx1Bgn2JTjq0apxXaf12F9FvJZUrGo6JhLCsOf+i4nKiWWa/rdIbSjXQi74vt8vpgeP/vCgOGKmiUZRvzLeeS7iLFoEqHbTr7NDaNXpjF+nXbbnx0XrT68le6dEk6dF9Zgue2tDg+bejf38a6+G8CAml0dKV6YZpXkY2XHWTpE5M63UH2l7kw9D6dMIihiN7yDXGheWmgNRHZyF3FE+u2yJFON4bjnyXK9VsGbnDVENx0KfXdVhb3UbXHqSbh2iLcKfStBOTRImYROIiWjt2/EP6uAOidEFQDTOafNJfN0VA1MVvzLXjDn3Qw5eb+kXmWlhZE/WkTSEl0VHi5thUlxVz8fc8MiUIWhJju9yqjryoFrfSG9ppr0XXtzus+YFT5zZT/9L8nUBq2icS4HW1Erc0kYUlmjtSdgTbZgRscIyHKUrrR0CR7YQ02GvRSOsRw816UHRo7OhdZIHyQul4GtLPtJiN9lo4CCPKKw1MeaAEC/V6U7DOETnx4LrLKi/HWV5XoeOLvrA2MnpP1MX+icu6XesPnECkwqVi96iuY5+N+hJVXe3iF607xdT70vvtFm8OCk/1il1cOO5dYCFR9bsfO/4hfZhypDlSzT9omzaTOgtQzuIx+yKZIddmc422RKOu6VaO9JDG1t3tlx7YtDfUjpOIQWjH03Te6r72TTnFfeFwkDjmy++bZNGP2ym2CNHuMb95JRyhm6uX5oKV1Ml8oM/2hOGce+KIFAsXCX6i4rK97O9FiZaYna50zP3QgjMY0v0txDlmU1Qstu0L1DIhnBlO5GYhLuB20Q9TL9lQO28JDiEscMMbOYSdYvbRqI4YTKe3U2F93U3mJEa0CIBxLiOCt+fRCd63pk/gz1XudnL41coeWsO3EFBhNXPHK4ZWFzl9fYfTystRB2RNY5OP5r9XCsstTJ0o/u720/ap1xhbd5tOb7QzjXLlTrdGqlojaJV4AI+he2jcjYwJZ67znh8OZcKf3Z48XyuCedy7OJsnRnMch4GQCJDqgUbadyd8N797WodDdNhjZFouR+q4iDrfs7sSZYrjviNHc0RJSV1wpdgYxR7wNXHzSlulFXrgb2fpM/x5xl5/cfqkGV3UQf5+4GgT4QqOYgUkok3jRJbkm4IajYXufTaLdhjCRUKCb0ndyW64bArCL4WnA1rJTifwyc7wskCpqt4jwIEMg7p21KcBElzRXHF7ehDkdPmMXK64YeX7ImSRpt7TbWSijy6hBYQvZp80Ik9b8akUPUzK41iacGP5Ax1vfcoi+fmBuwFJ5ZraR7Y4tFo40t/m0V1te9Xbvfs2a4Jyi2tRd3cPvbC00ZCUikiX+V+uQdIberuZ6SC7dry5Rgv1dozqKrSXdrmE9d0AmRCZqGvPLg6iVszTaBmPUbC5+hdaMmi+E08+phsH0uB3dP0L06DIm6QEp80PWtGFDPnA7XCz68pthiW+0NaqO7R0pBtdZALfbkJUuhxNw0nzIX3S6r8+rBjF1pPuZO0n6l7B4+GKeuJO3EuRrP0c2WHb5TrmQeQpeRfr4Sa8Z00J6/xw5r19IW3mCEoPF99jPZ5o2O0KRamud09XV4xO70bWDrj/9vt5ZOL00vtZ57snyP6FB7qtx4G/rd4x8ttKb/M49mWb9bGLb1947PgH9PEtAgAu3OLnLf79wO0mRAAIB/2GL1TvKKJAxzz2l3aQhOpFIn2jpRsVUp+6UJS+uMTG+twbdboQhbtRgOZaHHfl8B298Oo7GmERkt3uZrbb0xfBhsVallaEwKQIuKicT6Nv4a0OEROXEAdlHu62UyPIhpKWd3NRYjXTO1SLnsa8S19s+KDtco9AHTpQFWuBeD2vQPUpjWRXmmnSEGfeoTeTHkS07SL3Jkrkb2FVbpQKmYe0IxawxoF6PYh/xXdwPi06MwMCldxA4CzoCgbEPOgnl+811d+qW/YIh5u2K0JNqN8fTztAZkVhCq1+Cf2X/AaXcCLUhCNN65vLqSg1gltcO7IZ5X7GTsGOZ4JzDjRKkiwpBnUeT7tsxpwjdoC/FVN2dKrzmiK53t+C9UZMOHts9DwbYdC74rpgX2gBlkqcO/HgbOqlk0b08zWdRl9rU/W4RhSCKOh5dzvTTnmdsaOD8pQa97od+W+46+740L++wxv5i92lFqKgWDbf14HF3d7dOSBKTndClN0OMbgIhsbQux53Cqh+k0QK7h+KphWjkQIdKA0HHuUraE1Z76d1BgiRZa0nHZl847GO1HAEJXy4zx2N/cpkqLXjadI8khsOurm3uG3Q3tDBGMXNvZFBI6Gju0tPtWbe3A0zQnVdumO4feLGn14/4Vt3YAJFfrBds+KU36zmaOB0rWqWJkiuyA6ZQYa1PoWWsOhfZcO0Kdf2g/wW+t+5jN0mNOwbIohs03QzjRol9ANLcnf3N4hwR78RCJHiPxxPYx4UdYwYgxgeLYUNjJ0YbGsr1JKxjIpBEt08WYuJsjE2PFL+kvhXdFRrwjai0s6SieoL5x34iUPsxcwoWzun4zR5gK9fbHRtg3pOYzqH9jH2FAW1sOy4YkvMz+kZXqdlpaLE/OgB2kO7ERWQI8HTmj4Vww69iTR2it3lU28S7vp8/dCnOlk2pKb4abol29UjldJZtjn0NxdwuEOwupjYCm0eoX5adlkSJDCF2wpUsSoc6Ni6eu94Z78aTYgYWVcVyuOwAk/UqOchyqtBlSTnrSjOQnA/Ycyh+ROih9SrL1z06gzadsf5DEpIPaX3NjTohrykOY+nB7lBet5PE+STZhisVyTiDSo7UkAox57TmJoSCuYYF5z9604JWP5IJKvv0Mc5+vbJ+frlyZMub4PfHRKUJP3NHY+QINFiiZWV2i4W7ZNA2hvXOStbqI5s+sseJOTkwtI/VqXHFW1u52ISprS7BxD7QC0TpDGnxHRbSVmV0cKLw4qPTGgTODHjpARCl9nNKI2SEV69Z3VEq7oNDc5Qou3g+TRVhWvMQ4em46/pNnVkBCrzS1KnbirpZN+HriImWsjK6y4zbcODNZhORa+vH681Et2gfItzeX3eLfe5mwJSEAUZ4lzruhsoP5QNaO7HZm5EYr7DICgcOfMVWmS/QnsbFtfoJONzTS91TKzuF059pf2kDupG9PTO7qGvlNiYKdFxWk+s8cya7nOtpWfHMOkWZ7UP53jMFuFxqMHuW+tzrY/v4VryFd3CuntXMthRahNSkrHFGG84TWLIkPJZEMemCpipbxbqe3gezcad2LF5pzJ2qmBkqvSFLVgq6fB60Kz3ppzH3UQQyWg2EB72skGe3FVL3MxvTxOCT0K878MafZNA3b04NE48p1G+ZCDJ6tT04DvYgSAX5Er6RuQ47ZpS6e9QjDKRHnriEnYKacGgtGxd4RVo9BkxfYjCEI0svYjhLRfSBs+0uLRm3hYygWdNB2SJjqZVatN1j1EpcFjXjnoMySn6xfLu6exM+pCXuJM48uklelDH7KIiyU2nlFW9vLcUDeQkgVJ45OYs2LlgvUSZ55pvW2O2knaPQZWcm7Ngc5neW4peE8HOSuuzcnQCoXgRlS6GE3FTJBlwMvA93DykRdT3ICA+0YzRKDLXNFrFQWpIQA/UY8D3URA33KeI8vkpOAs1XgooJZfWdVsk7LgJOpWsUCzlkI3D1vppi4yPNaVnyInSEhRv6YgxNrwioZfoQ5OoemqpCguNnfLMo1IBwPLTWwons9ZLrrBNQr/aPr6cg0ZPa+xbDzccAfiFChI7Guel4Y05n97oY7oCOjkL0Bh1dsKr0DAJ+dxyjqSs2vYHL9T9330y6JpiSSm86CvCRfjvPpSD97XQQD/ms9yDuHRqpALZyuA0WTjwhjfykOhQTSgadvpo8PIr+IOqXt+N8zGuVR8UXm+/wNudUjEcJ21VxxLn5XpLNnlGqSFQp6nkCKPDOZPDQi7hBB0vzLqVWl0hd6X6MA0Xd2ze0W98TyrZSvb5dMY2ms21qb5MPs3mjAJ1B7QVY9CWcYb9nhBob0B1G98V3hnyCkkWZP0Sfd3ju50dUmIMgiXupx94rPesOMn8TunBudmhWiUmEQLNXajh4LnMWocv9dvvSN2OHGNfbjYaNyQpOleYnYl0KCHj6vBRL5gdCI1wR73WjZJY4d3anpYKSp6JR54Ei/fd9AP61id5oO8RVRL3qc4FNydBj6s4HgQLbiFFzyZ0RA3qS1iK50qbQeEIVCu0DJLUfAcRn1Gdkcxat1s0PtDyVjRkxw9adV4OuQi/hre7/INxahoj9IGTZ1D9VoI1STLzLUnD1AqKTckXVXOpq2q7MXPB9FUsFdOi9QoHArE41FnAL+IyO6ZsTaPRKBv/Z3UwQaxruQt0QUalrVJ9aqh9mcJbQl9rqqSwjyk6LW984Nsn/MGcg1dN/HRnLIAvQu/FGbWw4ViwFtLhTcmPcT7F9+gELos5obRP8SP64ZznZ/hznn+zeJTfElT/e7/3Z1D9Xz6o/vePi/0jg+p/PQb72Tes5q3pmrXC5R7zJGt3YDbz3xVr/CtFT6ur7aLAF4IA3UFU03D9fK6l/LUkQgZdnPH1i+vLzuEIeNuJJfLcxU3xAuNlzbQ+qgTNgH84/uvvFso+nSF73UkF9Mwmy+r7nSZgtYL8fa/oujnvR8s7nLjvHxyExJBw3o/Hf/33BH//6vckyjB/QBYpW726rj+HLKL+cEE7PMgCE8jU3V7Luc29o2Q0ruiDLKSWF4L56Bu2k9HH4/9+ZJESLaTXuj24b2QhNfGFyJqo0PLc5s+WN9HEXSLClU8y+nj8P44s1nyjha3B4fcdF/W6k7rN6X8QWZDRaadDd6ULeHFzWcGE5+eqEcyNrVobGvGvb88TjYY5b0U8+nRNzvb588/xfz+yOJar0Yl92Wuql695/+huxZ8sKw1mPn/wbcB/Fx38FtHn33cv/fUEnT8xz+3vVoz6N6xh7tS0WHSq/52aEP9VVvXjL5M4g12AeMUDfz3wtWUC7uN8hu/j/KZN/WOW/Qfb6p+n+8c73X/Lr/n9G6b/VWjk4y+T6rJeQpZqJ4/Z8Z0n7eN8hv+bedUfs+w/2Fb/5FU/3un+W37Nzx7tfxc92v+0ii4/edWPxKt+vIouP0tM/N2XmPjTHGU/edWPxKt+LEfZT5Pnn7C4/72//vWfvvx/nV6uLWVuZHN0cmVhbQplbmRvYmoKOCAwIG9iagoxOTAyNwplbmRvYmoKMiAwIG9iago8PAovVHlwZSAvUGFnZXMKL0tpZHMgClsKNSAwIFIKXQovQ291bnQgMQovUHJvY1NldCBbL1BERiAvVGV4dCAvSW1hZ2VCIC9JbWFnZUNdCj4+CmVuZG9iagp4cmVmCjAgMTEKMDAwMDAwMDAwMCA2NTUzNSBmIAowMDAwMDAwMDA5IDAwMDAwIG4gCjAwMDAwMTk4MzYgMDAwMDAgbiAKMDAwMDAwMDI0MSAwMDAwMCBuIAowMDAwMDAwMzM2IDAwMDAwIG4gCjAwMDAwMDA0MjIgMDAwMDAgbiAKMDAwMDAwMDM3MyAwMDAwMCBuIAowMDAwMDAwNzE1IDAwMDAwIG4gCjAwMDAwMTk4MTUgMDAwMDAgbiAKMDAwMDAwMDU0MCAwMDAwMCBuIAowMDAwMDAwNjk1IDAwMDAwIG4gCnRyYWlsZXIKPDwKL1NpemUgMTEKL0luZm8gMSAwIFIKL1Jvb3QgNiAwIFIKPj4Kc3RhcnR4cmVmCjE5OTM0CiUlRU9GCg=="></embed><figcaption>Change propagation for <span class="math"><em>y</em> = <em>m</em><em>x</em> + <em>b</em></span></figcaption>
+</figure>
+<p>As soon as the user inserts a value for <code>m</code> as well as <code>b</code>, <code>mAndB</code> will produce a tuple. Then, <code>y</code> computes the final function.</p>
+<p>How channels work in detail is explained in the following sections. This example should only give an intuition of the fundamental concepts and how data dependencies are expressed.</p>
+<h2 id="requirements">Requirements</h2>
+<p>The term <q>stream</q> was used several times. This term is polysemous and requires further explanation. In reactive programming there are different types of streams with severe semantic differences.</p>
+<blockquote>
+<p><a href="https://rx.codeplex.com/">Rx</a> (Reactive Extensions) is a contract designed by Microsoft which calls these streams <em>observables</em> and defines rules how to properly interact with these. An observable can be subscribed to with an <em>observer</em> which has one function for the next element and two auxiliary ones for handling errors and the completion of the stream. Furthermore, observables are subdivided into <em>cold</em> and <em>hot</em> observables<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a>:</p>
+<ul>
+<li><strong>Cold observable:</strong> Streams that are passive and start publishing on request</li>
+<li><strong>Hot observable:</strong> Streams that are active and publish regardless of subscriptions</li>
+</ul>
+<p>There are extensions to Rx which introduce back-pressure<a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a> to deal with streams that are producing values too fast. This may not be confused with back-propagation which describes those streams where the subscribers could propagate values back to the producer.</p>
+</blockquote>
+<p>This illustrates the diversity of streams. Due to the nature of Widok, streams had to be implemented differently from the outlined ones. Some of the requirements were:</p>
+<ul>
+<li>lightweight design</li>
+<li>support for n-way binding</li>
+<li>usable as the basis for reactive data structures</li>
+<li>provide functionality for resource management</li>
+<li>require little boilerplate to define new operations</li>
+</ul>
+<p>To better differentiate from the established reactive frameworks, a less biased term than <em>observable</em> was called for and the reactive streams are therefore called <em>channels</em> in Widok. The requirements have been implemented as follows: A subscriber is just a function pointer (wrapped around a small object). A channel can have an unlimited number of children whereas each of the child channels knows their parent. A function for flushing the content of a channel upon subscription can be freely defined during instantiation<a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a>. When a channel is destroyed, so are its children. Error handling is not part of the implementation. Similarly, no back-pressure is performed, but back-propagation is implemented for some selected operations like <code>biMap()</code>.</p>
+<p>For client-side web development only a small percentage of the interaction with streams require the features observables provide and this does not justify a more complex overall design. It is possible to use a full-fledged model like Rx or Monifu for just those areas of the application where necessary by redirecting (piping) the channel output.</p>
+<h2 id="implementation">Implementation</h2>
+<p>This section explains how reactive data structures are implemented in Widok. The design decisions will be beneficial for you to better understand the API and to design your own reactive data structures.</p>
+<p>To leverage the capabilities of Scala’s type system, we decided to separate the logic into distinct traits. Each data structure defines six traits which, when combined using the Cake pattern, yield a mutable reactive object without any additional code needed:</p>
+<pre class="tree"><code>[&quot;&quot;
+    [&quot;Read&quot; [&quot;Delta&quot;] [&quot;Poll&quot;]]
+    [&quot;Write&quot;]
+    [&quot;State&quot; [&quot;Disposable&quot;]]
+]</code></pre>
+<p>For a hypothetical reactive data structure <code>X</code> you would define:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">object</span> X {
+  <span class="co">/* Define delta change type */</span>
+}
+
+<span class="co">/* Read/write access to state */</span>
+<span class="kw">trait</span> StateX[T] <span class="kw">extends</span> Disposable {
+  <span class="co">/* This could be any kind of mutable storage */</span>
+  <span class="kw">val</span> state: Storage[T] = ...
+  <span class="co">/* Channel needed by the other traits */</span>
+  <span class="kw">val</span> changes: Channel[X.<span class="fu">Delta</span>[T]] = ...
+  <span class="co">/* Listen to `changes` and persist these in `state` */</span>
+  changes.<span class="fu">attach</span> { ... }
+  <span class="co">/* Free resources */</span>
+  <span class="kw">def</span> <span class="fu">dispose</span>() { changes.<span class="fu">dispose</span>() }
+}
+
+<span class="co">/* The name may suggest otherwise, but it does not have any access</span>
+<span class="co"> * to the state; it only produces delta objects</span>
+<span class="co"> */</span>
+<span class="kw">trait</span> WriteX[T] {
+  <span class="kw">val</span> changes: WriteChannel[X.<span class="fu">Delta</span>[T]]
+  <span class="co">/* Also define operations to generate delta change objects */</span>
+}
+
+<span class="kw">trait</span> DeltaX[T] {
+  <span class="kw">val</span> changes: ReadChannel[X.<span class="fu">Delta</span>[T]]
+  <span class="co">/* Also define streaming operations that listen to changes</span>
+<span class="co">   * and process these</span>
+<span class="co">   */</span>
+}
+
+<span class="kw">trait</span> PollX[T] {
+  <span class="kw">val</span> changes: ReadChannel[X.<span class="fu">Delta</span>[T]]
+  <span class="co">/* Only read-only access is permitted here */</span>
+  <span class="kw">val</span> state: Storage[T]
+  <span class="co">/* Also define streaming operations that need the state */</span>
+}
+
+<span class="kw">trait</span> ReadX[T] <span class="kw">extends</span> DeltaX[T] <span class="kw">with</span> PollX[T]
+
+<span class="kw">case</span> <span class="kw">class</span> X[T]()
+  <span class="kw">extends</span> ReadX[T]
+  <span class="kw">with</span> WriteX[T]
+  <span class="kw">with</span> StateX[T]</code></pre>
+<p>A call to <code>X()</code> now yields a mutable reactive instance of our newly defined data structure.</p>
+<p>It would have been possible to implement <code>X</code> as a single class, but the chosen approach offers more flexibility. Each of the traits are exchangeable. There are more possibilities for object instantiations. For example, often a change stream is already available. In this case, <code>DeltaX[T]</code> could be instantiated with a custom value for <code>changes</code>. The caller can decide whether it needs any of the operations that <code>PollX</code> defines. Depending on this decision it will either buffer the data or not. This ultimately leads to a more memory-efficient design as the responsibility of memory allocation is often shifted to the caller. It is in some way similar to what Python allows with its <code>yield</code> expression.</p>
+<p>The delta trait has a read-only version of the change stream. It may define operations that apply transformations directly on the stream without building any complex intermediate results. A prominent example would be the higher-order function <code>map()</code>. As <code>map()</code> works on a per-element basis and does not need any access to the state, it can be implemented efficiently. As a consequence, this allows for chaining: <code>list.map(f).map(g).buffer</code> would compute the final list at the very end with the <code>buffer</code> call<a href="#fn9" class="footnoteRef" id="fnref9"><sup>9</sup></a>.</p>
+<p>Another motivating reason for this design is precisely the immutability of delta objects. The stream could be forwarded directly to the client which may render the elements in the browser on-the-fly. A similar use case would be persistence, for example in an asynchronous database.</p>
+<p>Scala’s type refinements for traits come in useful. <code>X</code> takes <code>changes</code> from <code>StateX</code>. It points to the same memory address in <code>WriteX</code> and <code>DeltaX</code> even though they are declared with different types. This is because <code>Channel</code> inherits both from <code>WriteChannel</code> and <code>ReadChannel</code>.</p>
+<p>The type-safety has an enormous benefit: A function can use a mutable stream internally, but returning the stream with writing capabilities would lead to unpredictable results. If the caller accidentally writes to this stream, this operation will succeed and in the worst case other subscribers receive the messages as well. As <code>X</code> inherits from <code>ReadX</code>, the function can be more explicit and revoke some of its capabilities simply by returning <code>ReadX[T]</code>. Similarly, if the caller <em>should</em> get writing capabilities and no read capabilities, this can be made explicit as well. This will make it trivial to find bugs related to reading and writing capabilities of streams directly during compile-time. And it makes interfaces more intelligible as a more specific type reduces the semantic space of a function.</p>
+<p>The third advantage is correctness: With the functionality separated into different traits, the proper behaviour can be ensured using property-based testing. Rules for the generation of delta objects could be defined<a href="#fn10" class="footnoteRef" id="fnref10"><sup>10</sup></a>. This stream is then used in <code>StateX</code> and all other traits can be tested whether they behave as expected. Presently, a very basic approach for property-based testing is implemented, but future versions will explore better ways to achieve a higher coverage.</p>
+<p>A variety of generally applicable reactive operations were specified as traits in <code>org.widok.reactive</code>. They can be seen as a contract and a reactive data structure should strive to implement as many as possible of these. Depending on conceptual differences, not every operation can be defined on a data structure, though. As the signatures are given, this ensures that all data structures use the operations consistently. Each of the traits group functions that are similar in their behaviour. Furthermore, the traits are combined into sub-packages which follow the properties mentioned at the beginning of the chapter, namely <code>org.widok.reactive.{mutate, poll, stream}</code>.</p>
+<p>To summarise, for a reactive data structure it is necessary to declare several traits with the following capabilities:</p>
+<table>
+<caption>Traits and layers of a reactive data structure</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: left;"><strong>State</strong></th>
+<th style="text-align: left;"><strong>Mutation</strong></th>
+<th style="text-align: left;"><strong>Polling</strong></th>
+<th style="text-align: left;"><strong>Streaming</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>Delta</code></td>
+<td style="text-align: left;">no</td>
+<td style="text-align: left;">no</td>
+<td style="text-align: left;">no</td>
+<td style="text-align: left;">yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>Poll</code></td>
+<td style="text-align: left;">no</td>
+<td style="text-align: left;">no</td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">yes<a href="#fn11" class="footnoteRef" id="fnref11"><sup>11</sup></a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>Read</code></td>
+<td style="text-align: left;">no</td>
+<td style="text-align: left;">no</td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>Write</code></td>
+<td style="text-align: left;">no</td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">no</td>
+<td style="text-align: left;">no</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>State</code></td>
+<td style="text-align: left;">yes</td>
+<td style="text-align: left;">no</td>
+<td style="text-align: left;">no</td>
+<td style="text-align: left;">no</td>
+</tr>
+</tbody>
+</table>
+<h2 id="reactive-data-structures">Reactive data structures</h2>
+<p>Widok currently implements four reactive data structures:</p>
+<ul>
+<li><strong>Channels:</strong> single values like <code>T</code></li>
+<li><strong>Buffers:</strong> lists like <code>Seq[T]</code></li>
+<li><strong>Dictionaries:</strong> maps like <code>Map[A, B]</code></li>
+<li><strong>Sets:</strong> reactive <code>Set[T]</code></li>
+</ul>
+<h2 id="channels">Channels</h2>
+<p>A channel models continuous values as a stream. It serves as a multiplexer for typed messages that consist of immutable values. Messages sent to the channel get propagated to the observers that have been attached to the channel — in the same order as they were added. It is possible to operate on channels with higher-order functions such as <code>map()</code>, <code>filter()</code> or <code>take()</code>. These methods may be chained, such that every produced values is propagated down the observer chain.</p>
+<p>Widok differentiates between two top-level channel types:</p>
+<ul>
+<li><strong>Channel:</strong> corresponds to a reactive <code>T</code></li>
+<li><strong>Partial channel:</strong> corresponds to a reactive <code>Option[T]</code></li>
+</ul>
+<p>There are four channel implementations:</p>
+<ul>
+<li><code>Channel</code>: stream that does not persist its values</li>
+<li><code>Var</code>: variable stream; its value is always defined and has an initial value<a href="#fn12" class="footnoteRef" id="fnref12"><sup>12</sup></a></li>
+<li><code>LazyVar</code>: stream for lazily evaluated variables</li>
+<li><code>PtrVar</code>: stream for generic events<a href="#fn13" class="footnoteRef" id="fnref13"><sup>13</sup></a></li>
+</ul>
+<p>Partial channels model optional values:</p>
+<ul>
+<li><code>PartialChannel</code>: base type</li>
+<li><code>Opt</code>: stream that has two states, either <em>defined with a value</em> or <em>undefined</em></li>
+</ul>
+<blockquote>
+<p><strong>Note:</strong> <code>Opt[T]</code> is merely a convenience type and <code>Var[Option[T]]</code> could be used, too.</p>
+</blockquote>
+<h3 id="operations">Operations</h3>
+<p>Here is a simple example for a channel that receives integers. We register an observer which prints all values on the console:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">val</span> ch = Channel[Int]()  <span class="co">// initialise</span>
+ch.<span class="fu">attach</span>(println)       <span class="co">// attach observer</span>
+ch := <span class="dv">42</span>                 <span class="co">// produce value</span></code></pre>
+<blockquote>
+<p><strong>Note:</strong> The <code>:=</code> operator is a shortcut for the method <code>produce</code>.</p>
+</blockquote>
+<p>The return values of operations are channels, therefore chaining is possible. Channels can be used to express data dependencies:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">val</span> ch = Channel[Int]()
+ch.<span class="fu">filter</span>(_ &gt; <span class="dv">3</span>)
+  .<span class="fu">map</span>(_ + <span class="dv">1</span>)
+  .<span class="fu">attach</span>(println)
+ch := <span class="dv">42</span>  <span class="co">// 43 printed</span>
+ch := <span class="dv">1</span>   <span class="co">// nothing printed</span></code></pre>
+<p>Use the method <code>distinct</code> to produce a value if it is the first or different from the previous one. A use case is to perform time-consuming operations such as performing HTTP requests only once for the same user input:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala">ch.<span class="fu">distinct</span>.<span class="fu">attach</span> { query =&gt;
+  <span class="co">// perform HTTP request</span>
+}</code></pre>
+<p>It must be noted that streaming operations have different semantics than their non-reactive counterparts. For brevity, only certain combinators are covered by the manual. For the rest, please refer to the ScalaDoc documentation.</p>
+<h3 id="state-channels">State channels</h3>
+<p>For better performance, <code>Channel</code> does not cache the produced values. Some operations cannot be implemented without access to the current value, though. And often it is necessary to poll the current value. For these reasons <em>state channels</em> such as <code>Var</code> or <code>Opt</code> were introduced. The following example visualises the different behaviours:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">val</span> ch = <span class="fu">Var</span>(<span class="dv">42</span>)
+ch.<span class="fu">attach</span>(println)  <span class="co">// prints 42</span>
+
+<span class="kw">val</span> ch2 = Channel[Int]()
+ch2 := <span class="dv">42</span>  <span class="co">// Value is lost as ch2 does not have any observers</span>
+ch2.<span class="fu">attach</span>(println)</code></pre>
+<p><code>update()</code> is an operation that requires that the produced values are persisted. <code>update()</code> takes a function which modifies the current value:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">val</span> ch = <span class="fu">Var</span>(<span class="dv">2</span>)
+ch.<span class="fu">attach</span>(println)
+ch.<span class="fu">update</span>(_ + <span class="dv">1</span>)  <span class="co">// produces 3</span></code></pre>
+<p>A partially-defined channel (<code>Opt</code>) is constructed as follows:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">val</span> x = Opt[Int]()
+x := <span class="dv">42</span></code></pre>
+<p>Alternatively, a default value may be passed:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">val</span> x = <span class="fu">Opt</span>(<span class="dv">42</span>)</code></pre>
+<p>A state channel provides all the methods a channel does. <code>Var[T]</code> and <code>Opt[T]</code> can be obtained from any existing <code>ReadChannel[T]</code> using the method <code>cache</code>:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">val</span> chOpt = ch.<span class="fu">cache</span>      <span class="co">// Opt[Int]</span>
+<span class="kw">val</span> chVar = ch.<span class="fu">cache</span>(<span class="dv">42</span>)  <span class="co">// Var[Int]</span></code></pre>
+<p><code>chOpt</code> is undefined as long as no value was produced on <code>ch</code>. <code>chVar</code> will be initialised with 42 and the value is overridden with the first produced value on <code>ch</code>.</p>
+<p><code>biMap()</code> allows to implement a bi-directional map, i.e. a stream with back-propagation:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">val</span> map   = Map(<span class="dv">1</span> -&gt; <span class="st">&quot;one&quot;</span>, <span class="dv">2</span> -&gt; <span class="st">&quot;two&quot;</span>, <span class="dv">3</span> -&gt; <span class="st">&quot;three&quot;</span>)
+<span class="kw">val</span> id    = <span class="fu">Var</span>(<span class="dv">2</span>)
+<span class="kw">val</span> idMap = id.<span class="fu">biMap</span>(
+  (id: Int)     =&gt; <span class="fu">map</span>(id)
+, (str: String) =&gt; map.<span class="fu">find</span>(_.<span class="fu">_2</span> == str).<span class="fu">get</span>.<span class="fu">_1</span>)
+id   .<span class="fu">attach</span>(x =&gt; <span class="fu">println</span>(<span class="st">&quot;id   : &quot;</span> + x))
+idMap.<span class="fu">attach</span>(x =&gt; <span class="fu">println</span>(<span class="st">&quot;idMap: &quot;</span> + x))
+idMap := <span class="st">&quot;three&quot;</span></code></pre>
+<p>The output is:</p>
+<pre><code>id   : 2
+idMap: two
+id   : 3
+idMap: three</code></pre>
+<p><code>biMap()</code> can be used to implement a lens as a channel. The following example defines a lens for the field <code>b</code>. It has a back channel that composes a new object with the changed field value.</p>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">case</span> <span class="kw">class</span> <span class="fu">Test</span>(a: Int, b: Int)
+<span class="kw">val</span> test = <span class="fu">Var</span>(<span class="fu">Test</span>(<span class="dv">1</span>, <span class="dv">2</span>))
+<span class="kw">val</span> lens = test.<span class="fu">biMap</span>(_.<span class="fu">b</span>, (x: Int) =&gt; test.<span class="fu">get</span>.<span class="fu">copy</span>(b = x))
+test.<span class="fu">attach</span>(println)
+lens := <span class="dv">42</span>  <span class="co">// produces Test(1, 42)</span></code></pre>
+<p>A <code>LazyVar</code> evaluates its argument lazily. In the following example, it points to a mutable variable:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">var</span> counter = <span class="dv">0</span>
+<span class="kw">val</span> ch = <span class="fu">LazyVar</span>(counter)
+ch.<span class="fu">attach</span>(value =&gt; { counter += <span class="dv">1</span>; <span class="fu">println</span>(value) })  <span class="co">// prints 0</span>
+ch.<span class="fu">attach</span>(value =&gt; { counter += <span class="dv">1</span>; <span class="fu">println</span>(value) })  <span class="co">// prints 1</span></code></pre>
+<h3 id="call-semantics">Call semantics</h3>
+<p>Functions passed to higher-order operations are evaluated on-demand:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">val</span> ch = <span class="fu">Var</span>(<span class="dv">42</span>).<span class="fu">map</span>(i =&gt; { <span class="fu">println</span>(i); i + <span class="dv">1</span> })
+ch.<span class="fu">attach</span>(_ =&gt; ())  <span class="co">// prints 42</span>
+ch.<span class="fu">attach</span>(_ =&gt; ())  <span class="co">// prints 42</span></code></pre>
+<p>The value of a state channel gets propagated to a child when it requests the value (<code>flush()</code>). In the example, <code>Var</code> delays the propagation of the initial value 42 until the first <code>attach()</code> call. <code>attach()</code> goes up the channel chain and triggers the flush on each channel. In other words, <code>map(f)</code> merely registers an observer, but doesn’t call <code>f</code> right away. <code>f</code> is called each time when any of its direct or indirect children uses <code>attach()</code>.</p>
+<p>This reduces the memory usage and complexity of the channel implementation as no caching needs to be performed. On the other hand, you may want to perform on-site caching of the results of <code>f</code>, especially if the function is side-effecting.</p>
+<p>The current value of a state channel may be read at any time using <code>.get</code> (if available) or <code>flush()</code>.</p>
+<p>There are operations that maintain state for all observers. For example, <code>skip(n)</code> counts the number of produced values<a href="#fn14" class="footnoteRef" id="fnref14"><sup>14</sup></a>. As soon as <code>n</code> is exceeded, all subsequent values are passed on. The initial <code>attach()</code> calls ignore the first value (42), but deal with all values after that:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">val</span> ch = <span class="fu">Var</span>(<span class="dv">42</span>)
+<span class="kw">val</span> dch = ch.<span class="fu">drop</span>(<span class="dv">1</span>)
+dch.<span class="fu">attach</span>(println)
+dch.<span class="fu">attach</span>(println)
+ch := <span class="dv">23</span>  <span class="co">// produces 23 twice</span></code></pre>
+<h2 id="buffers">Buffers</h2>
+<p>Buffers are reactive lists. State changes such as row additions, updates or removals are encoded as delta objects. This allows to reflect these changes directly in the DOM, without having to re-render the entire list. <code>Buffer[T]</code> is therefore more efficient than <code>Channel[Seq[T]]</code> when dealing with list changes.</p>
+<p>The following example creates a buffer with three initial rows, observes the size<a href="#fn15" class="footnoteRef" id="fnref15"><sup>15</sup></a> and then adds another row:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">val</span> buf = Buffer(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)
+buf.<span class="fu">size</span>.<span class="fu">attach</span>(println) <span class="co">// Prints 3</span>
+buf += <span class="dv">4</span>  <span class="co">// Inserts row 4, prints 4</span></code></pre>
+<p>All polling methods have a dollar sign as suffix <code>$</code>:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">val</span> buf = Buffer(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)
+<span class="fu">println</span>(buf.<span class="fu">size</span>$) <span class="co">// Prints 3</span></code></pre>
+<p>An example of using <code>removeAll()</code>:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">val</span> buf  = Buffer(<span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)
+<span class="kw">val</span> mod2 = buf.<span class="fu">filter</span>$(_ % <span class="dv">2</span> == <span class="dv">0</span>)
+
+buf.<span class="fu">removeAll</span>(mod2.<span class="fu">get</span>)</code></pre>
+<blockquote>
+<p><strong>Note:</strong> <code>Buffer</code> will identify rows by their value if the row type is a <code>case class</code>. In this case, operations like <code>insertAfter()</code> or <code>remove()</code> will always refer to the first occurrence. This is often not desired. An alternative would be to define a <code>class</code> instead or to wrap the values in a <code>Ref[_]</code> object:</p>
+</blockquote>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">val</span> todos = Buffer[Ref[Todo]]()
+<span class="fu">ul</span>(
+  todos.<span class="fu">map</span> { <span class="kw">case</span> tr @ Ref(t) =&gt;
+    <span class="fu">li</span>(
+      <span class="co">// Access field `completed`</span>
+      <span class="fu">checkbox</span>().<span class="fu">bind</span>(t.<span class="fu">completed</span>)
+
+      <span class="co">// remove() requires reference</span>
+    , <span class="fu">button</span>().<span class="fu">onClick</span>(_ =&gt; todos.<span class="fu">remove</span>(tr))
+    )
+  }
+)</code></pre>
+<blockquote>
+<p>The value of a <code>Ref[_]</code> can be obtained by calling <code>get</code>. However, it is more convenient to do pattern matching as in the example.</p>
+</blockquote>
+<p>You can observe the delta objects produced by a buffer:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">val</span> buf = Buffer(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)
+buf.<span class="fu">changes</span>.<span class="fu">attach</span>(println)
+buf += <span class="dv">4</span>
+buf.<span class="fu">clear</span>()</code></pre>
+<p>This prints:</p>
+<pre><code>Insert(Last(),1)
+Insert(Last(),2)
+Insert(Last(),3)
+Insert(Last(),4)
+Clear()</code></pre>
+<p>All streaming operations that a buffer provides are implemented in terms of the <code>changes</code> channel.</p>
+<h2 id="dictionaries">Dictionaries</h2>
+<p>Dictionaries are unordered maps from <code>A</code> to <code>B</code>. Widok abbreviates the type as <code>Dict</code>.</p>
+<h2 id="sets">Sets</h2>
+<p>Reactive sets are implemented as <code>BufSet</code><a href="#fn16" class="footnoteRef" id="fnref16"><sup>16</sup></a>.</p>
+<h2 id="binding-to-widgets">Binding to Widgets</h2>
+<p>Reactive data structures interact with user interfaces. These data structures are usually set up before the widgets, so that they can be referenced during the widget initialisation. The most common use case is binding channels to DOM nodes:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">val</span> name = Channel[String]()
+<span class="kw">def</span> <span class="fu">view</span>() = <span class="fu">h1</span>(<span class="st">&quot;Hello &quot;</span>, name)</code></pre>
+<p>This example shows one-way binding, i.e. uni-directional communication. <code>name</code> is converted into a widget, which observes the values produced on <code>name</code> and updates the DOM node with every change. This is realised by an implicit and translates to <code>span().subscribe(name)</code>.</p>
+<p>Another implicit is provided for widget channels, so you can use <code>map()</code> on any channel to create a widget stream. The widgets are rendered automatically. If the widget type stays the same and it provides a <code>subscribe()</code> method, use it instead.</p>
+<p>On form fields you will need to call <code>subscribe()</code> by yourself:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">val</span> name = Channel[String]()
+<span class="kw">def</span> <span class="fu">view</span>() = <span class="fu">text</span>().<span class="fu">subscribe</span>(name)</code></pre>
+<p>Two-way binding is achieved by using the method <code>bind()</code> instead of <code>subscribe()</code>. The only difference is that changes are back-propagated. This lets you define multiple widgets which listen to the same channel and synchronise their values:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">val</span> ch = <span class="fu">Var</span>(<span class="st">&quot;Hello world&quot;</span>)
+<span class="kw">def</span> <span class="fu">view</span>() = <span class="fu">Inline</span>(
+  Input.<span class="fu">Text</span>().<span class="fu">bind</span>(ch)
+, Input.<span class="fu">Text</span>().<span class="fu">bindEnter</span>(ch)
+)</code></pre>
+<p>This creates two text fields. When the page is loaded, both have the same content: <q>Hello world</q>. When the user changes the content of the first field, the second text field is updated on-the-fly. The second field requires an enter press before the change gets propagated to the first text field.</p>
+<p>Each widget has methods to control its attributes either with static values or channels. For example, to set the CSS tag of a widget use <code>widget.css(&quot;tag1&quot;, &quot;tag2&quot;)</code>. This method is overloaded and you could also pass a <code>ReadChannel[Seq[String]]</code>.</p>
+<p>Passing channels is useful specifically for toggling CSS tags with <code>cssState()</code>. It sets CSS tags only when the expected channel produces <code>true</code>, otherwise it unsets the tags:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala">widget.<span class="fu">cssState</span>(editing, <span class="st">&quot;editing&quot;</span>, <span class="st">&quot;change&quot;</span>)</code></pre>
+<p>Other useful functions are <code>show()</code> and <code>visible()</code>. The former sets the CSS property <code>display</code> to <code>none</code>, while the latter sets <code>visibility</code> to <code>hidden</code> to hide a widget.</p>
+<p>As reactive data structures provide streaming operations that return channels, these can be used in widgets. Consider the method <code>isEmpty</code> that is defined on buffers. You could show a <code>span</code> depending on whether the list is empty or not:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">val</span> buf = Buffer[Int]()
+
+<span class="kw">def</span> <span class="fu">view</span>() = <span class="fu">Inline</span>(
+  <span class="fu">span</span>(<span class="st">&quot;The list is empty.&quot;</span>)
+    .<span class="fu">show</span>(agg.<span class="fu">isEmpty</span>)
+, <span class="fu">span</span>(<span class="st">&quot;The list is not empty.&quot;</span>)
+    .<span class="fu">show</span>(agg.<span class="fu">nonEmpty</span>)
+, <span class="fu">button</span>().<span class="fu">onClick</span>(_ =&gt; buf += <span class="dv">42</span>)
+, <span class="fu">button</span>().<span class="fu">onClick</span>(_ =&gt; buf.<span class="fu">clear</span>())
+)</code></pre>
+<h2 id="tests">Tests</h2>
+<p>The proper functioning of each operation is backed by <a href="https://github.com/widok/widok/tree/master/shared/src/test/scala/org/widok">test cases</a>. These provide complementary documentation.</p>
+<h1 id="bindings">Bindings</h1>
+<p>This chapter deals with third-party CSS frameworks for which Widok provides typed bindings.</p>
+<h2 id="bootstrap">Bootstrap</h2>
+<p>Bootstrap is a <q>framework for developing responsive, mobile first projects on the web.</q> See the <a href="http://getbootstrap.com/">project page</a> for more information.</p>
+<p>To use the bindings, it may be desirable to import its entire namespace:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">import</span> org.<span class="fu">widok</span>.<span class="fu">bindings</span>.<span class="fu">Bootstrap</span>.<span class="fu">_</span></code></pre>
+<p>Bootstrap’s components closely resemble their HTML counterparts. For example:</p>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;button</span><span class="ot"> type=</span><span class="st">&quot;button&quot;</span><span class="ot"> class=</span><span class="st">&quot;btn btn-default&quot;</span><span class="kw">&gt;</span>
+  <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;glyphicon glyphicon-align-left&quot;</span><span class="kw">&gt;&lt;/span&gt;</span>
+<span class="kw">&lt;/button&gt;</span></code></pre>
+<p>This translates to:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala">Button(Glyphicon.<span class="fu">AlignLeft</span>())</code></pre>
+<p>Bootstrap widgets expect a list of arguments which denotes child widgets. The configuration can be controlled by usual method calls on the widget. If a widget conceptually doesn’t have any children, then its arguments are used for the configuration instead.</p>
+<h3 id="external-stylesheet">External stylesheet</h3>
+<p>For the bindings to work without sbt-web, add the latest Bootstrap stylesheet to the <code>head</code> tag of your <code>application.html</code> file. You can either keep a local copy of the stylesheet or use a CDN:</p>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;link</span>
+<span class="ot">  rel=</span><span class="st">&quot;stylesheet&quot;</span>
+<span class="ot">  href=</span><span class="st">&quot;https://maxcdn.bootstrapcdn.com/</span>
+<span class="st">bootstrap/3.3.2/css/bootstrap.min.css&quot;</span><span class="kw">&gt;</span></code></pre>
+<p>Please keep in mind that the pre-built stylesheet comes with certain restrictions, like the font path being hard-coded.</p>
+<h3 id="label">Label</h3>
+<p>Every widget is equipped with a method <code>label(value: Style)</code> that allows attaching a Bootstrap label like <code>label-info</code> to it:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="fu">span</span>(<span class="st">&quot;Text&quot;</span>).<span class="fu">label</span>(Label.<span class="fu">Info</span>)</code></pre>
+<p><code>TextContainer(styles: Style*)</code> generates a container with a list of styles.</p>
+<h3 id="glyphicons">Glyphicons</h3>
+<p>Glyphicons are simple function calls, for example: <code>Glyphicon.User()</code>. All Bootstrap glyphicons are supported, although the naming was changed to camel-case.</p>
+<h3 id="forms">Forms</h3>
+<p>Forms can be validated on-the-fly. For each field a custom validator may be written. <code>validator.errors()</code> will render the textual error. Instead of showing the error underneath a field, this call can be placed anywhere, for instance to centralise all errors. <code>validate()</code> is defined on every widget and sets the <code>has-error</code> CSS tag if a field is invalid. The initial validation is triggered when the user presses the submit button. <code>validator.check()</code> will perform the first validation and return <code>true</code> if all fields are valid. If at least one input field was invalid, the submit button is kept disabled as long as the input stays wrong.</p>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">val</span> username    = <span class="fu">Var</span>(<span class="st">&quot;&quot;</span>)
+<span class="kw">val</span> displayName = <span class="fu">Var</span>(<span class="st">&quot;&quot;</span>)
+
+<span class="kw">def</span> <span class="fu">validateNonEmpty</span>(value: String) =
+  <span class="kw">if</span> (value.<span class="fu">trim</span>.<span class="fu">isEmpty</span>) Some(<span class="st">&quot;Field cannot be empty&quot;</span>)
+  <span class="kw">else</span> None
+
+<span class="kw">implicit</span> <span class="kw">val</span> validator = Validator(
+  <span class="fu">Validation</span>(username,    validateNonEmpty)
+, <span class="fu">Validation</span>(displayName, validateNonEmpty)
+)
+
+Container(
+  <span class="fu">FormGroup</span>(
+    <span class="fu">InputGroup</span>(
+      InputGroup.<span class="fu">Addon</span>(Glyphicon.<span class="fu">Globe</span>())
+    , Input.<span class="fu">Text</span>()
+        .<span class="fu">placeholder</span>(<span class="st">&quot;Display name&quot;</span>)
+        .<span class="fu">size</span>(Size.<span class="fu">Large</span>)
+        .<span class="fu">tabIndex</span>(<span class="dv">1</span>)
+        .<span class="fu">bind</span>(displayName)
+    )
+    , validator.<span class="fu">errors</span>(displayName)
+  ).<span class="fu">validate</span>(displayName)
+
+  , <span class="fu">FormGroup</span>(
+      <span class="fu">InputGroup</span>(
+        InputGroup.<span class="fu">Addon</span>(Glyphicon.<span class="fu">User</span>())
+      , Input.<span class="fu">Text</span>()
+          .<span class="fu">placeholder</span>(<span class="st">&quot;Username&quot;</span>)
+          .<span class="fu">size</span>(Size.<span class="fu">Large</span>)
+          .<span class="fu">tabIndex</span>(<span class="dv">2</span>)
+          .<span class="fu">bind</span>(username)
+      )
+      , validator.<span class="fu">errors</span>(username)
+    ).<span class="fu">validate</span>(username)
+  )
+
+, Button(<span class="st">&quot;Submit&quot;</span>).<span class="fu">onClick</span> { _ =&gt;
+    <span class="kw">if</span> (validator.<span class="fu">check</span>()) <span class="fu">println</span>(<span class="st">&quot;Ok&quot;</span>)
+  }.<span class="fu">enabled</span>(validator.<span class="fu">maySubmit</span>)
+)</code></pre>
+<p>Other widgets related to forms are:</p>
+<ul>
+<li><code>HorizontalForm()</code></li>
+<li><code>FormGroup()</code></li>
+<li><code>ControlLabel()</code></li>
+<li><code>InputGroup()</code></li>
+<li><code>InputGroup.Addon()</code></li>
+<li><code>Input.Text()</code></li>
+<li><code>Input.Password()</code></li>
+<li><code>Input.Select()</code></li>
+<li><code>Button()</code></li>
+<li><code>Button.Group()</code></li>
+<li><code>Button.Toolbar()</code></li>
+<li><code>Checkbox()</code></li>
+</ul>
+<h3 id="layout">Layout</h3>
+<p>Layout-related widgets are:</p>
+<ul>
+<li><code>Footer()</code></li>
+<li><code>Container()</code></li>
+<li><code>PageHeader()</code></li>
+<li><code>Lead()</code></li>
+<li><code>PullRight()</code></li>
+</ul>
+<h3 id="navigation">Navigation</h3>
+<p>Example:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">val</span> tab1 = Navigation.<span class="fu">Tab</span>(<span class="st">&quot;Tab 1&quot;</span>)
+<span class="kw">val</span> tab2 = Navigation.<span class="fu">Tab</span>(<span class="st">&quot;Tab 2&quot;</span>)
+<span class="kw">val</span> currentTab = <span class="fu">Var</span>(tab1)
+
+Navigation.<span class="fu">renderTabs</span>(Seq(tab1, tab2), currentTab)</code></pre>
+<h3 id="navigation-bar">Navigation bar</h3>
+<p>Example for the <code>NavigationBar</code> widget:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="fu">NavigationBar</span>(
+  Container(
+    NavigationBar.<span class="fu">Header</span>(
+      NavigationBar.<span class="fu">Toggle</span>()
+    , NavigationBar.<span class="fu">Brand</span>(<span class="st">&quot;Brand name&quot;</span>)
+    )
+  , NavigationBar.<span class="fu">Collapse</span>(
+      NavigationBar.<span class="fu">Elements</span>(
+        <span class="fu">Item</span>(<span class="fu">a</span>(Glyphicon.<span class="fu">Dashboard</span>(), <span class="st">&quot; Page 1&quot;</span>).<span class="fu">url</span>(Routes.<span class="fu">page1</span>()))
+      , <span class="fu">Item</span>(<span class="fu">a</span>(Glyphicon.<span class="fu">Font</span>(), <span class="st">&quot; Page 2&quot;</span>).<span class="fu">url</span>(Routes.<span class="fu">page2</span>()))
+      , NavigationBar.<span class="fu">Right</span>(
+          NavigationBar.<span class="fu">Navigation</span>(
+            NavigationBar.<span class="fu">Form</span>(
+              <span class="fu">FormGroup</span>(
+                <span class="fu">InputGroup</span>(Input.<span class="fu">Text</span>())
+              , Button(Glyphicon.<span class="fu">Search</span>())
+              ).<span class="fu">role</span>(Role.<span class="fu">Search</span>)
+            )
+          )
+        )
+      )
+    )
+  )
+)</code></pre>
+<p>As probably more than one page is going to use the same header, you should create a trait for it. For example, you could define <code>CustomPage</code> with the header. Then, it only requires you to define the page title and body for every page.</p>
+<h3 id="alert">Alert</h3>
+<p>Example:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="fu">Alert</span>(<span class="st">&quot;No occurrences&quot;</span>).<span class="fu">style</span>(Style.<span class="fu">Danger</span>)</code></pre>
+<h3 id="progress-bar">Progress bar</h3>
+<p>Example:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">val</span> percentage = <span class="fu">Var</span>(<span class="fl">0.1</span>)
+<span class="fu">ProgressBar</span>(<span class="st">&quot;Caption&quot;</span>)
+  .<span class="fu">style</span>(percentage.<span class="fu">map</span>(p =&gt; <span class="kw">if</span> (p &lt; <span class="fl">0.5</span>) Style.<span class="fu">Warning</span> <span class="kw">else</span> Style.<span class="fu">Success</span>))
+  .<span class="fu">progress</span>(percentage)</code></pre>
+<h3 id="panel">Panel</h3>
+<p>Example:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala">Panel(
+  Panel.<span class="fu">Heading</span>(Panel.<span class="fu">Title3</span>(<span class="st">&quot;Panel title&quot;</span>))
+, Panel.<span class="fu">Body</span>(<span class="st">&quot;Panel text&quot;</span>)
+).<span class="fu">style</span>(Style.<span class="fu">Danger</span>)</code></pre>
+<h3 id="pagination">Pagination</h3>
+<p>Example:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="fu">Pagination</span>(
+  Pagination.<span class="fu">Item</span>(<span class="fu">a</span>(<span class="st">&quot;«&quot;</span>)).<span class="fu">disabled</span>(<span class="kw">true</span>)
+, Pagination.<span class="fu">Item</span>(<span class="fu">a</span>(<span class="st">&quot;1&quot;</span>)).<span class="fu">active</span>(<span class="kw">true</span>)
+, Pagination.<span class="fu">Item</span>(<span class="fu">a</span>(<span class="st">&quot;2&quot;</span>))
+, Pagination.<span class="fu">Item</span>(<span class="fu">a</span>(<span class="st">&quot;»&quot;</span>))
+)</code></pre>
+<h3 id="list-groups">List groups</h3>
+<p>Example:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="fu">ListGroup</span>(
+  ListGroup.<span class="fu">Item</span>(<span class="fu">a</span>(<span class="st">&quot;Item 1&quot;</span>)).<span class="fu">active</span>(<span class="kw">true</span>),
+, ListGroup.<span class="fu">Item</span>(<span class="fu">a</span>(<span class="st">&quot;Item 2&quot;</span>))
+, ListGroup.<span class="fu">Item</span>(<span class="fu">a</span>(<span class="st">&quot;Item 3&quot;</span>))
+)</code></pre>
+<h3 id="grids">Grids</h3>
+<p>Example:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala">Grid.<span class="fu">Row</span>(
+  Grid.<span class="fu">Column</span>(
+    <span class="st">&quot;Grid contents&quot;</span>
+  ).<span class="fu">column</span>(Size.<span class="fu">ExtraSmall</span>, <span class="dv">6</span>)
+   .<span class="fu">column</span>(Size.<span class="fu">Medium</span>, <span class="dv">3</span>)
+)</code></pre>
+<h3 id="modal">Modal</h3>
+<p>It is most convenient to use the <code>ModalBuilder</code> to create modals. On the same page you can define several modals. For example:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">val</span> modal: ModalBuilder = <span class="fu">ModalBuilder</span>(
+  Modal.<span class="fu">Header</span>(
+    Modal.<span class="fu">Close</span>(modal.<span class="fu">dismiss</span>)
+  , Modal.<span class="fu">Title</span>(<span class="st">&quot;Modal title&quot;</span>)
+  )
+, Modal.<span class="fu">Body</span>(<span class="st">&quot;Modal body&quot;</span>)
+, Modal.<span class="fu">Footer</span>(
+    Button(<span class="st">&quot;Submit&quot;</span>).<span class="fu">onClick</span>(_ =&gt; modal.<span class="fu">dismiss</span>())
+  )
+)
+
+<span class="kw">def</span> <span class="fu">body</span>() = <span class="fu">div</span>(
+  Button(<span class="st">&quot;Open&quot;</span>).<span class="fu">onClick</span>(_ =&gt; modal.<span class="fu">open</span>())
+, modal <span class="co">/* Each modal must be added to the body. It is hidden by default. */</span>
+)</code></pre>
+<h3 id="media">Media</h3>
+<p>Example:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala">Media(
+  Media.<span class="fu">Left</span>(<span class="fu">Placeholder</span>(<span class="st">&quot;cover&quot;</span>, Placeholder.<span class="fu">Size</span>(<span class="dv">150</span>, <span class="dv">80</span>)))
+, Media.<span class="fu">Body</span>(
+    Media.<span class="fu">Heading</span>(<span class="st">&quot;Heading&quot;</span>)
+  , <span class="st">&quot;Description&quot;</span>
+  )
+)</code></pre>
+<h3 id="breadcrumb">Breadcrumb</h3>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="fu">Breadcrumb</span>(
+  <span class="fu">Item</span>(<span class="fu">a</span>(<span class="st">&quot;Item 1&quot;</span>))
+, <span class="fu">Item</span>(<span class="fu">a</span>(<span class="st">&quot;Item 2&quot;</span>)).<span class="fu">active</span>(<span class="kw">true</span>)
+)</code></pre>
+<h3 id="table">Table</h3>
+<p>To use a Bootstrap table, use <code>Table()</code> and <code>Table.Row()</code> which in contrast to <code>table()</code> and <code>tr()</code> provide Bootstrap-related styling options:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="fu">Table</span>(
+  <span class="fu">thead</span>(
+    <span class="fu">tr</span>(
+      <span class="fu">th</span>(<span class="st">&quot;Date&quot;</span>)
+    , <span class="fu">th</span>(<span class="st">&quot;Quantity&quot;</span>)
+    )
+  )
+
+, <span class="fu">tbody</span>(
+    Table.<span class="fu">Row</span>(<span class="fu">td</span>(<span class="st">&quot;01.01.2015&quot;</span>), <span class="fu">td</span>(<span class="st">&quot;23&quot;</span>)).<span class="fu">style</span>(Style.<span class="fu">Info</span>)
+  , Table.<span class="fu">Row</span>(<span class="fu">td</span>(<span class="st">&quot;02.01.2015&quot;</span>), <span class="fu">td</span>(<span class="st">&quot;42&quot;</span>)).<span class="fu">style</span>(Style.<span class="fu">Danger</span>)
+  )
+)</code></pre>
+<h3 id="typeahead">Typeahead</h3>
+<p>Example:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">val</span> allMatches = Map(<span class="dv">0</span> -&gt; <span class="st">&quot;First&quot;</span>, <span class="dv">1</span> -&gt; <span class="st">&quot;Second&quot;</span>, <span class="dv">2</span> -&gt; <span class="st">&quot;Third&quot;</span>)
+<span class="kw">def</span> <span class="fu">matches</span>(input: String): Seq[(Int, String)] =
+  allMatches.<span class="fu">filter</span> { <span class="kw">case</span> (k, v) =&gt; v.<span class="fu">startsWith</span>(input) }.<span class="fu">toSeq</span>
+<span class="kw">def</span> <span class="fu">select</span>(selection: Int) { <span class="fu">println</span>(s<span class="st">&quot;Selection: $selection&quot;</span>) }
+
+<span class="fu">Typeahead</span>(Input.<span class="fu">Text</span>(), matches, select)</code></pre>
+<h2 id="font-awesome-1">Font-Awesome</h2>
+<p>The Font-Awesome bindings include all icons in camel-case notation. For convenience, rename the object when you import it:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">import</span> org.<span class="fu">widok</span>.<span class="fu">bindings</span>.{FontAwesome =&gt; fa}</code></pre>
+<p>Using the <a href="http://fortawesome.github.io/Font-Awesome/icon/user/"><code>user</code> icon</a> is as simple as writing:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala">fa.<span class="fu">User</span>()</code></pre>
+<p>This translates to:</p>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;fa fa-user&quot;</span><span class="kw">&gt;&lt;/span&gt;</span></code></pre>
+<h1 id="developing">Developing</h1>
+<p>If you would like to participate or try out development releases, please read this chapter.</p>
+<h2 id="api">API</h2>
+<p>Widok is still in its early stages and the API may be subject to changes. Any recommendations for improvements are welcome.</p>
+<h2 id="compilation-1">Compilation</h2>
+<p>To work on the development version of Widok, run the following commands:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> clone git@github.com:widok/widok.git
+$ <span class="kw">cd</span> widok
+$ <span class="kw">sbt</span> publish-local</code></pre>
+<p>This compiles the latest version of Widok and installs it locally. To use it, make sure to also update the version in your project accordingly. Remember that your project’s Scala.js version must match the version Widok is built for.</p>
+<h2 id="releases">Releases</h2>
+<p>The versioning scheme follows the format <code>releaseSeries.relativeVersion</code>. Thus, v0.2.0 defines the version 0 of the release series 0.2. All versions within the same release series must be binary-compatible. If any of the dependencies (like Scala.js) are updated, the release series must be increased as well.</p>
+<p>Widok releases are published to <a href="https://search.maven.org/">Maven Central</a>.</p>
+<h2 id="manual">Manual</h2>
+<p>Since v0.2, the manual is stored in the same repository as the code. This enables you to commit code coupled with the corresponding documentation changes. At any time, the manual should always reflect the current state of the code base.</p>
+<h1 id="changelog">Changelog</h1>
+<p>The changelog lists all major changes between releases. For more details, please see the <a href="https://github.com/widok/widok/commits/master">Git changelog</a>.</p>
+<h2 id="version-0.2">Version 0.2</h2>
+<h3 id="general-work">General work</h3>
+<ul>
+<li>Relicensed as Apache v2.0</li>
+<li>Ported to Scala 2.11.5</li>
+<li>Ported to Scala.js v0.6.0</li>
+<li>Ported to scalajs-dom v0.8.0</li>
+<li>Uses <a href="http://github.com/monifu/minitest">minitest</a> for the test cases</li>
+<li><a href="https://github.com/milessabin/shapeless">Shapeless</a> dependency dropped; the lens macros resulted in slower compilation and had insufficient IDE support. At the time of writing, Shapeless was not yet ported to Scala.js v0.6.0. <code>Var()</code> can be used as a drop-in replacement for more flexibility and better performance. As a result of dropping Shapeless, the Sonatype resolver is not needed anymore.</li>
+<li>There is a <a href="https://gitter.im/widok/widok">Gitter channel</a> for conversations about Widok</li>
+<li>JVM support: Widok is now built for the JVM, allowing you to use the reactive library on the server, too. Upcoming versions will further focus on network transparency (see <a href="https://github.com/widok/widok/issues/26">#26</a>). In the future, the widget library will be usable under the JVM as well (see <a href="https://github.com/widok/widok/issues/25">#25</a>).</li>
+<li>The manual is now part of the code repository. Pandoc is used for compilation. Current targets are PDF, HTML and EPUB.</li>
+</ul>
+<h3 id="event-propagation">Event propagation</h3>
+<p>This version includes a complete redesign of the event propagation mechanisms. The previous implementation was merely a proof of concept and therefore had a couple of design issues. Changes include:</p>
+<ul>
+<li>More abstraction layers for better type-safety and modularity. The whole API now strictly distinguishes between <code>ReadChannels</code> and <code>WriteChannels</code>. By looking at the types of a function, it is now more predictable what the passed channel is being used for.</li>
+<li>Improve naming: <code>Var</code> and <code>Buffer</code> as opposed to <code>CachedChannel</code> and <code>CachedAggregate</code></li>
+<li><p><code>Aggregate</code>s were dropped. Instead, reactive data structures were introduced, which encode their changes as delta objects and are built on top of channels. Publishing changes as channels allows to persist the stream or send it directly to the client. Furthermore, change transformers could be written, for example one that cancels out common sequences like for better rendering performance:</p>
+<pre class="sourceCode scala"><code class="sourceCode scala">Change.<span class="fu">Insert</span>(Position.<span class="fu">Last</span>(), element)
+Change.<span class="fu">Remove</span>(element)</code></pre></li>
+<li>Reactive data structures for buffers, dictionaries and sets were introduced.</li>
+<li>A reactive Rose tree implementation was added.</li>
+<li>Back propagation for aggregates was entirely removed. For sequences it offered little benefit. Previously, back propagation was only used for deletions. Abandoning this feature makes it easier to implement new combinators. For example, <code>filter()</code> became significantly shorter and better to comprehend.</li>
+<li>Partially defined streams were introduced (<code>Opt</code>)</li>
+<li>Created traits that fully specify the functionality of reactive combinators (see <code>Combinators.scala</code>). As most combinators are implemented by more than one class, this will ensure consistency in their usage. They could also be used outside of Widok as the basis for alternative implementations.</li>
+<li>Work on resource management has begun; <code>dispose()</code> can be called on channels to clear its subscription in the parent.</li>
+<li>Property-based testing for channels and aggregates (basic operations only)</li>
+<li><p>Cycle detection for channels. As cycles may be well-defined under certain circumstances, they can be ignored using <code>filterCycles</code> (see the <a href="https://github.com/widok/todomvc">TodoMVC application</a> for an example)</p></li>
+</ul>
+<h3 id="widgets-2">Widgets</h3>
+<p>Some work also went into the widget subsystem:</p>
+<ul>
+<li>New implicits to render numerical values, buffers and sequences without type conversions</li>
+<li>DOM event listeners are now available on all widgets and made available as channels. This implies that more than one listener can be attached to the same event. Also, <code>on*()</code> short-hands were created for all events. This makes registering a click event listeners as simple as writing <code>.onClick(ev =&gt; ...)</code>.</li>
+<li>All DOM elements have short aliases which are equal to their HTML tag names. Instead of <code>Input.Text()</code>, you could now write <code>text()</code>. As these tag names may conflict in certain cases, an explicit import is necessary: <code>import org.widok.html._</code></li>
+<li>The Bootstrap bindings were completely revised. No type casts are necessary anymore and most widgets are now <code>case class</code>es instead of functions. This makes the widgets easier in their usage. The bindings now cover a large percentage of the functionality Bootstrap provides.</li>
+</ul>
+<p>Newly added widgets are:</p>
+<ul>
+<li>Bootstrap: Modal dialogue</li>
+<li>Bootstrap: Typeahead field</li>
+<li>Bootstrap: Form validation</li>
+<li>Bootstrap: Table</li>
+<li>Bootstrap: Pagination</li>
+<li>Bootstrap: Panel</li>
+<li>Bootstrap: Button group and toolbar</li>
+<li>Bootstrap: Breadcrumb</li>
+<li>Bootstrap: Media object</li>
+<li>HTML: File input</li>
+<li>HTML: Password field</li>
+<li>HTML: Select box</li>
+<li>HTML: Radio button</li>
+<li>HTML: HTML5 number input field</li>
+<li>Widget container <code>Inline()</code> (can be used when a <code>span()</code> would introduce undesired design glitches)</li>
+<li>Image placeholder</li>
+<li>Lorem ipsum</li>
+</ul>
+<p>Code generators were introduced for higher reliability of the bindings. <a href="https://github.com/sbt/sbt-web">sbt-web</a> is used internally to obtain external web dependencies. As part of the build process, Scala files are then created. Auto-generated bindings are provided for:</p>
+<ul>
+<li>Bootstrap’s glyphicons</li>
+<li>Font-Awesome</li>
+</ul>
+<h3 id="routing">Routing</h3>
+<ul>
+<li>In v0.1 the DOM nodes of all routes were initialised when the page loads. This may result in cycle errors. Now, a route change also reinitialises the entire page.</li>
+<li>The method <code>destroy()</code> can be overridden to react on page changes, for example for manual resource management</li>
+</ul>
+<h3 id="trivia">Trivia</h3>
+<ul>
+<li>The API changes significantly shrinked TodoMVC’s file size from 3396 bytes (92 lines) to 3059 bytes (89 lines).</li>
+<li>Widok can be used to develop desktop applications with <a href="https://github.com/nwjs/nw.js/">NW.js</a> as shown by <a href="http://github.com/poliglot/poliglot-ui">poliglot-ui</a></li>
+</ul>
+<h1 id="support">Support</h1>
+<p>The official support channels are <a href="https://gitter.im/widok/widok">Gitter</a> and <a href="https://github.com/widok/widok/issues">GitHub issues</a>. If you have general questions, you may also send me an e-mail.</p>
+<div class="references">
+
+</div>
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>An application cannot define more than one entry point.<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>In contrast to a <code>&lt;span&gt;</code> or <code>&lt;div&gt;</code>, an <code>Inline</code> view cannot be controlled using CSS stylesheet rules.<a href="#fnref2">↩</a></p></li>
+<li id="fn3"><p>Partials are composed widgets.<a href="#fnref3">↩</a></p></li>
+<li id="fn4"><p>These functions do not access the state in any way.<a href="#fnref4">↩</a></p></li>
+<li id="fn5"><p>The types in the code only serve illustration purposes<a href="#fnref5">↩</a></p></li>
+<li id="fn6"><p>Source: <a href="http://leecampbell.blogspot.de/2010/08/rx-part-7-hot-and-cold-observables.html">leecampbell.blogspot.de</a> (4th February 2015)<a href="#fnref6">↩</a></p></li>
+<li id="fn7"><p>For instance, <a href="https://github.com/monifu/monifu">Monifu</a> implements this feature.<a href="#fnref7">↩</a></p></li>
+<li id="fn8"><p>This function is called by <code>attach()</code> and produces multiple values which is necessary for some reactive data structures like lists.<a href="#fnref8">↩</a></p></li>
+<li id="fn9"><p>This is largely inspired by Scala’s <a href="http://www.scala-lang.org/api/current/index.html#scala.collection.SeqView"><code>SeqView</code></a>.<a href="#fnref9">↩</a></p></li>
+<li id="fn10"><p>For example, a <code>Delta.Clear</code> may only be generated after <code>Delta.Insert</code>.<a href="#fnref10">↩</a></p></li>
+<li id="fn11"><p>This is a practical decision. The <code>Poll</code> trait has direct access to the state. Thus, certain streaming operations can be implemented more efficiently. This should be avoided though as a delta stream would need to be persisted first in order for the <code>Poll</code> trait to be applicable.<a href="#fnref11">↩</a></p></li>
+<li id="fn12"><p>In Rx terms, <code>Var</code> would correspond to a <em>cold observer</em> as attaching to it will flush its current value. This is different from <code>Channel</code> which loses its messages when there are no subscribers.<a href="#fnref12">↩</a></p></li>
+<li id="fn13"><p>It can be used to create delta channels from DOM variables by binding to the corresponding events that triggered by the value changes. For an example see <code>Node.click</code>.<a href="#fnref13">↩</a></p></li>
+<li id="fn14"><p><code>n</code> must be greater than 0.<a href="#fnref14">↩</a></p></li>
+<li id="fn15"><p><code>size</code> returns a <code>ReadChannel[Int]</code>.<a href="#fnref15">↩</a></p></li>
+<li id="fn16"><p>This name was chosen as <code>Set</code> would have collided with Scala’s implementation.<a href="#fnref16">↩</a></p></li>
+</ol>
+</section>
+
+</body>
+</html>

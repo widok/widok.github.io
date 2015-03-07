@@ -22,6 +22,26 @@
     <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
+  <style type="text/css">
+	table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+	  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+	table.sourceCode { width: 100%; line-height: 100%; }
+	td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+	td.sourceCode { padding-left: 5px; }
+	code > span.kw { color: #007020; font-weight: bold; }
+	code > span.dt { color: #902000; }
+	code > span.dv { color: #40a070; }
+	code > span.bn { color: #40a070; }
+	code > span.fl { color: #40a070; }
+	code > span.ch { color: #4070a0; }
+	code > span.st { color: #4070a0; }
+	code > span.co { color: #60a0b0; font-style: italic; }
+	code > span.ot { color: #007020; }
+	code > span.al { color: #ff0000; font-weight: bold; }
+	code > span.fu { color: #06287e; }
+	code > span.er { color: #ff0000; font-weight: bold; }
+  </style>
+
 </head>
 
 <body>
@@ -35,7 +55,7 @@
                     <div class="site-heading">
                         <h1>Widok</h1>
                         <hr class="small">
-                        <span class="subheading">Reactive web framework for Scala.js</span>
+                        <span class="subheading">Reactive web framework for the JVM and Scala.js</span>
                     </div>
                 </div>
             </div>
@@ -56,46 +76,14 @@
 
                     <h2 class="section-heading">Abstract</h2>
 
-                    <p>
-                        Widok is a reactive web framework for <a href="http://www.scala-js.org/">Scala.js</a>. It enables you to develop interactive web applications entirely in Scala by transpiling the code to JavaScript. Abstractions such as <i>views</i>, <i>channels</i> or <i>aggregates</i> allow for concise and reliable code. Widok ships native bindings for popular CSS frameworks like <a href="http://getbootstrap.com/">Bootstrap</a> and <a href="http://fortawesome.github.io/Font-Awesome/">Font-Awesome</a> which let you iterate faster.
-                    </p>
-
-                    <p>Widok's key concepts are:</p>
+                    <p>Widok is a reactive web framework for the JVM and Scala.js. Its key concepts are:</p>
 
                     <ul class="task-list">
-                        <li><strong>Page:</strong> the browser query is dispatched to a page which renders widgets</li>
-                        <li><strong>Widget:</strong> an element that corresponds to a node in the DOM</li>
-                        <li><strong>Channel:</strong> a stream of values</li>
-                        <li><strong>Aggregate:</strong> a channel container</li>
+						<li><strong>Pages:</strong> Widok enforces modularisation of your web application. You split your application into <i>pages</i>. A <i>router</i> watches the browser query and loads the respective page.</li>
+						<li><strong>Widgets:</strong> The layout is specified in terms of composable widgets. Widgets are bound to dynamically changing values which are rendered on-the-fly in the browser.</li>
+						<li><strong>Bindings:</strong> Widok ships bindings for CSS frameworks like Bootstrap and Font-Awesome.</li>
+						<li><strong>Reactive programming:</strong> Reactive data structures, which implement a simple model of data propagation, are provided. Widok has reactive counterparts for variables, arrays, maps and sets. Instead of dealing with constant values, you specify the data flow as streams, on which you operate with higher-order functions like map() or filter().</li>
                     </ul>
-
-                    <h2 class="section-heading">Comparison</h2>
-
-                    <p>Widok is different from traditional web frameworks in the following aspects:</p>
-
-                    <ul class="task-list">
-                        <li>The rendering logic is implemented entirely on the client-side</li>
-                        <li>The sole purpose of the server is to exchange data with the client</li>
-                        <li>Instead of writing HTML templates, widgets are defined in pure Scala code</li>
-                        <li>Only widgets are allowed to manipulate the DOM</li>
-                        <li>Designed with memory-efficiency in mind</li>
-                        <li>Bootstrap 3 bindings available</li>
-                    </ul>
-
-                    <p>As Widok is built around Scala.js it also inherits some of its properties:</p>
-
-                    <ul class="task-list">
-                        <li>IDE support</li>
-                        <li>Browser source maps</li>
-                        <li>Fast compilation times</li>
-                    </ul>
-
-                    <h2 class="section-heading">Data propagation</h2>
-
-                    <p>Channels model continuous values as streams. These streams can be observed. Internally, no copies of the produced values are created. If desired, the current value can be explicitly cached, though. It is possible to operate on channels with higher-order functions such as <code>map()</code> and <code>filter()</code>. Every time a new value is produced, it is propagated down the observer chain.</p>
-
-                    <p>Aggregates are channel containers. They allow to deal with large lists efficiently. If an item gets added, removed or updated, this is reflected directly by a change in the DOM, only operating on the actual nodes.</p>
-
 
                     <h2 class="section-heading">
                         Code example
@@ -103,48 +91,46 @@
 
                     <p>The following example implements a single-page application that uses two-way binding:</p>
 
-                    <pre>
-package example
+<pre class="sourceCode scala"><code class="sourceCode scala"><span class="kw">package</span> example
 
-import org.widok._
-import org.widok.html._
+<span class="kw">import</span> org.<span class="fu">widok</span>.<span class="fu">_</span>
+<span class="kw">import</span> org.<span class="fu">widok</span>.<span class="fu">html</span>.<span class="fu">_</span>
 
-object App extends PageApplication {
-  val name = Var("")
-  val hasName = name.map(_.nonEmpty)
+<span class="kw">object</span> App <span class="kw">extends</span> PageApplication {
+  <span class="kw">val</span> name = <span class="fu">Var</span>(<span class="st">&quot;&quot;</span>)
+  <span class="kw">val</span> hasName = name.<span class="fu">map</span>(_.<span class="fu">nonEmpty</span>)
 
-  def view() = div(
-    h1("Welcome to Widok!")
-  , p("Please enter your name:")
+  <span class="kw">def</span> <span class="fu">view</span>() = <span class="fu">div</span>(
+    <span class="fu">h1</span>(<span class="st">&quot;Welcome to Widok!&quot;</span>)
+  , <span class="fu">p</span>(<span class="st">&quot;Please enter your name:&quot;</span>)
 
-  , text().bindLive(name)
+  , <span class="fu">text</span>().<span class="fu">bind</span>(name)
 
-  , p("Hello, ", name)
-      .show(hasName)
+  , <span class="fu">p</span>(<span class="st">&quot;Hello, &quot;</span>, name)
+      .<span class="fu">show</span>(hasName)
 
-  , button("Change my name")
-      .onClick(_ => name := "tux")
-      .show(name.unequal("tux"))
+  , <span class="fu">button</span>(<span class="st">&quot;Change my name&quot;</span>)
+      .<span class="fu">onClick</span>(_ =&gt; name := <span class="st">&quot;tux&quot;</span>)
+      .<span class="fu">show</span>(name.<span class="fu">unequal</span>(<span class="st">&quot;tux&quot;</span>))
 
-  , button("Log out")
-      .onClick(_ => name := "")
-      .show(hasName)
+  , <span class="fu">button</span>(<span class="st">&quot;Log out&quot;</span>)
+      .<span class="fu">onClick</span>(_ =&gt; name := <span class="st">&quot;&quot;</span>)
+      .<span class="fu">show</span>(hasName)
   )
 
-  def ready() { }
-}
-                    </pre>
+  <span class="kw">def</span> <span class="fu">ready</span>() { }
+}</code></pre>
 
 					<h2 class="section-heading">
 						User manual
 					</h2>
 
-                    <p>The user manual (v0.1) is available in three formats:</p>
+                    <p>The user manual (v0.2) is available in three formats:</p>
 
 					<ul>
-						<li><a href="manual/widok-v0.1.html">HTML</a></li>
-						<li><a href="manual/widok-v0.1.pdf">PDF</a></li>
-						<li><a href="manual/widok-v0.1.epub">EPUB</a></li>
+						<li><a href="manual/widok-v0.2.html">HTML</a></li>
+						<li><a href="manual/widok-v0.2.pdf">PDF</a></li>
+						<li><a href="manual/widok-v0.2.epub">EPUB</a></li>
 					</ul>
 
                     <h2 class="section-heading">
