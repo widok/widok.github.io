@@ -111,7 +111,7 @@
 
   , <span class="fu">button</span>(<span class="st">&quot;Change my name&quot;</span>)
       .<span class="fu">onClick</span>(_ =&gt; name := <span class="st">&quot;tux&quot;</span>)
-      .<span class="fu">show</span>(name.<span class="fu">unequal</span>(<span class="st">&quot;tux&quot;</span>))
+      .<span class="fu">show</span>(name.<span class="fu">isNot</span>(<span class="st">&quot;tux&quot;</span>))
 
   , <span class="fu">button</span>(<span class="st">&quot;Log out&quot;</span>)
       .<span class="fu">onClick</span>(_ =&gt; name := <span class="st">&quot;&quot;</span>)
