@@ -1,0 +1,1168 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>widok - org.widok</title>
+          <meta name="description" content="widok - org.widok" />
+          <meta name="keywords" content="widok org.widok" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+      <link href="../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../lib/template.js"></script>
+      <script type="text/javascript" src="../../lib/tools.tooltip.js"></script>
+
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../index.html';
+            var hash = 'org.widok.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+	  </script>
+
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img src="../../lib/package_big.png" />
+        <p id="owner"><a href="../package.html" class="extype" name="org">org</a></p>
+        <h1>widok</h1><span class="permalink">
+      <a href="../../index.html#org.widok.package" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">widok</span>
+      </span>
+      </h4>
+
+          <div id="comment" class="fullcommenttop"><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a>, <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Any" class="extype" target="_top">Any</a></div>
+        </div></div>
+
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="org.widok"><span>widok</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show all</span></li>
+            </ol>
+            <a href="http://docs.scala-lang.org/overviews/scaladoc/usage.html#members" target="_blank">Learn more about member selection</a>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="org.widok.Array" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Array[T]extendsProductwithSerializable"></a>
+      <a id="Array[T]:Array[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Array.html"><span class="name">Array</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="params">()</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.package@Array[T]extendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Wrapper around ArrayBuffer
+Implements same semantics as its JavaScript counterpart.</p>
+    </li><li name="org.widok.BiChildChannel" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BiChildChannel[T,U]extendsChildChannel[T,U]withProductwithSerializable"></a>
+      <a id="BiChildChannel[T,U]:BiChildChannel[T,U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="BiChildChannel.html"><span class="name">BiChildChannel</span></a><span class="tparams">[<span name="T">T</span>, <span name="U">U</span>]</span><span class="params">(<span name="parent">parent: <a href="WriteChannel.html" class="extype" name="org.widok.WriteChannel">WriteChannel</a>[<span class="extype" name="org.widok.BiChildChannel.T">T</span>]</span>, <span name="fwd">fwd: <a href="Channel$.html#Observer[T,U]=T=&gt;org.widok.Result[U]" class="extmbr" name="org.widok.Channel.Observer">Observer</a>[<span class="extype" name="org.widok.BiChildChannel.T">T</span>, <span class="extype" name="org.widok.BiChildChannel.U">U</span>]</span>, <span name="bwd">bwd: <a href="Channel$.html#Observer[T,U]=T=&gt;org.widok.Result[U]" class="extmbr" name="org.widok.Channel.Observer">Observer</a>[<span class="extype" name="org.widok.BiChildChannel.U">U</span>, <span class="extype" name="org.widok.BiChildChannel.T">T</span>]</span>)</span><span class="result"> extends <a href="ChildChannel.html" class="extype" name="org.widok.ChildChannel">ChildChannel</a>[<span class="extype" name="org.widok.BiChildChannel.T">T</span>, <span class="extype" name="org.widok.BiChildChannel.U">U</span>] with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.package@BiChildChannel[T,U]extendsChildChannel[T,U]withProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Bi-directional child</p>
+    </li><li name="org.widok.BiFlatChildChannel" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BiFlatChildChannel[T,U]extendsChildChannel[T,U]withProductwithSerializable"></a>
+      <a id="BiFlatChildChannel[T,U]:BiFlatChildChannel[T,U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="BiFlatChildChannel.html"><span class="name">BiFlatChildChannel</span></a><span class="tparams">[<span name="T">T</span>, <span name="U">U</span>]</span><span class="params">(<span name="parent">parent: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<span class="extype" name="org.widok.BiFlatChildChannel.T">T</span>]</span>, <span name="observer">observer: <a href="Channel$.html#Observer[T,U]=T=&gt;org.widok.Result[U]" class="extmbr" name="org.widok.Channel.Observer">Observer</a>[<span class="extype" name="org.widok.BiFlatChildChannel.T">T</span>, <a href="Channel.html" class="extype" name="org.widok.Channel">Channel</a>[<span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>]]</span>)</span><span class="result"> extends <a href="ChildChannel.html" class="extype" name="org.widok.ChildChannel">ChildChannel</a>[<span class="extype" name="org.widok.BiFlatChildChannel.T">T</span>, <span class="extype" name="org.widok.BiFlatChildChannel.U">U</span>] with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.package@BiFlatChildChannel[T,U]extendsChildChannel[T,U]withProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+
+    </li><li name="org.widok.BufSet" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="BufSet[T]extendsReadBufSet[T]withWriteBufSet[T]withStateBufSet[T]"></a>
+      <a id="BufSet[T]:BufSet[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="BufSet.html"><span class="name">BufSet</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="ReadBufSet.html" class="extype" name="org.widok.ReadBufSet">ReadBufSet</a>[<span class="extype" name="org.widok.BufSet.T">T</span>] with <a href="WriteBufSet.html" class="extype" name="org.widok.WriteBufSet">WriteBufSet</a>[<span class="extype" name="org.widok.BufSet.T">T</span>] with <a href="StateBufSet.html" class="extype" name="org.widok.StateBufSet">StateBufSet</a>[<span class="extype" name="org.widok.BufSet.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.package@BufSet[T]extendsReadBufSet[T]withWriteBufSet[T]withStateBufSet[T]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+
+    </li><li name="org.widok.Buffer" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Buffer[T]extendsReadBuffer[T]withWriteBuffer[T]withStateBuffer[T]"></a>
+      <a id="Buffer[T]:Buffer[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Buffer.html"><span class="name">Buffer</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="ReadBuffer.html" class="extype" name="org.widok.ReadBuffer">ReadBuffer</a>[<span class="extype" name="org.widok.Buffer.T">T</span>] with <a href="WriteBuffer.html" class="extype" name="org.widok.WriteBuffer">WriteBuffer</a>[<span class="extype" name="org.widok.Buffer.T">T</span>] with <a href="StateBuffer.html" class="extype" name="org.widok.StateBuffer">StateBuffer</a>[<span class="extype" name="org.widok.Buffer.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.package@Buffer[T]extendsReadBuffer[T]withWriteBuffer[T]withStateBuffer[T]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+
+    </li><li name="org.widok.Channel" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Channel[T]extendsReadChannel[T]withWriteChannel[T]"></a>
+      <a id="Channel[T]:Channel[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Channel.html"><span class="name">Channel</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<span class="extype" name="org.widok.Channel.T">T</span>] with <a href="WriteChannel.html" class="extype" name="org.widok.WriteChannel">WriteChannel</a>[<span class="extype" name="org.widok.Channel.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.package@Channel[T]extendsReadChannel[T]withWriteChannel[T]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+
+    </li><li name="org.widok.ChannelDefaultSize" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ChannelDefaultSize[T]extendsAnyRef"></a>
+      <a id="ChannelDefaultSize[T]:ChannelDefaultSize[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ChannelDefaultSize.html"><span class="name">ChannelDefaultSize</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.package@ChannelDefaultSize[T]extendsAnyRef" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+
+    </li><li name="org.widok.ChildChannel" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ChildChannel[T,U]extendsChannel[U]withChannelDefaultSize[U]"></a>
+      <a id="ChildChannel[T,U]:ChildChannel[T,U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ChildChannel.html"><span class="name">ChildChannel</span></a><span class="tparams">[<span name="T">T</span>, <span name="U">U</span>]</span><span class="result"> extends <a href="Channel.html" class="extype" name="org.widok.Channel">Channel</a>[<span class="extype" name="org.widok.ChildChannel.U">U</span>] with <a href="ChannelDefaultSize.html" class="extype" name="org.widok.ChannelDefaultSize">ChannelDefaultSize</a>[<span class="extype" name="org.widok.ChildChannel.U">U</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.package@ChildChannel[T,U]extendsChannel[U]withChannelDefaultSize[U]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+
+    </li><li name="org.widok.DeltaBufSet" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="DeltaBufSet[T]extendsSizewithMap[org.widok.DeltaBufSet,T]withFilter[org.widok.DeltaBufSet,T,T]"></a>
+      <a id="DeltaBufSet[T]:DeltaBufSet[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="DeltaBufSet.html"><span class="name">DeltaBufSet</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="reactive/stream/Size.html" class="extype" name="org.widok.reactive.stream.Size">Size</a> with <a href="reactive/stream/Map.html" class="extype" name="org.widok.reactive.stream.Map">Map</a>[<a href="DeltaBufSet.html" class="extype" name="org.widok.DeltaBufSet">DeltaBufSet</a>, <span class="extype" name="org.widok.DeltaBufSet.T">T</span>] with <a href="reactive/stream/Filter.html" class="extype" name="org.widok.reactive.stream.Filter">Filter</a>[<a href="DeltaBufSet.html" class="extype" name="org.widok.DeltaBufSet">DeltaBufSet</a>, <span class="extype" name="org.widok.DeltaBufSet.T">T</span>, <span class="extype" name="org.widok.DeltaBufSet.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.package@DeltaBufSet[T]extendsSizewithMap[org.widok.DeltaBufSet,T]withFilter[org.widok.DeltaBufSet,T,T]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+
+    </li><li name="org.widok.DeltaBuffer" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="DeltaBuffer[T]extendsSizewithMap[org.widok.DeltaBuffer,T]"></a>
+      <a id="DeltaBuffer[T]:DeltaBuffer[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="DeltaBuffer.html"><span class="name">DeltaBuffer</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="reactive/stream/Size.html" class="extype" name="org.widok.reactive.stream.Size">Size</a> with <a href="reactive/stream/Map.html" class="extype" name="org.widok.reactive.stream.Map">Map</a>[<a href="DeltaBuffer.html" class="extype" name="org.widok.DeltaBuffer">DeltaBuffer</a>, <span class="extype" name="org.widok.DeltaBuffer.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.package@DeltaBuffer[T]extendsSizewithMap[org.widok.DeltaBuffer,T]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+
+    </li><li name="org.widok.DeltaDict" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="DeltaDict[A,B]extendsSizewithFilter[[x]org.widok.DeltaDict[x,B],A,B]withMapDict[org.widok.DeltaDict,A,B]withKey[A,B]"></a>
+      <a id="DeltaDict[A,B]:DeltaDict[A,B]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="DeltaDict.html"><span class="name">DeltaDict</span></a><span class="tparams">[<span name="A">A</span>, <span name="B">B</span>]</span><span class="result"> extends <a href="reactive/stream/Size.html" class="extype" name="org.widok.reactive.stream.Size">Size</a> with <a href="reactive/stream/Filter.html" class="extype" name="org.widok.reactive.stream.Filter">Filter</a>[[x]<a href="DeltaDict.html" class="extype" name="org.widok.DeltaDict">DeltaDict</a>[<span class="extype" name="org.widok.&lt;refinement&gt;.d.x">x</span>, <span class="extype" name="org.widok.DeltaDict.B">B</span>], <span class="extype" name="org.widok.DeltaDict.A">A</span>, <span class="extype" name="org.widok.DeltaDict.B">B</span>] with <a href="reactive/stream/MapDict.html" class="extype" name="org.widok.reactive.stream.MapDict">MapDict</a>[<a href="DeltaDict.html" class="extype" name="org.widok.DeltaDict">DeltaDict</a>, <span class="extype" name="org.widok.DeltaDict.A">A</span>, <span class="extype" name="org.widok.DeltaDict.B">B</span>] with <a href="reactive/stream/Key.html" class="extype" name="org.widok.reactive.stream.Key">Key</a>[<span class="extype" name="org.widok.DeltaDict.A">A</span>, <span class="extype" name="org.widok.DeltaDict.B">B</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.package@DeltaDict[A,B]extendsSizewithFilter[[x]org.widok.DeltaDict[x,B],A,B]withMapDict[org.widok.DeltaDict,A,B]withKey[A,B]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+
+    </li><li name="org.widok.Dict" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Dict[A,B]extendsReadDict[A,B]withWriteDict[A,B]withStateDict[A,B]"></a>
+      <a id="Dict[A,B]:Dict[A,B]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Dict.html"><span class="name">Dict</span></a><span class="tparams">[<span name="A">A</span>, <span name="B">B</span>]</span><span class="result"> extends <a href="ReadDict.html" class="extype" name="org.widok.ReadDict">ReadDict</a>[<span class="extype" name="org.widok.Dict.A">A</span>, <span class="extype" name="org.widok.Dict.B">B</span>] with <a href="WriteDict.html" class="extype" name="org.widok.WriteDict">WriteDict</a>[<span class="extype" name="org.widok.Dict.A">A</span>, <span class="extype" name="org.widok.Dict.B">B</span>] with <a href="StateDict.html" class="extype" name="org.widok.StateDict">StateDict</a>[<span class="extype" name="org.widok.Dict.A">A</span>, <span class="extype" name="org.widok.Dict.B">B</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.package@Dict[A,B]extendsReadDict[A,B]withWriteDict[A,B]withStateDict[A,B]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+
+    </li><li name="org.widok.Disposable" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="DisposableextendsAnyRef"></a>
+      <a id="Disposable:Disposable"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Disposable.html"><span class="name">Disposable</span></a><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.package@DisposableextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+
+    </li><li name="org.widok.FlatChildChannel" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="FlatChildChannel[T,U]extendsChildChannel[T,U]withProductwithSerializable"></a>
+      <a id="FlatChildChannel[T,U]:FlatChildChannel[T,U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="FlatChildChannel.html"><span class="name">FlatChildChannel</span></a><span class="tparams">[<span name="T">T</span>, <span name="U">U</span>]</span><span class="params">(<span name="parent">parent: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<span class="extype" name="org.widok.FlatChildChannel.T">T</span>]</span>, <span name="observer">observer: <a href="Channel$.html#Observer[T,U]=T=&gt;org.widok.Result[U]" class="extmbr" name="org.widok.Channel.Observer">Observer</a>[<span class="extype" name="org.widok.FlatChildChannel.T">T</span>, <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<span class="extype" name="org.widok.FlatChildChannel.U">U</span>]]</span>)</span><span class="result"> extends <a href="ChildChannel.html" class="extype" name="org.widok.ChildChannel">ChildChannel</a>[<span class="extype" name="org.widok.FlatChildChannel.T">T</span>, <span class="extype" name="org.widok.FlatChildChannel.U">U</span>] with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.package@FlatChildChannel[T,U]extendsChildChannel[T,U]withProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+
+    </li><li name="org.widok.Opt" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="Opt[T]extendsPartialChannel[T]withPartialChannelwithPartialChannel[T]"></a>
+      <a id="Opt[T]:Opt[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Opt.html"><span class="name">Opt</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="PartialChannel.html" class="extype" name="org.widok.PartialChannel">PartialChannel</a>[<span class="extype" name="org.widok.Opt.T">T</span>] with <a href="reactive/poll/PartialChannel.html" class="extype" name="org.widok.reactive.poll.PartialChannel">widok.reactive.poll.PartialChannel</a> with <a href="reactive/mutate/PartialChannel.html" class="extype" name="org.widok.reactive.mutate.PartialChannel">widok.reactive.mutate.PartialChannel</a>[<span class="extype" name="org.widok.Opt.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.package@Opt[T]extendsPartialChannel[T]withPartialChannelwithPartialChannel[T]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Publishes a stream of defined values.</p><div class="fullcomment"><div class="comment cmt"><p>Publishes a stream of defined values. Use isEmpty() to detect when the
+current value is cleared.
+</p></div></div>
+    </li><li name="org.widok.PartialChannel" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="PartialChannel[T]extendsStateChannel[T]withReadPartialChannel[T]"></a>
+      <a id="PartialChannel[T]:PartialChannel[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="PartialChannel.html"><span class="name">PartialChannel</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="StateChannel.html" class="extype" name="org.widok.StateChannel">StateChannel</a>[<span class="extype" name="org.widok.PartialChannel.T">T</span>] with <a href="ReadPartialChannel.html" class="extype" name="org.widok.ReadPartialChannel">ReadPartialChannel</a>[<span class="extype" name="org.widok.PartialChannel.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.package@PartialChannel[T]extendsStateChannel[T]withReadPartialChannel[T]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+
+    </li><li name="org.widok.PollBufSet" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="PollBufSet[T]extendsCount[T]withEmptywithBufSet[T]"></a>
+      <a id="PollBufSet[T]:PollBufSet[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="PollBufSet.html"><span class="name">PollBufSet</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="reactive/poll/Count.html" class="extype" name="org.widok.reactive.poll.Count">Count</a>[<span class="extype" name="org.widok.PollBufSet.T">T</span>] with <a href="reactive/poll/Empty.html" class="extype" name="org.widok.reactive.poll.Empty">Empty</a> with <a href="reactive/poll/BufSet.html" class="extype" name="org.widok.reactive.poll.BufSet">widok.reactive.poll.BufSet</a>[<span class="extype" name="org.widok.PollBufSet.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.package@PollBufSet[T]extendsCount[T]withEmptywithBufSet[T]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+
+    </li><li name="org.widok.PollBuffer" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="PollBuffer[T]extendsIndex[Seq,Int,T]withRelativeOrder[T]withIterate[T]withFilter[org.widok.ReadBuffer,T]withFind[T]withFilter[org.widok.DeltaBuffer,T,T]withRelativeOrder[T]withAggregate[org.widok.ReadBuffer,T]withFilterOrdered[org.widok.ReadBuffer,T]withMapExtended[org.widok.ReadBuffer,T]withAbsoluteOrder[org.widok.ReadBuffer,T]"></a>
+      <a id="PollBuffer[T]:PollBuffer[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="PollBuffer.html"><span class="name">PollBuffer</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="reactive/poll/Index.html" class="extype" name="org.widok.reactive.poll.Index">Index</a>[<span class="extype" name="scala.Seq">Seq</span>, <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Int" class="extype" target="_top">Int</a>, <span class="extype" name="org.widok.PollBuffer.T">T</span>] with <a href="reactive/poll/RelativeOrder.html" class="extype" name="org.widok.reactive.poll.RelativeOrder">RelativeOrder</a>[<span class="extype" name="org.widok.PollBuffer.T">T</span>] with <a href="reactive/poll/Iterate.html" class="extype" name="org.widok.reactive.poll.Iterate">Iterate</a>[<span class="extype" name="org.widok.PollBuffer.T">T</span>] with <a href="reactive/poll/Filter.html" class="extype" name="org.widok.reactive.poll.Filter">Filter</a>[<a href="ReadBuffer.html" class="extype" name="org.widok.ReadBuffer">ReadBuffer</a>, <span class="extype" name="org.widok.PollBuffer.T">T</span>] with <a href="reactive/stream/Find.html" class="extype" name="org.widok.reactive.stream.Find">Find</a>[<span class="extype" name="org.widok.PollBuffer.T">T</span>] with <a href="reactive/stream/Filter.html" class="extype" name="org.widok.reactive.stream.Filter">Filter</a>[<a href="DeltaBuffer.html" class="extype" name="org.widok.DeltaBuffer">DeltaBuffer</a>, <span class="extype" name="org.widok.PollBuffer.T">T</span>, <span class="extype" name="org.widok.PollBuffer.T">T</span>] with <a href="reactive/stream/RelativeOrder.html" class="extype" name="org.widok.reactive.stream.RelativeOrder">RelativeOrder</a>[<span class="extype" name="org.widok.PollBuffer.T">T</span>] with <a href="reactive/stream/Aggregate.html" class="extype" name="org.widok.reactive.stream.Aggregate">Aggregate</a>[<a href="ReadBuffer.html" class="extype" name="org.widok.ReadBuffer">ReadBuffer</a>, <span class="extype" name="org.widok.PollBuffer.T">T</span>] with <a href="reactive/stream/FilterOrdered.html" class="extype" name="org.widok.reactive.stream.FilterOrdered">FilterOrdered</a>[<a href="ReadBuffer.html" class="extype" name="org.widok.ReadBuffer">ReadBuffer</a>, <span class="extype" name="org.widok.PollBuffer.T">T</span>] with <a href="reactive/stream/MapExtended.html" class="extype" name="org.widok.reactive.stream.MapExtended">MapExtended</a>[<a href="ReadBuffer.html" class="extype" name="org.widok.ReadBuffer">ReadBuffer</a>, <span class="extype" name="org.widok.PollBuffer.T">T</span>] with <a href="reactive/stream/AbsoluteOrder.html" class="extype" name="org.widok.reactive.stream.AbsoluteOrder">AbsoluteOrder</a>[<a href="ReadBuffer.html" class="extype" name="org.widok.ReadBuffer">ReadBuffer</a>, <span class="extype" name="org.widok.PollBuffer.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.package@PollBuffer[T]extendsIndex[Seq,Int,T]withRelativeOrder[T]withIterate[T]withFilter[org.widok.ReadBuffer,T]withFind[T]withFilter[org.widok.DeltaBuffer,T,T]withRelativeOrder[T]withAggregate[org.widok.ReadBuffer,T]withFilterOrdered[org.widok.ReadBuffer,T]withMapExtended[org.widok.ReadBuffer,T]withAbsoluteOrder[org.widok.ReadBuffer,T]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+
+    </li><li name="org.widok.PollDict" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="PollDict[A,B]extendsKey[A,B]withEmptywithFilterMap[org.widok.ReadDict,A,B]withKey[A,B]"></a>
+      <a id="PollDict[A,B]:PollDict[A,B]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="PollDict.html"><span class="name">PollDict</span></a><span class="tparams">[<span name="A">A</span>, <span name="B">B</span>]</span><span class="result"> extends <a href="reactive/poll/Key.html" class="extype" name="org.widok.reactive.poll.Key">Key</a>[<span class="extype" name="org.widok.PollDict.A">A</span>, <span class="extype" name="org.widok.PollDict.B">B</span>] with <a href="reactive/poll/Empty.html" class="extype" name="org.widok.reactive.poll.Empty">Empty</a> with <a href="reactive/poll/FilterMap.html" class="extype" name="org.widok.reactive.poll.FilterMap">FilterMap</a>[<a href="ReadDict.html" class="extype" name="org.widok.ReadDict">ReadDict</a>, <span class="extype" name="org.widok.PollDict.A">A</span>, <span class="extype" name="org.widok.PollDict.B">B</span>] with <a href="reactive/stream/Key.html" class="extype" name="org.widok.reactive.stream.Key">Key</a>[<span class="extype" name="org.widok.PollDict.A">A</span>, <span class="extype" name="org.widok.PollDict.B">B</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.package@PollDict[A,B]extendsKey[A,B]withEmptywithFilterMap[org.widok.ReadDict,A,B]withKey[A,B]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+
+    </li><li name="org.widok.ReadBufSet" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ReadBufSet[T]extendsPollBufSet[T]withDeltaBufSet[T]"></a>
+      <a id="ReadBufSet[T]:ReadBufSet[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ReadBufSet.html"><span class="name">ReadBufSet</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="PollBufSet.html" class="extype" name="org.widok.PollBufSet">PollBufSet</a>[<span class="extype" name="org.widok.ReadBufSet.T">T</span>] with <a href="DeltaBufSet.html" class="extype" name="org.widok.DeltaBufSet">DeltaBufSet</a>[<span class="extype" name="org.widok.ReadBufSet.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.package@ReadBufSet[T]extendsPollBufSet[T]withDeltaBufSet[T]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+
+    </li><li name="org.widok.ReadBuffer" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ReadBuffer[T]extendsDeltaBuffer[T]withPollBuffer[T]"></a>
+      <a id="ReadBuffer[T]:ReadBuffer[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ReadBuffer.html"><span class="name">ReadBuffer</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="DeltaBuffer.html" class="extype" name="org.widok.DeltaBuffer">DeltaBuffer</a>[<span class="extype" name="org.widok.ReadBuffer.T">T</span>] with <a href="PollBuffer.html" class="extype" name="org.widok.PollBuffer">PollBuffer</a>[<span class="extype" name="org.widok.ReadBuffer.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.package@ReadBuffer[T]extendsDeltaBuffer[T]withPollBuffer[T]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+
+    </li><li name="org.widok.ReadChannel" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ReadChannel[T]extendsHead[T]withTail[org.widok.ReadChannel,T]withTake[org.widok.ReadChannel,T]withFold[T]withIs[T]withAggregate[org.widok.ReadChannel,T]withFilter[org.widok.ReadChannel,T,T]withMap[org.widok.ReadChannel,T]withMapExtended[org.widok.ReadChannel,T]withCache[T]withSizewithFlush[T]withDisposable"></a>
+      <a id="ReadChannel[T]:ReadChannel[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ReadChannel.html"><span class="name">ReadChannel</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="reactive/stream/Head.html" class="extype" name="org.widok.reactive.stream.Head">Head</a>[<span class="extype" name="org.widok.ReadChannel.T">T</span>] with <a href="reactive/stream/Tail.html" class="extype" name="org.widok.reactive.stream.Tail">Tail</a>[<a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>, <span class="extype" name="org.widok.ReadChannel.T">T</span>] with <a href="reactive/stream/Take.html" class="extype" name="org.widok.reactive.stream.Take">Take</a>[<a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>, <span class="extype" name="org.widok.ReadChannel.T">T</span>] with <a href="reactive/stream/Fold.html" class="extype" name="org.widok.reactive.stream.Fold">Fold</a>[<span class="extype" name="org.widok.ReadChannel.T">T</span>] with <a href="reactive/stream/Is.html" class="extype" name="org.widok.reactive.stream.Is">Is</a>[<span class="extype" name="org.widok.ReadChannel.T">T</span>] with <a href="reactive/stream/Aggregate.html" class="extype" name="org.widok.reactive.stream.Aggregate">Aggregate</a>[<a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>, <span class="extype" name="org.widok.ReadChannel.T">T</span>] with <a href="reactive/stream/Filter.html" class="extype" name="org.widok.reactive.stream.Filter">Filter</a>[<a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>, <span class="extype" name="org.widok.ReadChannel.T">T</span>, <span class="extype" name="org.widok.ReadChannel.T">T</span>] with <a href="reactive/stream/Map.html" class="extype" name="org.widok.reactive.stream.Map">Map</a>[<a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>, <span class="extype" name="org.widok.ReadChannel.T">T</span>] with <a href="reactive/stream/MapExtended.html" class="extype" name="org.widok.reactive.stream.MapExtended">MapExtended</a>[<a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>, <span class="extype" name="org.widok.ReadChannel.T">T</span>] with <a href="reactive/stream/Cache.html" class="extype" name="org.widok.reactive.stream.Cache">Cache</a>[<span class="extype" name="org.widok.ReadChannel.T">T</span>] with <a href="reactive/stream/Size.html" class="extype" name="org.widok.reactive.stream.Size">Size</a> with <a href="reactive/poll/Flush.html" class="extype" name="org.widok.reactive.poll.Flush">Flush</a>[<span class="extype" name="org.widok.ReadChannel.T">T</span>] with <a href="Disposable.html" class="extype" name="org.widok.Disposable">Disposable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.package@ReadChannel[T]extendsHead[T]withTail[org.widok.ReadChannel,T]withTake[org.widok.ReadChannel,T]withFold[T]withIs[T]withAggregate[org.widok.ReadChannel,T]withFilter[org.widok.ReadChannel,T,T]withMap[org.widok.ReadChannel,T]withMapExtended[org.widok.ReadChannel,T]withCache[T]withSizewithFlush[T]withDisposable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+
+    </li><li name="org.widok.ReadDict" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ReadDict[A,B]extendsPollDict[A,B]withDeltaDict[A,B]"></a>
+      <a id="ReadDict[A,B]:ReadDict[A,B]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ReadDict.html"><span class="name">ReadDict</span></a><span class="tparams">[<span name="A">A</span>, <span name="B">B</span>]</span><span class="result"> extends <a href="PollDict.html" class="extype" name="org.widok.PollDict">PollDict</a>[<span class="extype" name="org.widok.ReadDict.A">A</span>, <span class="extype" name="org.widok.ReadDict.B">B</span>] with <a href="DeltaDict.html" class="extype" name="org.widok.DeltaDict">DeltaDict</a>[<span class="extype" name="org.widok.ReadDict.A">A</span>, <span class="extype" name="org.widok.ReadDict.B">B</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.package@ReadDict[A,B]extendsPollDict[A,B]withDeltaDict[A,B]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+
+    </li><li name="org.widok.ReadPartialChannel" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ReadPartialChannel[T]extendsReadChannel[T]withReadStateChannel[T]withEmptywithCount[T]withPartialChannel[T]"></a>
+      <a id="ReadPartialChannel[T]:ReadPartialChannel[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ReadPartialChannel.html"><span class="name">ReadPartialChannel</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<span class="extype" name="org.widok.ReadPartialChannel.T">T</span>] with <a href="ReadStateChannel.html" class="extype" name="org.widok.ReadStateChannel">ReadStateChannel</a>[<span class="extype" name="org.widok.ReadPartialChannel.T">T</span>] with <a href="reactive/poll/Empty.html" class="extype" name="org.widok.reactive.poll.Empty">Empty</a> with <a href="reactive/poll/Count.html" class="extype" name="org.widok.reactive.poll.Count">Count</a>[<span class="extype" name="org.widok.ReadPartialChannel.T">T</span>] with <a href="reactive/stream/PartialChannel.html" class="extype" name="org.widok.reactive.stream.PartialChannel">widok.reactive.stream.PartialChannel</a>[<span class="extype" name="org.widok.ReadPartialChannel.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.package@ReadPartialChannel[T]extendsReadChannel[T]withReadStateChannel[T]withEmptywithCount[T]withPartialChannel[T]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+
+    </li><li name="org.widok.ReadStateChannel" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ReadStateChannel[T]extendsReadChannel[T]"></a>
+      <a id="ReadStateChannel[T]:ReadStateChannel[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ReadStateChannel.html"><span class="name">ReadStateChannel</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<span class="extype" name="org.widok.ReadStateChannel.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.package@ReadStateChannel[T]extendsReadChannel[T]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+
+    </li><li name="org.widok.Ref" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Ref[T]extendsAnyRef"></a>
+      <a id="Ref[T]:Ref[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Ref.html"><span class="name">Ref</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.package@Ref[T]extendsAnyRef" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Ref makes references to values explicit.</p><div class="fullcomment"><div class="comment cmt"><p>Ref makes references to values explicit. In Scala, objects may have different
+equality semantics. For example, case classes always implement structural
+equality, but ordinary classes not necessarily. To use different instances of
+the same value in a hash table, all objects must be wrapped. Ref is a simple
+solution for this and ensures that physical equality is always performed as
+hashCode cannot be overridden.
+</p></div></div>
+    </li><li name="org.widok.RefBuf" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="RefBuf[T]extendsBuffer[org.widok.Ref[T]]withProductwithSerializable"></a>
+      <a id="RefBuf[T]:RefBuf[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="RefBuf.html"><span class="name">RefBuf</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="params">()</span><span class="result"> extends <a href="Buffer.html" class="extype" name="org.widok.Buffer">Buffer</a>[<a href="Ref.html" class="extype" name="org.widok.Ref">Ref</a>[<span class="extype" name="org.widok.RefBuf.T">T</span>]] with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.package@RefBuf[T]extendsBuffer[org.widok.Ref[T]]withProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+
+    </li><li name="org.widok.Resource" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Resource[T,U]extendsDisposable"></a>
+      <a id="Resource[T,U]:Resource[T,U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Resource.html"><span class="name">Resource</span></a><span class="tparams">[<span name="T">T</span>, <span name="U">U</span>]</span><span class="result"> extends <a href="Disposable.html" class="extype" name="org.widok.Disposable">Disposable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.package@Resource[T,U]extendsDisposable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+
+    </li><li name="org.widok.Result" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Result[T]extendsAnyRef"></a>
+      <a id="Result[T]:Result[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Result.html"><span class="name">Result</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.package@Result[T]extendsAnyRef" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+
+    </li><li name="org.widok.RootChannel" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="RootChannel[T]extendsChannel[T]withChannelDefaultSize[T]"></a>
+      <a id="RootChannel[T]:RootChannel[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="RootChannel.html"><span class="name">RootChannel</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="Channel.html" class="extype" name="org.widok.Channel">Channel</a>[<span class="extype" name="org.widok.RootChannel.T">T</span>] with <a href="ChannelDefaultSize.html" class="extype" name="org.widok.ChannelDefaultSize">ChannelDefaultSize</a>[<span class="extype" name="org.widok.RootChannel.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.package@RootChannel[T]extendsChannel[T]withChannelDefaultSize[T]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+
+    </li><li name="org.widok.StateBufSet" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="StateBufSet[T]extendsDisposable"></a>
+      <a id="StateBufSet[T]:StateBufSet[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="StateBufSet.html"><span class="name">StateBufSet</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="Disposable.html" class="extype" name="org.widok.Disposable">Disposable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.package@StateBufSet[T]extendsDisposable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+
+    </li><li name="org.widok.StateBuffer" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="StateBuffer[T]extendsDisposable"></a>
+      <a id="StateBuffer[T]:StateBuffer[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="StateBuffer.html"><span class="name">StateBuffer</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="Disposable.html" class="extype" name="org.widok.Disposable">Disposable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.package@StateBuffer[T]extendsDisposable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+
+    </li><li name="org.widok.StateChannel" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="StateChannel[T]extendsChannel[T]withReadStateChannel[T]"></a>
+      <a id="StateChannel[T]:StateChannel[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="StateChannel.html"><span class="name">StateChannel</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="Channel.html" class="extype" name="org.widok.Channel">Channel</a>[<span class="extype" name="org.widok.StateChannel.T">T</span>] with <a href="ReadStateChannel.html" class="extype" name="org.widok.ReadStateChannel">ReadStateChannel</a>[<span class="extype" name="org.widok.StateChannel.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.package@StateChannel[T]extendsChannel[T]withReadStateChannel[T]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">In Rx terms, a <a href="StateChannel.html" class="extype" name="org.widok.StateChannel">StateChannel</a> can be considered a cold observable.</p>
+    </li><li name="org.widok.StateDict" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="StateDict[A,B]extendsDisposable"></a>
+      <a id="StateDict[A,B]:StateDict[A,B]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="StateDict.html"><span class="name">StateDict</span></a><span class="tparams">[<span name="A">A</span>, <span name="B">B</span>]</span><span class="result"> extends <a href="Disposable.html" class="extype" name="org.widok.Disposable">Disposable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.package@StateDict[A,B]extendsDisposable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+
+    </li><li name="org.widok.Tree" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Tree[T]extendsAnyRef"></a>
+      <a id="Tree[T]:Tree[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Tree.html"><span class="name">Tree</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.package@Tree[T]extendsAnyRef" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+
+    </li><li name="org.widok.UniChildChannel" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="UniChildChannel[T,U]extendsChildChannel[T,U]withProductwithSerializable"></a>
+      <a id="UniChildChannel[T,U]:UniChildChannel[T,U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="UniChildChannel.html"><span class="name">UniChildChannel</span></a><span class="tparams">[<span name="T">T</span>, <span name="U">U</span>]</span><span class="params">(<span name="parent">parent: <a href="ReadChannel.html" class="extype" name="org.widok.ReadChannel">ReadChannel</a>[<span class="extype" name="org.widok.UniChildChannel.T">T</span>]</span>, <span name="observer">observer: <a href="Channel$.html#Observer[T,U]=T=&gt;org.widok.Result[U]" class="extmbr" name="org.widok.Channel.Observer">Observer</a>[<span class="extype" name="org.widok.UniChildChannel.T">T</span>, <span class="extype" name="org.widok.UniChildChannel.U">U</span>]</span>, <span name="onFlush">onFlush: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Option" class="extype" target="_top">Option</a>[() ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="org.widok.UniChildChannel.U">U</span>]]</span>, <span name="doFilterCycles">doFilterCycles: <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a> = <span class="symbol">false</span></span>)</span><span class="result"> extends <a href="ChildChannel.html" class="extype" name="org.widok.ChildChannel">ChildChannel</a>[<span class="extype" name="org.widok.UniChildChannel.T">T</span>, <span class="extype" name="org.widok.UniChildChannel.U">U</span>] with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.package@UniChildChannel[T,U]extendsChildChannel[T,U]withProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Uni-directional child</p>
+    </li><li name="org.widok.Var" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Var[T]extendsStateChannel[T]withChannelDefaultSize[T]"></a>
+      <a id="Var[T]:Var[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Var.html"><span class="name">Var</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="StateChannel.html" class="extype" name="org.widok.StateChannel">StateChannel</a>[<span class="extype" name="org.widok.Var.T">T</span>] with <a href="ChannelDefaultSize.html" class="extype" name="org.widok.ChannelDefaultSize">ChannelDefaultSize</a>[<span class="extype" name="org.widok.Var.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.package@Var[T]extendsStateChannel[T]withChannelDefaultSize[T]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+
+    </li><li name="org.widok.WriteBufSet" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="WriteBufSet[T]extendsBufSet[T]"></a>
+      <a id="WriteBufSet[T]:WriteBufSet[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="WriteBufSet.html"><span class="name">WriteBufSet</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="reactive/mutate/BufSet.html" class="extype" name="org.widok.reactive.mutate.BufSet">widok.reactive.mutate.BufSet</a>[<span class="extype" name="org.widok.WriteBufSet.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.package@WriteBufSet[T]extendsBufSet[T]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+
+    </li><li name="org.widok.WriteBuffer" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="WriteBuffer[T]extendsBuffer[Seq,T]"></a>
+      <a id="WriteBuffer[T]:WriteBuffer[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="WriteBuffer.html"><span class="name">WriteBuffer</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="reactive/mutate/Buffer.html" class="extype" name="org.widok.reactive.mutate.Buffer">widok.reactive.mutate.Buffer</a>[<span class="extype" name="scala.Seq">Seq</span>, <span class="extype" name="org.widok.WriteBuffer.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.package@WriteBuffer[T]extendsBuffer[Seq,T]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+
+    </li><li name="org.widok.WriteChannel" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="WriteChannel[T]extendsChannel[T]"></a>
+      <a id="WriteChannel[T]:WriteChannel[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="WriteChannel.html"><span class="name">WriteChannel</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="reactive/propagate/Channel.html" class="extype" name="org.widok.reactive.propagate.Channel">widok.reactive.propagate.Channel</a>[<span class="extype" name="org.widok.WriteChannel.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.package@WriteChannel[T]extendsChannel[T]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+
+    </li><li name="org.widok.WriteDict" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="WriteDict[A,B]extendsDict[A,B]"></a>
+      <a id="WriteDict[A,B]:WriteDict[A,B]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="WriteDict.html"><span class="name">WriteDict</span></a><span class="tparams">[<span name="A">A</span>, <span name="B">B</span>]</span><span class="result"> extends <a href="reactive/mutate/Dict.html" class="extype" name="org.widok.reactive.mutate.Dict">widok.reactive.mutate.Dict</a>[<span class="extype" name="org.widok.WriteDict.A">A</span>, <span class="extype" name="org.widok.WriteDict.B">B</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.package@WriteDict[A,B]extendsDict[A,B]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+
+    </li></ol>
+            </div>
+
+
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="org.widok.BufSet" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BufSet"></a>
+      <a id="BufSet:BufSet"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="BufSet$.html"><span class="name">BufSet</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.package@BufSet" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Reactive set
+</p>
+    </li><li name="org.widok.Buffer" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Buffer"></a>
+      <a id="Buffer:Buffer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Buffer$.html"><span class="name">Buffer</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.package@Buffer" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A buffer is a reactive ordered list of elements
+</p>
+    </li><li name="org.widok.Channel" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Channel"></a>
+      <a id="Channel:Channel"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Channel$.html"><span class="name">Channel</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.package@Channel" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+
+    </li><li name="org.widok.DeltaBufSet" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DeltaBufSet"></a>
+      <a id="DeltaBufSet:DeltaBufSet"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="DeltaBufSet$.html"><span class="name">DeltaBufSet</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.package@DeltaBufSet" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+
+    </li><li name="org.widok.DeltaBuffer" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DeltaBuffer"></a>
+      <a id="DeltaBuffer:DeltaBuffer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="DeltaBuffer$.html"><span class="name">DeltaBuffer</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.package@DeltaBuffer" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+
+    </li><li name="org.widok.DeltaDict" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DeltaDict"></a>
+      <a id="DeltaDict:DeltaDict"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="DeltaDict$.html"><span class="name">DeltaDict</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.package@DeltaDict" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+
+    </li><li name="org.widok.Dict" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Dict"></a>
+      <a id="Dict:Dict"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Dict$.html"><span class="name">Dict</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.package@Dict" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A dictionary is a reactive ordered map A =&gt; B
+</p>
+    </li><li name="org.widok#FunctionToWriteChannel" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="FunctionToWriteChannel[T](f:T=&gt;Unit):org.widok.WriteChannel[T]"></a>
+      <a id="FunctionToWriteChannel[T]((T)⇒Unit):WriteChannel[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">FunctionToWriteChannel</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="f">f: (<span class="extype" name="org.widok.FunctionToWriteChannel.T">T</span>) ⇒ <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>)</span><span class="result">: <a href="WriteChannel.html" class="extype" name="org.widok.WriteChannel">WriteChannel</a>[<span class="extype" name="org.widok.FunctionToWriteChannel.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.package@FunctionToWriteChannel[T](f:T=&gt;Unit):org.widok.WriteChannel[T]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+
+    </li><li name="org.widok.Helpers" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Helpers"></a>
+      <a id="Helpers:Helpers"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Helpers$.html"><span class="name">Helpers</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.package@Helpers" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+
+    </li><li name="org.widok.LazyVar" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="LazyVar"></a>
+      <a id="LazyVar:LazyVar"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="LazyVar$.html"><span class="name">LazyVar</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.package@LazyVar" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+
+    </li><li name="org.widok.Opt" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Opt"></a>
+      <a id="Opt:Opt"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Opt$.html"><span class="name">Opt</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.package@Opt" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+
+    </li><li name="org.widok.PtrVar" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="PtrVar"></a>
+      <a id="PtrVar:PtrVar"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="PtrVar$.html"><span class="name">PtrVar</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.package@PtrVar" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Every produced value on the channel <code>change</code> indicates that the underlying
+variable was modified and the current value can be retrieved via <code>get</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Every produced value on the channel <code>change</code> indicates that the underlying
+variable was modified and the current value can be retrieved via <code>get</code>.
+If a value v is produced on the resulting channel instead, then set(v) is
+called.
+</p></div></div>
+    </li><li name="org.widok.Ref" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Ref"></a>
+      <a id="Ref:Ref"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Ref$.html"><span class="name">Ref</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.package@Ref" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+
+    </li><li name="org.widok.Resource" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Resource"></a>
+      <a id="Resource:Resource"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Resource$.html"><span class="name">Resource</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.package@Resource" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+
+    </li><li name="org.widok.Result" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Result"></a>
+      <a id="Result:Result"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Result$.html"><span class="name">Result</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.package@Result" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+
+    </li><li name="org.widok.Tree" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Tree"></a>
+      <a id="Tree:Tree"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Tree$.html"><span class="name">Tree</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.package@Tree" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+
+    </li><li name="org.widok.Var" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Var"></a>
+      <a id="Var:Var"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Var$.html"><span class="name">Var</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.package@Var" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+
+    </li><li name="org.widok.reactive" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="reactive"></a>
+      <a id="reactive:reactive"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="reactive/package.html"><span class="name">reactive</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.package@reactive" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+
+    </li><li name="org.widok.validation" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="validation"></a>
+      <a id="validation:validation"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="validation/package.html"><span class="name">validation</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#org.widok.package@validation" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+
+    </li></ol>
+            </div>
+
+
+
+
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.11.6/index.html#scala.Any" class="extype" target="_top">Any</a></h3>
+            </div>
+
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>
